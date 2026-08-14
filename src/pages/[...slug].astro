@@ -1,0 +1,30 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+type ArticleEntry = CollectionEntry<'articles'>;
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+
+  return articles.map((article) => ({
+    params: {
+      slug: article.data.originalUrl
+        ? article.data.originalUrl.replace(/^\/+/, '').replace(/\/+$/, '')
+        : article.id.replace(/^en\//, '').replace(/\.md$/, ''),
+    },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+---
+
+<Base title={article.data.title} description={article.data.description}>
+  <article>
+    <h1>{article.data.title}</h1>
+    {article.data.draft && <p><strong>Draft — pending review</strong></p>}
+    <Content />
+  </article>
+</Base>

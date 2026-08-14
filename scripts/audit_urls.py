@@ -99,6 +99,17 @@ LEGACY_PRODUCT_PATTERNS = (
     "xalex",
 )
 
+SERVICE_PAGE_PATTERNS = (
+    "contact",
+    "about",
+    "privacy-policy",
+    "privacy",
+    "terms",
+    "disclaimer",
+    "facebook-demo",
+    "instagram-feed-demo",
+)
+
 TECHNICAL_PATH_PARTS = (
     "/wp-admin/",
     "/wp-content/",
@@ -452,6 +463,10 @@ def classify_url(url: str) -> str:
             return "legacy_product"
     if any(pattern in path for pattern in LEGACY_PRODUCT_PATTERNS):
         return "legacy_product"
+    if any(segment in SERVICE_PAGE_PATTERNS for segment in segments):
+        return "other"
+    if any(pattern in path for pattern in SERVICE_PAGE_PATTERNS):
+        return "other"
 
     if len(segments) == 1 and re.match(r"^[a-z0-9][a-z0-9-]+$", segments[0]):
         return "article"

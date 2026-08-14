@@ -3,19 +3,75 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
 const articles = await getCollection('articles');
+
+const tierOrder = { P0: 0, P1: 1, P2: 2, P3: 3 };
+const sortedArticles = articles.sort((a, b) => {
+  const tierA = tierOrder[a.data.priorityTier ?? 'P3'];
+  const tierB = tierOrder[b.data.priorityTier ?? 'P3'];
+
+  if (tierA !== tierB) {
+    return tierA - tierB;
+  }
+
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const plannedCategories = [
+  'Blood Tests',
+  'Hormone Tests',
+  'STD Testing',
+  'Vitamin & Nutrition',
+  'Metabolic Health',
+  'Fertility Testing',
+  'At-Home Lab Kits',
+];
 ---
 
-<Base title="All Med Tests">
-  <h1>Articles</h1>
-  {
-    articles.length > 0 ? (
-      <ul>
-        {articles.map((article) => (
-          <li>{article.data.title}</li>
-        ))}
-      </ul>
-    ) : (
-      <p>No articles yet.</p>
-    )
-  }
+<Base
+  title="allmedtests.com"
+  description="Guides to laboratory tests and methods, with marketplace tools for finding lab testing options."
+>
+  <section aria-labelledby="hero-title">
+    <h1 id="hero-title">allmedtests.com</h1>
+    <p>
+      Practical guides to laboratory tests and methods, plus a growing marketplace layer to help
+      people compare where to order or take common health tests.
+    </p>
+  </section>
+
+  <section aria-labelledby="guides-title">
+    <h2 id="guides-title">Lab Test Guides</h2>
+    {
+      sortedArticles.length > 0 ? (
+        <ul>
+          {sortedArticles.map((article) => {
+            const href = article.data.originalUrl ?? `/${article.id.replace(/^en\//, '').replace(/\.md$/, '')}/`;
+
+            return (
+              <li>
+                <h3>
+                  <a href={href}>{article.data.title}</a>
+                  {article.data.draft && <small> Draft — pending review</small>}
+                </h3>
+                {article.data.description && <p>{article.data.description}</p>}
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>No guides have been restored yet.</p>
+      )
+    }
+  </section>
+
+  <section aria-labelledby="marketplace-title">
+    <h2 id="marketplace-title">Find a Test Near You</h2>
+    <p>
+      Coming soon: comparison tools for lab testing options, at-home test kits, and provider
+      availability.
+    </p>
+    <ul>
+      {plannedCategories.map((category) => <li>{category}</li>)}
+    </ul>
+  </section>
 </Base>

@@ -1,6 +1,6 @@
 # allmedtests.com URL audit summary
 
-Generated: 2026-08-14 01:17:00 UTC
+Generated: 2026-08-14 03:02:40 UTC
 
 ## Counts
 
@@ -12,17 +12,17 @@ Generated: 2026-08-14 01:17:00 UTC
 ## URL Types
 
 - homepage: 1
-- article: 51
+- article: 44
 - legacy_product: 95
 - taxonomy: 167
-- other: 19
+- other: 26
 
 ## Article Priority Tiers
 
 - P0: 9
 - P1: 0
 - P2: 25
-- P3: 17
+- P3: 10
 
 ## Homepage
 
@@ -54,7 +54,7 @@ No P1 article URLs.
 
 ## Remaining Articles Without Backlinks
 
-- P2/P3 article URLs without backlinks: 42
+- P2/P3 article URLs without backlinks: 35
 
 ## Filter Reasons
 
