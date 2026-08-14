@@ -1,0 +1,3 @@
+# Redirect map for allmedtests.com migration
+# Populated after legacy_product/taxonomy mapping is finalized (see audit/legacy_products_review.csv, audit/taxonomy_review.csv)
+# Format: /old-path  /new-path  301

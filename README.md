@@ -15,6 +15,16 @@ Recovered English articles will live in `src/content/articles/en/`. The current 
 
 ## Redirects
 
-Recommended deployment target: Vercel. Astro works well there, and future redirect rules can live in `vercel.json` when taxonomy and legacy-product mappings are ready.
+Deployment target: Cloudflare Pages.
 
-No redirect file is created yet because the taxonomy and legacy shop URL mappings have not been approved.
+Build command: `npm run build`.
+
+Output directory: `dist/`.
+
+Cloudflare Pages reads redirects from `public/_redirects`, using the Netlify-style format:
+
+```text
+/old-path  /new-path  301
+```
+
+The redirect file is intentionally not populated yet because taxonomy and legacy shop URL mappings have not been approved. Cloudflare Pages has a redirect-rule limit around 2000 rules; the expected migration map is roughly 260+ redirects from `audit/legacy_products_review.csv` and `audit/taxonomy_review.csv`, so it fits with plenty of room.

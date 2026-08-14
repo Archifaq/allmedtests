@@ -11,6 +11,7 @@ const articles = defineCollection({
     sourceSnapshot: z.string().optional(),
     referringDomains: z.number().optional(),
     priorityTier: z.enum(['P0', 'P1', 'P2', 'P3']).optional(),
+    imageRestoreNeeded: z.boolean().default(false),
     draft: z.boolean().default(true),
   }),
 });
