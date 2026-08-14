@@ -1,0 +1,4735 @@
+{
+  "fetched_at": "2026-08-14T00:51:46.398248+00:00",
+  "latest_html": [
+    {
+      "original": "http://allmedtests.com/wp-login.php?action=lostpassword",
+      "timestamp": "20190708152550",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/wp-login.php",
+      "timestamp": "20221127192040",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-json/oembed/1.0/embed?url=http://allmedtests.com/bials-test/",
+      "timestamp": "20200226003749",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-json/oembed/1.0/embed?url=http://allmedtests.com/bials-test/&format=xml",
+      "timestamp": "20200226003802",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-includes/wlwmanifest.xml",
+      "timestamp": "20200223020239",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/wp-content/plugins/anti-spam/js/anti-spam-5.4.js",
+      "timestamp": "20190919212026",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/wp-content/plugins/anti-spam/js/anti-spam-4.2.js",
+      "timestamp": "20170119052844",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-content/plugins/adsense-click-fraud-monitoring/clickupdate.php",
+      "timestamp": "20190503080742",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/wp-content/cache/wpfc-minified/cb080ff05efb0a8fcf061f370d0e8f17/1475745483index.css",
+      "timestamp": "20170119201052",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/wp-content/cache/wpfc-minified/b5cbd74ee6d841a0766d398d595ee333/1475745607index.css",
+      "timestamp": "20170119210513",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-content/cache/wpfc-minified/",
+      "timestamp": "20160601194853",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/wp-admin/admin-ajax.php",
+      "timestamp": "20241009200808",
+      "statuscode": "400",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-admin",
+      "timestamp": "20170504005133",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/what-ph-meter-use/",
+      "timestamp": "20240416034410",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/to-study-the-response-of-skin-to-blunt-injury-triple-response/",
+      "timestamp": "20240722072502",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/taste-sensation-test/",
+      "timestamp": "20240722081127",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/wheal-formation/",
+      "timestamp": "20240808134257",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/what-is-ph-meter/",
+      "timestamp": "20240808125240",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/urea-test/",
+      "timestamp": "20230610042153",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/trochlear-examination/",
+      "timestamp": "20200208191424",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/triple-response/",
+      "timestamp": "20240808132429",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/tone-of-muscles/",
+      "timestamp": "20240915102018",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/test-for-taste-sensation/",
+      "timestamp": "20240622005055",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/test-for-reducing-sugars/",
+      "timestamp": "20240915094956",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/test-for-coordination/",
+      "timestamp": "20230610050608",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/taste-sensation-test/",
+      "timestamp": "20240808133054",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/taste-sensation/",
+      "timestamp": "20200130133810",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/superficial-reflexes/",
+      "timestamp": "20240722084644",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/strength-of-muscles/",
+      "timestamp": "20240416033823",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/starch-test-for-iodine/",
+      "timestamp": "20240416043805",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/starch-iodine-test/",
+      "timestamp": "20240416035229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer-use/",
+      "timestamp": "20200805195703",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer-procedure/",
+      "timestamp": "20200805191911",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer-principle/",
+      "timestamp": "20200805190300",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer/",
+      "timestamp": "20200805193328",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sgot-test-procedure/",
+      "timestamp": "20240520035746",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sgot-test/",
+      "timestamp": "20200806203547",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sgot/",
+      "timestamp": "20230610034438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-urea-test/",
+      "timestamp": "20240621232359",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-creatinin/",
+      "timestamp": "20240621233144",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-cholesterol-test-procedure/",
+      "timestamp": "20240808142441",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-cholesterol-test/",
+      "timestamp": "20240808125732",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-bilirubin-test-with-jendrassik-grofs-method/",
+      "timestamp": "20240221230131",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-bilirubin-test/",
+      "timestamp": "20240416035514",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/separation-of-amino-acids-by-chromatography/",
+      "timestamp": "20231001230837",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sensory-system-examination/",
+      "timestamp": "20230610050733",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sensory-system/",
+      "timestamp": "20240722071424",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/seliwanoffs-test/",
+      "timestamp": "20200211190835",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/seliwanoff-test/",
+      "timestamp": "20200211190828",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/rh-blood-grouping/",
+      "timestamp": "20240808132235",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/results-of-creatinine-clearance-test/",
+      "timestamp": "20240520020024",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/response-of-skin-to-blunt-injury/",
+      "timestamp": "20200131125237",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/red-reaction/",
+      "timestamp": "20240808133659",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/reagents-of-cholesterol-oxidase-method/",
+      "timestamp": "20200805195637",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/rapid-alternating-movements-test/",
+      "timestamp": "20240808133317",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/rapid-alternating-movements/",
+      "timestamp": "20240808143633",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/protein-free-filtrate/",
+      "timestamp": "20200208173427",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/procedure-of-dexamethasone-suppression-test/",
+      "timestamp": "20240808143234",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/procedure/",
+      "timestamp": "20240722070203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/principle/",
+      "timestamp": "20240808144557",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/precedure/",
+      "timestamp": "20240808132353",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/precautions/",
+      "timestamp": "20240808140730",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/plasma-proteins-determination/",
+      "timestamp": "20240416043205",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/plasma-proteins/",
+      "timestamp": "20240416032403",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter-working-priniciple/",
+      "timestamp": "20240722083716",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter-use/",
+      "timestamp": "20240416040316",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter-applications/",
+      "timestamp": "20240416031822",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter/",
+      "timestamp": "20240416042648",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/paper-chromatography-by-amino-acids/",
+      "timestamp": "20230401100425",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/paper-chromatography/",
+      "timestamp": "20231128161657",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test-results/",
+      "timestamp": "20240621231708",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test-procedure/",
+      "timestamp": "20240520034431",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test-principle/",
+      "timestamp": "20231001222634",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test/",
+      "timestamp": "20240722070107",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/olfactory-sensation-on-subject/",
+      "timestamp": "20240915094858",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/olfactory-sensation/",
+      "timestamp": "20240416032517",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/oculomotor/",
+      "timestamp": "20230610041331",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/muscle-power-test/",
+      "timestamp": "20240416051816",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/motor-system-examination/",
+      "timestamp": "20240416033306",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/motor-system/",
+      "timestamp": "20240622004308",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/molischs-test/",
+      "timestamp": "20240416032046",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/molisch-reagent/",
+      "timestamp": "20200105100133",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ldh-test/",
+      "timestamp": "20240915100228",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/lactate-dehydrogenase-test-procedure/",
+      "timestamp": "20240722081800",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/lactate-dehydrogenase-test-principle/",
+      "timestamp": "20240722065741",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/lactate-dehydrogenase-test/",
+      "timestamp": "20240221204955",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/knee-jerk/",
+      "timestamp": "20240621235245",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/kinetic-uv-method/",
+      "timestamp": "20230610042430",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/jendrassik-grofs-method/",
+      "timestamp": "20230610052210",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/jaw-jerk/",
+      "timestamp": "20240722085325",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/jaffes-method/",
+      "timestamp": "20240722074257",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/iodine-test/",
+      "timestamp": "20240221220357",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/hypotonia/",
+      "timestamp": "20180805204209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/hypertonia/",
+      "timestamp": "20240416045722",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/how-to-use-ph-meter/",
+      "timestamp": "20240808135339",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/how-to-collect-blood/",
+      "timestamp": "20240722065209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/heel-to-shin-test-procedue/",
+      "timestamp": "20200131125949",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/heel-to-shin-test/",
+      "timestamp": "20200130135338",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/heel-shin-test/",
+      "timestamp": "20240808134427",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/glucose-oxidase-method/",
+      "timestamp": "20240416051454",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/folin-wu-method-procedure/",
+      "timestamp": "20200208182024",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/folin-wu-method-precautions/",
+      "timestamp": "20230610035351",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/folin-wu-method/",
+      "timestamp": "20230610041203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/flare-formation/",
+      "timestamp": "20240808125618",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/finger-to-nose-test-procedure/",
+      "timestamp": "20190309203211",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/finger-to-nose-test/",
+      "timestamp": "20230610031919",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/finger-nose-test/",
+      "timestamp": "20240808140310",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/facial-nerve-test/",
+      "timestamp": "20230610034132",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/facial-nerve-examination/",
+      "timestamp": "20240520033650",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/examination-of-trigeminal-nerve/",
+      "timestamp": "20240416044739",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/estimation-of-serum-urea/",
+      "timestamp": "20231001212301",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/estimation-of-blood-urea/",
+      "timestamp": "20220523101819",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/estimation-of-blood-glucose-by-glucose-oxidase/",
+      "timestamp": "20200130133326",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/estimation-of-blood-glucose/",
+      "timestamp": "20200130133737",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/dst-results/",
+      "timestamp": "20240808143706",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count-result/",
+      "timestamp": "20240808130053",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count-procedure/",
+      "timestamp": "20231001211058",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count-applications/",
+      "timestamp": "20240520023955",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count/",
+      "timestamp": "20241005085838",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/diacetyl-monoxime-method/",
+      "timestamp": "20230610050937",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/dexamethasone-suppression-test/",
+      "timestamp": "20240808133443",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/determination-of-serum-creatinin/",
+      "timestamp": "20200805195438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/determination-of-plasma-proteins-by-biuret-method/",
+      "timestamp": "20240722085501",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/demostration-of-deep-tendon-reflexes/",
+      "timestamp": "20240722072127",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/demonstrate-superficial-reflexes-on-subject/",
+      "timestamp": "20240722070848",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/demonstrate-ankle-and-patellar-clonus/",
+      "timestamp": "20240622000139",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/deep-tendon-reflexes/",
+      "timestamp": "20231001223436",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/dam-method/",
+      "timestamp": "20220523121801",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cunjunctival-reflex/",
+      "timestamp": "20240722071815",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinine-clearance-test-procedure/",
+      "timestamp": "20240520020852",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinine-clearance-test-principle/",
+      "timestamp": "20240915091917",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinine-clearance-test/",
+      "timestamp": "20240520023606",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinin-determination-jaffes-method/",
+      "timestamp": "20240722071500",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatine-kinase-test/",
+      "timestamp": "20240808144654",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatine-kinase/",
+      "timestamp": "20240722065438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cranial-nerve-7-test/",
+      "timestamp": "20230610041756",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cortical-sensory-functions/",
+      "timestamp": "20230610051143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/corneal-reflexes/",
+      "timestamp": "20240520020358",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/coordination-tests/",
+      "timestamp": "20240722074405",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/collection-of-blood/",
+      "timestamp": "20240621230100",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/collect-blood/",
+      "timestamp": "20240622004934",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/clinical-examination-of-facial-nerve/",
+      "timestamp": "20240520020705",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/clinical-examination/",
+      "timestamp": "20240722065629",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ck-estimation/",
+      "timestamp": "20240722073058",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ck-enzyme/",
+      "timestamp": "20240622002651",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cholesterol-test/",
+      "timestamp": "20200805185620",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cholesterol-oxidase-method/",
+      "timestamp": "20240808130610",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/carbohydrates-general-test/",
+      "timestamp": "20240722083616",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bulk-of-muscles/",
+      "timestamp": "20240416044551",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/blunt-injury/",
+      "timestamp": "20240520030902",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/blood-urea/",
+      "timestamp": "20240520015651",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/blood-glucose-test/",
+      "timestamp": "20200130133025",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/blood-collection/",
+      "timestamp": "20240416052336",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/biuret-method/",
+      "timestamp": "20231001231449",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bilirubin-test/",
+      "timestamp": "20240808134449",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/benedicts-test/",
+      "timestamp": "20240915103107",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/barfoeds-test/",
+      "timestamp": "20240416052554",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/barfoed-test/",
+      "timestamp": "20240221204808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/barfoed-reagent/",
+      "timestamp": "20230610042549",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bails-test-result/",
+      "timestamp": "20240808135803",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bails-test-reagent/",
+      "timestamp": "20240808144047",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/bails-test-procedure/",
+      "timestamp": "20200226003729",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/bails-test/",
+      "timestamp": "20200226003744",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ast-test/",
+      "timestamp": "20230610044535",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/anthrone-test/",
+      "timestamp": "20240808140021",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/anthrone-reagent/",
+      "timestamp": "20240808131039",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/anthrone/",
+      "timestamp": "20240808140257",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ankle-jerk/",
+      "timestamp": "20240722085707",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/amino-acids-paper-chromatography/",
+      "timestamp": "20240520032927",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/aldose-and-ketose-sugar/",
+      "timestamp": "20200211190813",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/abo-blood-grouping/",
+      "timestamp": "20240808125959",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/abo-and-rh-blood-grouping/",
+      "timestamp": "20240416045030",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/abducent-nerve-examination/",
+      "timestamp": "20200208183425",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/5th-cranial-nerve-test/",
+      "timestamp": "20240722072022",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/5th-cranial-nerve/",
+      "timestamp": "20230610034353",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/spectrophotometer-working-principle-use-applications/",
+      "timestamp": "20251228144441",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/sitemap.xml",
+      "timestamp": "20240624035851",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/sgot-test-uv-method/",
+      "timestamp": "20240520034715",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-urea-test-kinetic-uv-method/",
+      "timestamp": "20240520030101",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-creatinine-test-jaffes-method/",
+      "timestamp": "20241005102533",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-cholesterol-test-cholesterol-oxidase-method/",
+      "timestamp": "20240722073346",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-bilirubin-test/",
+      "timestamp": "20240622010304",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/separation-amino-acids-paper-chromatography/",
+      "timestamp": "20240520033821",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/seliwanoffs-test-principle-procedure/",
+      "timestamp": "20240520023335",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/search/%7Bs%7D/",
+      "timestamp": "20190709023532",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/schema/person/admin/",
+      "timestamp": "20190623023528",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/robots.txt",
+      "timestamp": "20220925111630",
+      "statuscode": "503",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/rapid-alternating-movement-tests/",
+      "timestamp": "20240722071229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/protein-free-filtrate-folin-wu-method/",
+      "timestamp": "20240915111719",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/privacy-policy/",
+      "timestamp": "20240623212635",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/photoelectric-colorimeter/",
+      "timestamp": "20240915110436",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/warranty",
+      "timestamp": "20120924041718",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/shipping",
+      "timestamp": "20120629081308",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/privacy",
+      "timestamp": "20120629093109",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/contact",
+      "timestamp": "20120629093314",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/conditions",
+      "timestamp": "20120629093024",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/9/",
+      "timestamp": "20240621225925",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/8/",
+      "timestamp": "20240416033443",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/7/",
+      "timestamp": "20240722070338",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/6/",
+      "timestamp": "20240808130414",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/5/",
+      "timestamp": "20240416033216",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/4/",
+      "timestamp": "20240722070249",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/3/",
+      "timestamp": "20240808130241",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/2/",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/osazone-test-principle-procedure/",
+      "timestamp": "20240915111429",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/olfactory-sensations/",
+      "timestamp": "20240622003703",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/my-instagram-feed-demo-3/",
+      "timestamp": "20240622003533",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/my-instagram-feed-demo-2/",
+      "timestamp": "20240621235920",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/my-instagram-feed-demo/",
+      "timestamp": "20240722075850",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/molischs-test-principle-reagent/",
+      "timestamp": "20240915095701",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/lactate-dehydrogenase-test/",
+      "timestamp": "20240722070727",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/iodine-test-starch/",
+      "timestamp": "20251230035934",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/heel-to-shin-test-procedure/",
+      "timestamp": "20240520040426",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/finger-nose-test-procedure-video/",
+      "timestamp": "20240808140548",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/favicon.ico",
+      "timestamp": "20240623212948",
+      "statuscode": "302",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/facebook-demo-2/",
+      "timestamp": "20240622000654",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/facebook-demo/",
+      "timestamp": "20240915094310",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/examination-oculomotor-trochlear-abducent-nerves/",
+      "timestamp": "20240520015332",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/differential-leukocyte-count-procedure/",
+      "timestamp": "20240621224721",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/dexamethasone-suppression-test/",
+      "timestamp": "20240722084423",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/determination-plasma-protein-biuret-method/",
+      "timestamp": "20240520020253",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/determination-blood-urea-dam-method/",
+      "timestamp": "20240416034747",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/demonstrate-superficial-reflexes-subject/",
+      "timestamp": "20240621224508",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/demonstrate-power-different-muscles-subject/",
+      "timestamp": "20240416035636",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/demonstrate-deep-tendon-reflexes-subject/feed/",
+      "timestamp": "20191201063942",
+      "statuscode": "522",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/demonstrate-deep-tendon-reflexes-subject/",
+      "timestamp": "20240621232321",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/customer/login",
+      "timestamp": "20120630191639",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/creatinine-clearance-test/",
+      "timestamp": "20240416051740",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/creatine-kinase-test/",
+      "timestamp": "20240416043709",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/cranial-nerve-7-test/",
+      "timestamp": "20240416042831",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/coordination-tests/",
+      "timestamp": "20240622010227",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/contact/",
+      "timestamp": "20240915112610",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/clinical-tests-examination-trigeminal-nerve/",
+      "timestamp": "20240621230858",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/clinical-examination-sensory-system/",
+      "timestamp": "20240621230413",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/clinical-examination-motor-system/",
+      "timestamp": "20241005100658",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/cgi-sys/suspendedpage.cgi",
+      "timestamp": "20171225102129",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/cdn-cgi/l/email-protection",
+      "timestamp": "20240221202725",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/proteins/",
+      "timestamp": "20240621235315",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/physiology/page/3/",
+      "timestamp": "20240808142933",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/physiology/page/2/",
+      "timestamp": "20211128152527",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/physiology/",
+      "timestamp": "20240416045758",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/lipdis/",
+      "timestamp": "20240621230724",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/laboratory-techniques/",
+      "timestamp": "20240722074934",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/category/general/",
+      "timestamp": "20200105100225",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/clinical-techniques/",
+      "timestamp": "20241005082514",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/carbohydrates/page/2/",
+      "timestamp": "20240915090809",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/carbohydrates/",
+      "timestamp": "20240221213020",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/page/4/",
+      "timestamp": "20231001220636",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/page/3/",
+      "timestamp": "20241005090114",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/page/2/",
+      "timestamp": "20241005083525",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/",
+      "timestamp": "20240520033538",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/blood-glucose-test/",
+      "timestamp": "20240520035045",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/blood-collection/",
+      "timestamp": "20240221204615",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/bials-test/feed/",
+      "timestamp": "20200226003723",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/bials-test/",
+      "timestamp": "20240722080136",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/benedicts-test-reducing-sugar/",
+      "timestamp": "20240808130150",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/barfoeds-test-monosaccharide/",
+      "timestamp": "20240915105727",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/author/hamzakhankhan/page/9/",
+      "timestamp": "20191021174647",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/author/hamzakhankhan/page/3/",
+      "timestamp": "20191021182038",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/author/hamzakhankhan/page/2/",
+      "timestamp": "20191021182607",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/author/hamzakhankhan/",
+      "timestamp": "20200202173834",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/app-ads.txt",
+      "timestamp": "20240623200926",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/anthrone-test/",
+      "timestamp": "20250831202004",
+      "statuscode": "404",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/ankle-patellar-clonus/",
+      "timestamp": "20240915101518",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/abo-and-rh-blood-grouping/",
+      "timestamp": "20241005084300",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/?s=%7Bs%7D",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/?s=%7Bsearch_term_string%7D",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=98",
+      "timestamp": "20200130132715",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=96",
+      "timestamp": "20180815042641",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=94",
+      "timestamp": "20170524111620",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=92",
+      "timestamp": "20190923102646",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=9",
+      "timestamp": "20200208111718",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=89",
+      "timestamp": "20180805203844",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=87",
+      "timestamp": "20200131125938",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=84",
+      "timestamp": "20200209002704",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=74",
+      "timestamp": "20191228192507",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=51",
+      "timestamp": "20200209121901",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=44",
+      "timestamp": "20200208101853",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=389",
+      "timestamp": "20181112124550",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=38",
+      "timestamp": "20200208103046",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=348",
+      "timestamp": "20190923170407",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=33",
+      "timestamp": "20191227163158",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=291",
+      "timestamp": "20200208183154",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=289",
+      "timestamp": "20200130132344",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/?p=25",
+      "timestamp": "20231012025121",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=20",
+      "timestamp": "20200105100220",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=180",
+      "timestamp": "20200130132137",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=177",
+      "timestamp": "20200130131323",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=167",
+      "timestamp": "20180708163608",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=163",
+      "timestamp": "20190920033133",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=160",
+      "timestamp": "20200130135205",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=156",
+      "timestamp": "20180425204847",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=153",
+      "timestamp": "20190918213538",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=150",
+      "timestamp": "20190309203624",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=147",
+      "timestamp": "20200131125014",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=141",
+      "timestamp": "20200130135242",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=137",
+      "timestamp": "20200130134544",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=133",
+      "timestamp": "20190920203331",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=130",
+      "timestamp": "20200124161215",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=128",
+      "timestamp": "20200208110218",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=126",
+      "timestamp": "20200208065515",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=124",
+      "timestamp": "20171119040052",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=122",
+      "timestamp": "20200209011206",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=118",
+      "timestamp": "20190919140733",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=115",
+      "timestamp": "20191227163227",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=113",
+      "timestamp": "20200131125609",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=110",
+      "timestamp": "20200208190534",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=11",
+      "timestamp": "20200209003009",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=108",
+      "timestamp": "20200208173423",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/?p=106",
+      "timestamp": "20190921013751",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/?p=104",
+      "timestamp": "20200208105305",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/92-saliva-drug-test-detox-products",
+      "timestamp": "20120926172321",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/91-syntetic-urine",
+      "timestamp": "20120928073331",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/77961-ultra-mask-one-hour-cleansing-formula-mandarin-orange-flavor",
+      "timestamp": "20120928073316",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/77960-ultra-mask-one-hour-cleansing-formula-cherry-red-flavor",
+      "timestamp": "20120926172304",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/77959-ultra-mask-one-hour-cleansing-formula-wild-berry-blast-flavor",
+      "timestamp": "20120927063826",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/70130-zydot-ultimate-24-plus-starfruit-flavor",
+      "timestamp": "20120926172259",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28676-zydot-ultimate-blend-wild-cherry-flavor",
+      "timestamp": "20120926172254",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28675-zydot-ultimate-blend-starfruit-flavor",
+      "timestamp": "20120928073258",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28674-zydot-ultimate-blend-orange-flavor",
+      "timestamp": "20120927063821",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28133-zydot-ultimate-24-plus-blend-orange-flavor",
+      "timestamp": "20120926172249",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28097-zydot-ultimate-24-plus-blend-wild-cherry-flavor",
+      "timestamp": "20120928073252",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2713-qcarbo-fast-cleansing-formula-orange-flavor",
+      "timestamp": "20120927063816",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2709-qcarbo-plus-with-booster-cranberry-raspberry-flavor",
+      "timestamp": "20120926001859",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2694-qcarbo-fast-cleansing-formula-strawberry-mango-flavor",
+      "timestamp": "20120926172244",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2693-qcarbo-plus-with-booster-strawberry-mango-flavor",
+      "timestamp": "20120924052230",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/13596-vale-solution-tropical-punch-flavor",
+      "timestamp": "20120927063811",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/13595-vale-solution-orange-flavor",
+      "timestamp": "20120926172239",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/13594-solution-4x",
+      "timestamp": "20120926001834",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/1136384-ultra-mask-one-hour-cleansing-formula-exotic-punch-flavor",
+      "timestamp": "20120927063805",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90-urine-drug-test-detox-drinks",
+      "timestamp": "20120924052143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/88-hair-drug-test-detox-products",
+      "timestamp": "20120926172234",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/87-detox-kits",
+      "timestamp": "20120926172229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/81/7901-the-home-access-hiv-1-test-kit-system",
+      "timestamp": "20120704140224",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/81/1064212-strep-a-test-strips-25-bx",
+      "timestamp": "20120629093223",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/81-disease-tests",
+      "timestamp": "20120629093209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/933946-infidelity-home-test-kit-checkmate",
+      "timestamp": "20120704152443",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/2151-see-through-transparency-spray",
+      "timestamp": "20120704152437",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/2150-expray-explosive-detection-50-test-kit-with-spray-explosives-detection-technology",
+      "timestamp": "20120705131234",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/2149-dropex-plus-explosives-detection-field-test-kit",
+      "timestamp": "20120705131525",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1886-multi-drug-spray-test-100-tests",
+      "timestamp": "20120704152432",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1803-expray-explosives-detection-identification-field-test-kit-100-tests",
+      "timestamp": "20120704152427",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1801-drug-detection-spray-kit-for-thc-coc-meth-opi-20-tests",
+      "timestamp": "20120704152422",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1756-detect-now-spray-cocaine-crack-drug-test",
+      "timestamp": "20120705131228",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1728-detect-now-for-marijuana-drug-test",
+      "timestamp": "20120705131219",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1064220-meth-substance-methamphetamine-surface-drug-testing",
+      "timestamp": "20120704152417",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77-forensic-tests",
+      "timestamp": "20120629093203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75/1764-alcohol-saliva-screen-test",
+      "timestamp": "20120704141039",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75/1763-alcohol-saliva-test-dot-approved",
+      "timestamp": "20120704140218",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75/1064210-alcomate-prestige-al-6000-full-kit",
+      "timestamp": "20120704140213",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75-alcohol-tests",
+      "timestamp": "20120629093158",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74/2146-qtest-saliva-biotester-ovulation-prediction-test",
+      "timestamp": "20120704141019",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74/1786-digital-basal-thermometer-lifeaid",
+      "timestamp": "20120704141014",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74/1772-ovulation-test-strips-pack-of-ten-10",
+      "timestamp": "20120704141009",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74-ovulation-tests",
+      "timestamp": "20120701000442",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73/2142-hcg-midstream-pregnancy-tests-pack-of-ten",
+      "timestamp": "20120704141004",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73/1737-hcg-midstream-pregnancy-tests-pack-of-five",
+      "timestamp": "20120704140958",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73/1138029-uti-urinary-tract-infection-3-tests-in-box",
+      "timestamp": "20120626130741",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73-pregnancy-tests",
+      "timestamp": "20120701000312",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/2161-latex-powder-free-exam-gloves-5-pairs",
+      "timestamp": "20120704192125",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/2159-employer-s-all-inclusive-drug-testing-pack",
+      "timestamp": "20120704191010",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1885-multi-line-6-drug-urine-screen-test",
+      "timestamp": "20120704192232",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1884-multi-line-5-drug-urine-screen-test",
+      "timestamp": "20120704192202",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1883-9-panel-drug-urine-test",
+      "timestamp": "20120704193007",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1874-drug-test-3-panel-screen-urine-kit-thc-coc-met",
+      "timestamp": "20120704192049",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1872-specimen-collection-cup-with-thermometer",
+      "timestamp": "20120704192044",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1871-adulteration-urine-drug-test",
+      "timestamp": "20120704140953",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1862-xalex-complete-employer-s-drug-test-kit",
+      "timestamp": "20120704192930",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1861-drug-test-kit-2-panel-screen-urine-thc-meth",
+      "timestamp": "20120704190959",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1853-specimen-collection-cups-105ml",
+      "timestamp": "20120704140209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1799-drug-test-kit-2-panel-screen-urine-thc-cocaine",
+      "timestamp": "20120704192917",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1759-6-panel-urine-multi-drug-test-kit-coc-amp-m-amp-thc-opi-bzd",
+      "timestamp": "20120704140203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1758-5-panel-multi-drug-urine-test-kit-thc-coc-met-opi-amp",
+      "timestamp": "20120704140948",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1757-10-panel-multi-drug-urine-test-kit",
+      "timestamp": "20120704140943",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1732-drug-test-3-panel-screen-urine-kit-thc-coc-opi",
+      "timestamp": "20120704192524",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1730-5-panel-multi-drug-urine-test-kit-thc-coc-amp-opi-pcp",
+      "timestamp": "20120704140158",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1061431-adulteration-tests-25-in-cannister",
+      "timestamp": "20120704192039",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1061430-12-drug-test-kit",
+      "timestamp": "20120704192157",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72-drug-test-dips-multi-panels",
+      "timestamp": "20120629093153",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/588-cocaine-coc-detox-kits",
+      "timestamp": "20120927063800",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/5016-opiate-her-mor-detox-kits",
+      "timestamp": "20120926172223",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45345-saliva-drug-tests",
+      "timestamp": "20120701000348",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/933944-11-panel-drug-test-cup-qtest-clia",
+      "timestamp": "20120705072110",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/2158-5-panel-urine-drug-test-ez-split-cup-with-adulteration-test",
+      "timestamp": "20120704140153",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1880-multi-drug-screen-test-kit-cup",
+      "timestamp": "20120704140148",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064219-k-cup-drug-test-cup-for-10-drugs-of-abuse",
+      "timestamp": "20120705072055",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064214-k-cup-7-panel-drug-testing-cup",
+      "timestamp": "20120705072050",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064213-k-cup-drug-testing-cup-5-panel",
+      "timestamp": "20120704152412",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064184-14-panel-drug-test-cup-t-cup",
+      "timestamp": "20120629093148",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1061435-qtest-12-panel-drug-testing-cup",
+      "timestamp": "20120704152407",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/10374-multi-drug-testing-cup-qtest-5",
+      "timestamp": "20120704140939",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344-drug-testing-cups",
+      "timestamp": "20120629093143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45343-laboratory-tests-hair-saliva-urine",
+      "timestamp": "20120701000229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342/2164-thc-marijuana-drug-test-urine-cassette",
+      "timestamp": "20120704140528",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342/1875-cotinine-nicotine-tobacco-urine-test",
+      "timestamp": "20120704140143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342/1762-cannabis-thc-marijuana-dip-strip-drug-urine-test",
+      "timestamp": "20120704140523",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342-single-urine-drug-tests",
+      "timestamp": "20120701000343",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/389-alternative-detoxifying-products",
+      "timestamp": "20120926172218",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/06/",
+      "timestamp": "20241005102457",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/04/",
+      "timestamp": "20240520033852",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/03/page/2/",
+      "timestamp": "20240416042536",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/03/",
+      "timestamp": "20240221221415",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/02/page/2/",
+      "timestamp": "20240221213527",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/02/",
+      "timestamp": "20240520031737",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/01/",
+      "timestamp": "20240808134907",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/12/page/2/",
+      "timestamp": "20240808134533",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/12/",
+      "timestamp": "20241005094757",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/11/page/2/",
+      "timestamp": "20240221213147",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/11/",
+      "timestamp": "20240722080438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/10/page/2/",
+      "timestamp": "20240221211800",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/10/",
+      "timestamp": "20240915101126",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/191-thc-marijuana-detox-kits",
+      "timestamp": "20120927063755",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/190-urine-drug-test-detox-pills",
+      "timestamp": "20120927063750",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/189-home-test-kits",
+      "timestamp": "20120926172212",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2169-xalex-multi-drug-testing-kit-for-10-drugs",
+      "timestamp": "20120630214111",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2168-xalex-multi-drug-testing-kit-for-6-drugs",
+      "timestamp": "20120630214106",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2166-xalex-multi-drug-testing-kit-for-5-drugs-thc-coc-opi-amp-pcp",
+      "timestamp": "20120630214101",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2165-xalex-multi-drug-testing-kit-for-5-drugs-thc-coc-met-opi-amp",
+      "timestamp": "20120630214056",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115-xalex-drug-testing-kits",
+      "timestamp": "20120629093020",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/trust.txt",
+      "timestamp": "20240623214745",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/security.txt",
+      "timestamp": "20240623212156",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/openid-configuration",
+      "timestamp": "20240623195102",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/nodeinfo",
+      "timestamp": "20240623211633",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/gpc.json",
+      "timestamp": "20240623195834",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/dnt-policy.txt",
+      "timestamp": "20240623195946",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/assetlinks.json",
+      "timestamp": "20240623235420",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/.well-known/ai-plugin.json",
+      "timestamp": "20240623235631",
+      "statuscode": "301",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    }
+  ],
+  "latest_200_html": [
+    {
+      "original": "http://allmedtests.com/wp-login.php?action=lostpassword",
+      "timestamp": "20190708152550",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/wp-login.php",
+      "timestamp": "20221127192040",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-content/cache/wpfc-minified/",
+      "timestamp": "20160601194853",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/wp-admin/admin-ajax.php",
+      "timestamp": "20161207155926",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/what-ph-meter-use/",
+      "timestamp": "20240416034410",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/to-study-the-response-of-skin-to-blunt-injury-triple-response/",
+      "timestamp": "20240722072502",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/taste-sensation-test/",
+      "timestamp": "20240722081127",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/wheal-formation/",
+      "timestamp": "20240808134257",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/what-is-ph-meter/",
+      "timestamp": "20240808125240",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/urea-test/",
+      "timestamp": "20230610042153",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/trochlear-examination/",
+      "timestamp": "20200208191424",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/triple-response/",
+      "timestamp": "20240808132429",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/tone-of-muscles/",
+      "timestamp": "20240915102018",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/test-for-taste-sensation/",
+      "timestamp": "20240622005055",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/test-for-reducing-sugars/",
+      "timestamp": "20240915094956",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/test-for-coordination/",
+      "timestamp": "20230610050608",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/taste-sensation-test/",
+      "timestamp": "20240808133054",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/taste-sensation/",
+      "timestamp": "20200130133810",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/superficial-reflexes/",
+      "timestamp": "20240722084644",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/strength-of-muscles/",
+      "timestamp": "20240416033823",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/starch-test-for-iodine/",
+      "timestamp": "20240416043805",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/starch-iodine-test/",
+      "timestamp": "20240416035229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer-use/",
+      "timestamp": "20200805195703",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer-procedure/",
+      "timestamp": "20200805191911",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer-principle/",
+      "timestamp": "20200805190300",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/spectrophotometer/",
+      "timestamp": "20200805193328",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sgot-test-procedure/",
+      "timestamp": "20240520035746",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sgot-test/",
+      "timestamp": "20200806203547",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sgot/",
+      "timestamp": "20230610034438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-urea-test/",
+      "timestamp": "20240621232359",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-creatinin/",
+      "timestamp": "20240621233144",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-cholesterol-test-procedure/",
+      "timestamp": "20240808142441",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-cholesterol-test/",
+      "timestamp": "20240808125732",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-bilirubin-test-with-jendrassik-grofs-method/",
+      "timestamp": "20240221230131",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/serum-bilirubin-test/",
+      "timestamp": "20240416035514",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/separation-of-amino-acids-by-chromatography/",
+      "timestamp": "20231001230837",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sensory-system-examination/",
+      "timestamp": "20230610050733",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/sensory-system/",
+      "timestamp": "20240722071424",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/seliwanoffs-test/",
+      "timestamp": "20200211190835",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/seliwanoff-test/",
+      "timestamp": "20200211190828",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/rh-blood-grouping/",
+      "timestamp": "20240808132235",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/results-of-creatinine-clearance-test/",
+      "timestamp": "20240520020024",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/response-of-skin-to-blunt-injury/",
+      "timestamp": "20200131125237",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/red-reaction/",
+      "timestamp": "20240808133659",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/reagents-of-cholesterol-oxidase-method/",
+      "timestamp": "20200805195637",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/rapid-alternating-movements-test/",
+      "timestamp": "20240808133317",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/rapid-alternating-movements/",
+      "timestamp": "20240808143633",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/protein-free-filtrate/",
+      "timestamp": "20200208173427",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/procedure-of-dexamethasone-suppression-test/",
+      "timestamp": "20240808143234",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/procedure/",
+      "timestamp": "20240722070203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/principle/",
+      "timestamp": "20240808144557",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/precedure/",
+      "timestamp": "20240808132353",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/precautions/",
+      "timestamp": "20240808140730",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/plasma-proteins-determination/",
+      "timestamp": "20240416043205",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/plasma-proteins/",
+      "timestamp": "20240416032403",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter-working-priniciple/",
+      "timestamp": "20240722083716",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter-use/",
+      "timestamp": "20240416040316",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter-applications/",
+      "timestamp": "20240416031822",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/photoelectric-colorimeter/",
+      "timestamp": "20240416042648",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/paper-chromatography-by-amino-acids/",
+      "timestamp": "20230401100425",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/paper-chromatography/",
+      "timestamp": "20231128161657",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test-results/",
+      "timestamp": "20240621231708",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test-procedure/",
+      "timestamp": "20240520034431",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test-principle/",
+      "timestamp": "20231001222634",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/osazone-test/",
+      "timestamp": "20240722070107",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/olfactory-sensation-on-subject/",
+      "timestamp": "20240915094858",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/olfactory-sensation/",
+      "timestamp": "20240416032517",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/oculomotor/",
+      "timestamp": "20230610041331",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/muscle-power-test/",
+      "timestamp": "20240416051816",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/motor-system-examination/",
+      "timestamp": "20240416033306",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/motor-system/",
+      "timestamp": "20240622004308",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/molischs-test/",
+      "timestamp": "20240416032046",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/molisch-reagent/",
+      "timestamp": "20200105100133",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ldh-test/",
+      "timestamp": "20240915100228",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/lactate-dehydrogenase-test-procedure/",
+      "timestamp": "20240722081800",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/lactate-dehydrogenase-test-principle/",
+      "timestamp": "20240722065741",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/lactate-dehydrogenase-test/",
+      "timestamp": "20240221204955",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/knee-jerk/",
+      "timestamp": "20240621235245",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/kinetic-uv-method/",
+      "timestamp": "20230610042430",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/jendrassik-grofs-method/",
+      "timestamp": "20230610052210",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/jaw-jerk/",
+      "timestamp": "20240722085325",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/jaffes-method/",
+      "timestamp": "20240722074257",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/iodine-test/",
+      "timestamp": "20240221220357",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/hypotonia/",
+      "timestamp": "20180805204209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/hypertonia/",
+      "timestamp": "20240416045722",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/how-to-use-ph-meter/",
+      "timestamp": "20240808135339",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/how-to-collect-blood/",
+      "timestamp": "20240722065209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/heel-to-shin-test-procedue/",
+      "timestamp": "20200131125949",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/heel-to-shin-test/",
+      "timestamp": "20200130135338",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/heel-shin-test/",
+      "timestamp": "20240808134427",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/glucose-oxidase-method/",
+      "timestamp": "20240416051454",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/folin-wu-method-procedure/",
+      "timestamp": "20200208182024",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/folin-wu-method-precautions/",
+      "timestamp": "20230610035351",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/folin-wu-method/",
+      "timestamp": "20230610041203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/flare-formation/",
+      "timestamp": "20240808125618",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/finger-to-nose-test-procedure/",
+      "timestamp": "20190309203211",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/finger-to-nose-test/",
+      "timestamp": "20230610031919",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/finger-nose-test/",
+      "timestamp": "20240808140310",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/facial-nerve-test/",
+      "timestamp": "20230610034132",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/facial-nerve-examination/",
+      "timestamp": "20240520033650",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/examination-of-trigeminal-nerve/",
+      "timestamp": "20240416044739",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/estimation-of-serum-urea/",
+      "timestamp": "20231001212301",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/estimation-of-blood-urea/",
+      "timestamp": "20220523101819",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/estimation-of-blood-glucose-by-glucose-oxidase/",
+      "timestamp": "20200130133326",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/estimation-of-blood-glucose/",
+      "timestamp": "20200130133737",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/dst-results/",
+      "timestamp": "20240808143706",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count-result/",
+      "timestamp": "20240808130053",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count-procedure/",
+      "timestamp": "20231001211058",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count-applications/",
+      "timestamp": "20240520023955",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/differential-leukocyte-count/",
+      "timestamp": "20241005085838",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/diacetyl-monoxime-method/",
+      "timestamp": "20230610050937",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/dexamethasone-suppression-test/",
+      "timestamp": "20240808133443",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/determination-of-serum-creatinin/",
+      "timestamp": "20200805195438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/determination-of-plasma-proteins-by-biuret-method/",
+      "timestamp": "20240722085501",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/demostration-of-deep-tendon-reflexes/",
+      "timestamp": "20240722072127",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/demonstrate-superficial-reflexes-on-subject/",
+      "timestamp": "20240722070848",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/demonstrate-ankle-and-patellar-clonus/",
+      "timestamp": "20240622000139",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/deep-tendon-reflexes/",
+      "timestamp": "20231001223436",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/dam-method/",
+      "timestamp": "20220523121801",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cunjunctival-reflex/",
+      "timestamp": "20240722071815",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinine-clearance-test-procedure/",
+      "timestamp": "20240520020852",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinine-clearance-test-principle/",
+      "timestamp": "20240915091917",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinine-clearance-test/",
+      "timestamp": "20240520023606",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatinin-determination-jaffes-method/",
+      "timestamp": "20240722071500",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatine-kinase-test/",
+      "timestamp": "20240808144654",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/creatine-kinase/",
+      "timestamp": "20240722065438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cranial-nerve-7-test/",
+      "timestamp": "20230610041756",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cortical-sensory-functions/",
+      "timestamp": "20230610051143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/corneal-reflexes/",
+      "timestamp": "20240520020358",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/coordination-tests/",
+      "timestamp": "20240722074405",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/collection-of-blood/",
+      "timestamp": "20240621230100",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/collect-blood/",
+      "timestamp": "20240622004934",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/clinical-examination-of-facial-nerve/",
+      "timestamp": "20240520020705",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/clinical-examination/",
+      "timestamp": "20240722065629",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ck-estimation/",
+      "timestamp": "20240722073058",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ck-enzyme/",
+      "timestamp": "20240622002651",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cholesterol-test/",
+      "timestamp": "20200805185620",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/cholesterol-oxidase-method/",
+      "timestamp": "20240808130610",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/carbohydrates-general-test/",
+      "timestamp": "20240722083616",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bulk-of-muscles/",
+      "timestamp": "20240416044551",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/blunt-injury/",
+      "timestamp": "20240520030902",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/blood-urea/",
+      "timestamp": "20240520015651",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/blood-glucose-test/",
+      "timestamp": "20200130133025",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/blood-collection/",
+      "timestamp": "20240416052336",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/biuret-method/",
+      "timestamp": "20231001231449",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bilirubin-test/",
+      "timestamp": "20240808134449",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/benedicts-test/",
+      "timestamp": "20240915103107",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/barfoeds-test/",
+      "timestamp": "20240416052554",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/barfoed-test/",
+      "timestamp": "20240221204808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/barfoed-reagent/",
+      "timestamp": "20230610042549",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bails-test-result/",
+      "timestamp": "20240808135803",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/bails-test-reagent/",
+      "timestamp": "20240808144047",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/bails-test-procedure/",
+      "timestamp": "20191227153940",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/bails-test/",
+      "timestamp": "20191227153959",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ast-test/",
+      "timestamp": "20230610044535",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/anthrone-test/",
+      "timestamp": "20240808140021",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/anthrone-reagent/",
+      "timestamp": "20240808131039",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/anthrone/",
+      "timestamp": "20240808140257",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/ankle-jerk/",
+      "timestamp": "20240722085707",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/amino-acids-paper-chromatography/",
+      "timestamp": "20240520032927",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/aldose-and-ketose-sugar/",
+      "timestamp": "20200211190813",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/abo-blood-grouping/",
+      "timestamp": "20240808125959",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/abo-and-rh-blood-grouping/",
+      "timestamp": "20240416045030",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/tag/abducent-nerve-examination/",
+      "timestamp": "20200208183425",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/5th-cranial-nerve-test/",
+      "timestamp": "20240722072022",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/tag/5th-cranial-nerve/",
+      "timestamp": "20230610034353",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/spectrophotometer-working-principle-use-applications/",
+      "timestamp": "20251228144441",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/sgot-test-uv-method/",
+      "timestamp": "20240520034715",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-urea-test-kinetic-uv-method/",
+      "timestamp": "20240520030101",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-creatinine-test-jaffes-method/",
+      "timestamp": "20241005102533",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-cholesterol-test-cholesterol-oxidase-method/",
+      "timestamp": "20240722073346",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/serum-bilirubin-test/",
+      "timestamp": "20240622010304",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/separation-amino-acids-paper-chromatography/",
+      "timestamp": "20240520033821",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/seliwanoffs-test-principle-procedure/",
+      "timestamp": "20240520023335",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/search/%7Bs%7D/",
+      "timestamp": "20190709023532",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/rapid-alternating-movement-tests/",
+      "timestamp": "20240722071229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/protein-free-filtrate-folin-wu-method/",
+      "timestamp": "20240915111719",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/privacy-policy/",
+      "timestamp": "20240623212635",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/photoelectric-colorimeter/",
+      "timestamp": "20240915110436",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/warranty",
+      "timestamp": "20120924041718",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/shipping",
+      "timestamp": "20120629081308",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/privacy",
+      "timestamp": "20120629093109",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/contact",
+      "timestamp": "20120629093314",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/page/conditions",
+      "timestamp": "20120629093024",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/9/",
+      "timestamp": "20240621225925",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/8/",
+      "timestamp": "20240416033443",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/7/",
+      "timestamp": "20240722070338",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/6/",
+      "timestamp": "20240808130414",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/5/",
+      "timestamp": "20240416033216",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/4/",
+      "timestamp": "20240722070249",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/3/",
+      "timestamp": "20240808130241",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/page/2/",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/osazone-test-principle-procedure/",
+      "timestamp": "20240915111429",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/olfactory-sensations/",
+      "timestamp": "20240622003703",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/my-instagram-feed-demo-3/",
+      "timestamp": "20240622003533",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/my-instagram-feed-demo-2/",
+      "timestamp": "20240621235920",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/my-instagram-feed-demo/",
+      "timestamp": "20240722075850",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/molischs-test-principle-reagent/",
+      "timestamp": "20240915095701",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/lactate-dehydrogenase-test/",
+      "timestamp": "20240722070727",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/iodine-test-starch/",
+      "timestamp": "20251230035934",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/heel-to-shin-test-procedure/",
+      "timestamp": "20240520040426",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/finger-nose-test-procedure-video/",
+      "timestamp": "20240808140548",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/facebook-demo-2/",
+      "timestamp": "20240622000654",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/facebook-demo/",
+      "timestamp": "20240915094310",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/examination-oculomotor-trochlear-abducent-nerves/",
+      "timestamp": "20240520015332",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/differential-leukocyte-count-procedure/",
+      "timestamp": "20240621224721",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/dexamethasone-suppression-test/",
+      "timestamp": "20240722084423",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/determination-plasma-protein-biuret-method/",
+      "timestamp": "20240520020253",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/determination-blood-urea-dam-method/",
+      "timestamp": "20240416034747",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/demonstrate-superficial-reflexes-subject/",
+      "timestamp": "20240621224508",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/demonstrate-power-different-muscles-subject/",
+      "timestamp": "20240416035636",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/demonstrate-deep-tendon-reflexes-subject/",
+      "timestamp": "20240621232321",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/customer/login",
+      "timestamp": "20120630191639",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/creatinine-clearance-test/",
+      "timestamp": "20240416051740",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/creatine-kinase-test/",
+      "timestamp": "20240416043709",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/cranial-nerve-7-test/",
+      "timestamp": "20240416042831",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/coordination-tests/",
+      "timestamp": "20240622010227",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/contact/",
+      "timestamp": "20240915112610",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/clinical-tests-examination-trigeminal-nerve/",
+      "timestamp": "20240621230858",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/clinical-examination-sensory-system/",
+      "timestamp": "20240621230413",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/clinical-examination-motor-system/",
+      "timestamp": "20241005100658",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/cgi-sys/suspendedpage.cgi",
+      "timestamp": "20171225102129",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/cdn-cgi/l/email-protection",
+      "timestamp": "20240221202725",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/proteins/",
+      "timestamp": "20240621235315",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/physiology/page/3/",
+      "timestamp": "20240808142933",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/physiology/page/2/",
+      "timestamp": "20211128152527",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/physiology/",
+      "timestamp": "20240416045758",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/lipdis/",
+      "timestamp": "20240621230724",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/laboratory-techniques/",
+      "timestamp": "20240722074934",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/category/general/",
+      "timestamp": "20200105100225",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/clinical-techniques/",
+      "timestamp": "20241005082514",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/carbohydrates/page/2/",
+      "timestamp": "20240915090809",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/carbohydrates/",
+      "timestamp": "20240221213020",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/page/4/",
+      "timestamp": "20231001220636",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/page/3/",
+      "timestamp": "20241005090114",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/page/2/",
+      "timestamp": "20241005083525",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/category/biochemistry/",
+      "timestamp": "20240520033538",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/blood-glucose-test/",
+      "timestamp": "20240520035045",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/blood-collection/",
+      "timestamp": "20240221204615",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/bials-test/",
+      "timestamp": "20240722080136",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/benedicts-test-reducing-sugar/",
+      "timestamp": "20240808130150",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/barfoeds-test-monosaccharide/",
+      "timestamp": "20240915105727",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/author/hamzakhankhan/page/9/",
+      "timestamp": "20191021174647",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/author/hamzakhankhan/page/3/",
+      "timestamp": "20191021182038",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com/author/hamzakhankhan/page/2/",
+      "timestamp": "20191021182607",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/author/hamzakhankhan/",
+      "timestamp": "20191005042541",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/anthrone-test/",
+      "timestamp": "20241005095538",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/ankle-patellar-clonus/",
+      "timestamp": "20240915101518",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/abo-and-rh-blood-grouping/",
+      "timestamp": "20241005084300",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/?s=%7Bs%7D",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/?s=%7Bsearch_term_string%7D",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/92-saliva-drug-test-detox-products",
+      "timestamp": "20120926172321",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/91-syntetic-urine",
+      "timestamp": "20120928073331",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/77961-ultra-mask-one-hour-cleansing-formula-mandarin-orange-flavor",
+      "timestamp": "20120928073316",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/77960-ultra-mask-one-hour-cleansing-formula-cherry-red-flavor",
+      "timestamp": "20120926172304",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/77959-ultra-mask-one-hour-cleansing-formula-wild-berry-blast-flavor",
+      "timestamp": "20120927063826",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/70130-zydot-ultimate-24-plus-starfruit-flavor",
+      "timestamp": "20120926172259",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28676-zydot-ultimate-blend-wild-cherry-flavor",
+      "timestamp": "20120926172254",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28675-zydot-ultimate-blend-starfruit-flavor",
+      "timestamp": "20120928073258",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28674-zydot-ultimate-blend-orange-flavor",
+      "timestamp": "20120927063821",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28133-zydot-ultimate-24-plus-blend-orange-flavor",
+      "timestamp": "20120926172249",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/28097-zydot-ultimate-24-plus-blend-wild-cherry-flavor",
+      "timestamp": "20120928073252",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2713-qcarbo-fast-cleansing-formula-orange-flavor",
+      "timestamp": "20120927063816",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2709-qcarbo-plus-with-booster-cranberry-raspberry-flavor",
+      "timestamp": "20120926001859",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2694-qcarbo-fast-cleansing-formula-strawberry-mango-flavor",
+      "timestamp": "20120926172244",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/2693-qcarbo-plus-with-booster-strawberry-mango-flavor",
+      "timestamp": "20120924052230",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/13596-vale-solution-tropical-punch-flavor",
+      "timestamp": "20120927063811",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/13595-vale-solution-orange-flavor",
+      "timestamp": "20120926172239",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/13594-solution-4x",
+      "timestamp": "20120926001834",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90/1136384-ultra-mask-one-hour-cleansing-formula-exotic-punch-flavor",
+      "timestamp": "20120927063805",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/90-urine-drug-test-detox-drinks",
+      "timestamp": "20120924052143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/88-hair-drug-test-detox-products",
+      "timestamp": "20120926172234",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/87-detox-kits",
+      "timestamp": "20120926172229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/81/7901-the-home-access-hiv-1-test-kit-system",
+      "timestamp": "20120704140224",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/81/1064212-strep-a-test-strips-25-bx",
+      "timestamp": "20120629093223",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/81-disease-tests",
+      "timestamp": "20120629093209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/933946-infidelity-home-test-kit-checkmate",
+      "timestamp": "20120704152443",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/2151-see-through-transparency-spray",
+      "timestamp": "20120704152437",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/2150-expray-explosive-detection-50-test-kit-with-spray-explosives-detection-technology",
+      "timestamp": "20120705131234",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/2149-dropex-plus-explosives-detection-field-test-kit",
+      "timestamp": "20120705131525",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1886-multi-drug-spray-test-100-tests",
+      "timestamp": "20120704152432",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1803-expray-explosives-detection-identification-field-test-kit-100-tests",
+      "timestamp": "20120704152427",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1801-drug-detection-spray-kit-for-thc-coc-meth-opi-20-tests",
+      "timestamp": "20120704152422",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1756-detect-now-spray-cocaine-crack-drug-test",
+      "timestamp": "20120705131228",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1728-detect-now-for-marijuana-drug-test",
+      "timestamp": "20120705131219",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77/1064220-meth-substance-methamphetamine-surface-drug-testing",
+      "timestamp": "20120704152417",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/77-forensic-tests",
+      "timestamp": "20120629093203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75/1764-alcohol-saliva-screen-test",
+      "timestamp": "20120704141039",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75/1763-alcohol-saliva-test-dot-approved",
+      "timestamp": "20120704140218",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75/1064210-alcomate-prestige-al-6000-full-kit",
+      "timestamp": "20120704140213",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/75-alcohol-tests",
+      "timestamp": "20120629093158",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74/2146-qtest-saliva-biotester-ovulation-prediction-test",
+      "timestamp": "20120704141019",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74/1786-digital-basal-thermometer-lifeaid",
+      "timestamp": "20120704141014",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74/1772-ovulation-test-strips-pack-of-ten-10",
+      "timestamp": "20120704141009",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/74-ovulation-tests",
+      "timestamp": "20120701000442",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73/2142-hcg-midstream-pregnancy-tests-pack-of-ten",
+      "timestamp": "20120704141004",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73/1737-hcg-midstream-pregnancy-tests-pack-of-five",
+      "timestamp": "20120704140958",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73/1138029-uti-urinary-tract-infection-3-tests-in-box",
+      "timestamp": "20120626130741",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/73-pregnancy-tests",
+      "timestamp": "20120701000312",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/2161-latex-powder-free-exam-gloves-5-pairs",
+      "timestamp": "20120704192125",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/2159-employer-s-all-inclusive-drug-testing-pack",
+      "timestamp": "20120704191010",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1885-multi-line-6-drug-urine-screen-test",
+      "timestamp": "20120704192232",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1884-multi-line-5-drug-urine-screen-test",
+      "timestamp": "20120704192202",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1883-9-panel-drug-urine-test",
+      "timestamp": "20120704193007",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1874-drug-test-3-panel-screen-urine-kit-thc-coc-met",
+      "timestamp": "20120704192049",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1872-specimen-collection-cup-with-thermometer",
+      "timestamp": "20120704192044",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1871-adulteration-urine-drug-test",
+      "timestamp": "20120704140953",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1862-xalex-complete-employer-s-drug-test-kit",
+      "timestamp": "20120704192930",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1861-drug-test-kit-2-panel-screen-urine-thc-meth",
+      "timestamp": "20120704190959",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1853-specimen-collection-cups-105ml",
+      "timestamp": "20120704140209",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1799-drug-test-kit-2-panel-screen-urine-thc-cocaine",
+      "timestamp": "20120704192917",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1759-6-panel-urine-multi-drug-test-kit-coc-amp-m-amp-thc-opi-bzd",
+      "timestamp": "20120704140203",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1758-5-panel-multi-drug-urine-test-kit-thc-coc-met-opi-amp",
+      "timestamp": "20120704140948",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1757-10-panel-multi-drug-urine-test-kit",
+      "timestamp": "20120704140943",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1732-drug-test-3-panel-screen-urine-kit-thc-coc-opi",
+      "timestamp": "20120704192524",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1730-5-panel-multi-drug-urine-test-kit-thc-coc-amp-opi-pcp",
+      "timestamp": "20120704140158",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1061431-adulteration-tests-25-in-cannister",
+      "timestamp": "20120704192039",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72/1061430-12-drug-test-kit",
+      "timestamp": "20120704192157",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/72-drug-test-dips-multi-panels",
+      "timestamp": "20120629093153",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/588-cocaine-coc-detox-kits",
+      "timestamp": "20120927063800",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/5016-opiate-her-mor-detox-kits",
+      "timestamp": "20120926172223",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45345-saliva-drug-tests",
+      "timestamp": "20120701000348",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/933944-11-panel-drug-test-cup-qtest-clia",
+      "timestamp": "20120705072110",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/2158-5-panel-urine-drug-test-ez-split-cup-with-adulteration-test",
+      "timestamp": "20120704140153",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1880-multi-drug-screen-test-kit-cup",
+      "timestamp": "20120704140148",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064219-k-cup-drug-test-cup-for-10-drugs-of-abuse",
+      "timestamp": "20120705072055",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064214-k-cup-7-panel-drug-testing-cup",
+      "timestamp": "20120705072050",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064213-k-cup-drug-testing-cup-5-panel",
+      "timestamp": "20120704152412",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1064184-14-panel-drug-test-cup-t-cup",
+      "timestamp": "20120629093148",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/1061435-qtest-12-panel-drug-testing-cup",
+      "timestamp": "20120704152407",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344/10374-multi-drug-testing-cup-qtest-5",
+      "timestamp": "20120704140939",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45344-drug-testing-cups",
+      "timestamp": "20120629093143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45343-laboratory-tests-hair-saliva-urine",
+      "timestamp": "20120701000229",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342/2164-thc-marijuana-drug-test-urine-cassette",
+      "timestamp": "20120704140528",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342/1875-cotinine-nicotine-tobacco-urine-test",
+      "timestamp": "20120704140143",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342/1762-cannabis-thc-marijuana-dip-strip-drug-urine-test",
+      "timestamp": "20120704140523",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/45342-single-urine-drug-tests",
+      "timestamp": "20120701000343",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/389-alternative-detoxifying-products",
+      "timestamp": "20120926172218",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/06/",
+      "timestamp": "20241005102457",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/04/",
+      "timestamp": "20240520033852",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/03/page/2/",
+      "timestamp": "20240416042536",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/03/",
+      "timestamp": "20240221221415",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/02/page/2/",
+      "timestamp": "20240221213527",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/02/",
+      "timestamp": "20240520031737",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2017/01/",
+      "timestamp": "20240808134907",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/12/page/2/",
+      "timestamp": "20240808134533",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/12/",
+      "timestamp": "20241005094757",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/11/page/2/",
+      "timestamp": "20240221213147",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/11/",
+      "timestamp": "20240722080438",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/10/page/2/",
+      "timestamp": "20240221211800",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/2016/10/",
+      "timestamp": "20240915101126",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/191-thc-marijuana-detox-kits",
+      "timestamp": "20120927063755",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/190-urine-drug-test-detox-pills",
+      "timestamp": "20120927063750",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/189-home-test-kits",
+      "timestamp": "20120926172212",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2169-xalex-multi-drug-testing-kit-for-10-drugs",
+      "timestamp": "20120630214111",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2168-xalex-multi-drug-testing-kit-for-6-drugs",
+      "timestamp": "20120630214106",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2166-xalex-multi-drug-testing-kit-for-5-drugs-thc-coc-opi-amp-pcp",
+      "timestamp": "20120630214101",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115/2165-xalex-multi-drug-testing-kit-for-5-drugs-thc-coc-met-opi-amp",
+      "timestamp": "20120630214056",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "http://allmedtests.com:80/115-xalex-drug-testing-kits",
+      "timestamp": "20120629093020",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    },
+    {
+      "original": "https://allmedtests.com/",
+      "timestamp": "20241009200808",
+      "statuscode": "200",
+      "mimetype": "text/html"
+    }
+  ]
+}
