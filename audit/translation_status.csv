@@ -1,10 +1,10 @@
-slug,locale,market,status,translator_source
-spectrophotometer-working-principle-use-applications,pl,pl,draft,machine (Codex) - pending native review
-benedicts-test-reducing-sugar,pl,pl,draft,machine (Codex) - pending native review
-blood-glucose-test,pl,pl,draft,machine (Codex) - pending native review
-creatine-kinase-test,pl,pl,draft,machine (Codex) - pending native review
-serum-urea-test-kinetic-uv-method,pl,pl,draft,machine (Codex) - pending native review
-abo-and-rh-blood-grouping,pl,pl,draft,machine (Codex) - pending native review
-separation-amino-acids-paper-chromatography,pl,pl,draft,machine (Codex) - pending native review
-clinical-examination-sensory-system,pl,pl,draft,machine (Codex) - pending native review
-photoelectric-colorimeter,pl,pl,draft,machine (Codex) - pending native review
+slug,en_slug,locale,market,status,translator_source
+spektrofotometr-zasada-dzialania-uzycie-i-zastosowania,spectrophotometer-working-principle-use-applications,pl,pl,draft,machine (Codex) - pending native review
+proba-benedicta-i-analiza-cukrow-redukujacych,benedicts-test-reducing-sugar,pl,pl,draft,machine (Codex) - pending native review
+badanie-glukozy-we-krwi-metoda-oksydazy-glukozowej,blood-glucose-test,pl,pl,draft,machine (Codex) - pending native review
+badanie-kinazy-kreatynowej-metoda-kinetyczna-ifcc-zasada-procedura-wyniki,creatine-kinase-test,pl,pl,draft,machine (Codex) - pending native review
+badanie-mocznika-w-surowicy-metoda-kinetyczna-uv,serum-urea-test-kinetic-uv-method,pl,pl,draft,machine (Codex) - pending native review
+grupowanie-krwi-abo-i-rh,abo-and-rh-blood-grouping,pl,pl,draft,machine (Codex) - pending native review
+rozdzial-aminokwasow-metoda-chromatografii-bibulowej,separation-amino-acids-paper-chromatography,pl,pl,draft,machine (Codex) - pending native review
+badanie-kliniczne-ukladu-czuciowego,clinical-examination-sensory-system,pl,pl,draft,machine (Codex) - pending native review
+fotoelektryczny-kolorymetr-zasada-dzialania-uzycie-i-zastosowania,photoelectric-colorimeter,pl,pl,draft,machine (Codex) - pending native review
