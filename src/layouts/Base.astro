@@ -20,10 +20,10 @@ const { title = 'All Med Tests', description, locale = 'en' } = Astro.props;
     {description && <meta name="description" content={description} />}
   </head>
   <body>
-    <Header />
+    <Header locale={locale} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>

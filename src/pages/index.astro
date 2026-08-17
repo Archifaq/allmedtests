@@ -1,8 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import { t } from '../i18n';
+import { getArticlesByLocale } from '../lib/articles';
 
-const articles = await getCollection('articles');
+const articles = await getArticlesByLocale('en');
 
 const tierOrder = { P0: 0, P1: 1, P2: 2, P3: 3 };
 const sortedArticles = articles.sort((a, b) => {
@@ -17,30 +18,30 @@ const sortedArticles = articles.sort((a, b) => {
 });
 
 const plannedCategories = [
-  'Blood Tests',
-  'Hormone Tests',
-  'STD Testing',
-  'Vitamin & Nutrition',
-  'Metabolic Health',
-  'Fertility Testing',
-  'At-Home Lab Kits',
+  t('home.categoryBloodTests'),
+  t('home.categoryHormoneTests'),
+  t('home.categoryStdTesting'),
+  t('home.categoryVitaminNutrition'),
+  t('home.categoryMetabolicHealth'),
+  t('home.categoryFertilityTesting'),
+  t('home.categoryAtHomeLabKits'),
 ];
+
+const heroTagline = `\n${t('home.heroTagline')}\n`;
+const marketplaceTeaser = `\n${t('home.marketplaceTeaser')}\n`;
 ---
 
 <Base
-  title="allmedtests.com"
-  description="Guides to laboratory tests and methods, with marketplace tools for finding lab testing options."
+  title={t('site.brand')}
+  description={t('home.description')}
 >
   <section aria-labelledby="hero-title">
-    <h1 id="hero-title">allmedtests.com</h1>
-    <p>
-      Practical guides to laboratory tests and methods, plus a growing marketplace layer to help
-      people compare where to order or take common health tests.
-    </p>
+    <h1 id="hero-title">{t('site.brand')}</h1>
+    <p>{heroTagline}</p>
   </section>
 
   <section aria-labelledby="guides-title">
-    <h2 id="guides-title">Lab Test Guides</h2>
+    <h2 id="guides-title">{t('home.guidesTitle')}</h2>
     {
       sortedArticles.length > 0 ? (
         <ul>
@@ -51,7 +52,7 @@ const plannedCategories = [
               <li>
                 <h3>
                   <a href={href}>{article.data.title}</a>
-                  {article.data.draft && <small> Draft — pending review</small>}
+                  {article.data.draft && <small> {t('article.draftBadge')}</small>}
                 </h3>
                 {article.data.description && <p>{article.data.description}</p>}
               </li>
@@ -59,17 +60,14 @@ const plannedCategories = [
           })}
         </ul>
       ) : (
-        <p>No guides have been restored yet.</p>
+        <p>{t('home.noGuides')}</p>
       )
     }
   </section>
 
   <section aria-labelledby="marketplace-title">
-    <h2 id="marketplace-title">Find a Test Near You</h2>
-    <p>
-      Coming soon: comparison tools for lab testing options, at-home test kits, and provider
-      availability.
-    </p>
+    <h2 id="marketplace-title">{t('home.marketplaceTitle')}</h2>
+    <p>{marketplaceTeaser}</p>
     <ul>
       {plannedCategories.map((category) => <li>{category}</li>)}
     </ul>

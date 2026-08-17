@@ -1,0 +1,22 @@
+{
+  "site.brand": "allmedtests.com",
+  "site.homeAriaLabel": "allmedtests.com home",
+  "home.description": "Guides to laboratory tests and methods, with marketplace tools for finding lab testing options.",
+  "home.heroTagline": "Practical guides to laboratory tests and methods, plus a growing marketplace layer to help\n      people compare where to order or take common health tests.",
+  "home.guidesTitle": "Lab Test Guides",
+  "home.noGuides": "No guides have been restored yet.",
+  "home.marketplaceTitle": "Find a Test Near You",
+  "home.marketplaceTeaser": "Coming soon: comparison tools for lab testing options, at-home test kits, and provider\n      availability.",
+  "home.categoryBloodTests": "Blood Tests",
+  "home.categoryHormoneTests": "Hormone Tests",
+  "home.categoryStdTesting": "STD Testing",
+  "home.categoryVitaminNutrition": "Vitamin & Nutrition",
+  "home.categoryMetabolicHealth": "Metabolic Health",
+  "home.categoryFertilityTesting": "Fertility Testing",
+  "home.categoryAtHomeLabKits": "At-Home Lab Kits",
+  "article.draftBadge": "Draft — pending review",
+  "footer.affiliateDisclosure": "This site may contain affiliate links and may earn a commission from qualifying purchases.",
+  "market.testsTitle": "Tests",
+  "market.providersTitle": "Providers",
+  "market.categoriesTitle": "Categories"
+}

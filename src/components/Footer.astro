@@ -1,5 +1,14 @@
+---
+import { t, type LocaleCode } from '../i18n';
+
+interface Props {
+  locale?: LocaleCode;
+}
+
+const { locale = 'en' } = Astro.props;
+const affiliateDisclosure = `\n${t('footer.affiliateDisclosure', locale)}\n`;
+---
+
 <footer>
-  <p>
-    This site may contain affiliate links and may earn a commission from qualifying purchases.
-  </p>
+  <p>{affiliateDisclosure}</p>
 </footer>

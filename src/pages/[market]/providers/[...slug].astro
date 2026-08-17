@@ -1,0 +1,48 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { markets, type MarketCode } from '../../../data/markets';
+import Base from '../../../layouts/Base.astro';
+import { t } from '../../../i18n';
+
+type ProviderEntry = CollectionEntry<'providers'>;
+
+export async function getStaticPaths() {
+  if (process.env.MARKETPLACE_ENABLED !== 'true') {
+    return [];
+  }
+
+  const providers = await getCollection('providers');
+  const marketCodes = new Set(Object.keys(markets));
+
+  return providers
+    .filter((provider) => marketCodes.has(provider.data.market))
+    .map((provider) => {
+      const slug = provider.id.replace(/^[^/]+\//, '').replace(/\.md$/, '');
+
+      return {
+        params: {
+          market: provider.data.market,
+          slug,
+        },
+        props: { provider },
+      };
+    });
+}
+
+interface Props {
+  provider: ProviderEntry;
+}
+
+const { provider } = Astro.props;
+const market = provider.data.market as MarketCode;
+const config = markets[market];
+const { Content } = await provider.render();
+---
+
+<Base title={provider.data.name} locale={config.locale}>
+  <article>
+    <h1>{provider.data.name}</h1>
+    {provider.data.draft && <p><strong>{t('article.draftBadge', config.locale)}</strong></p>}
+    <Content />
+  </article>
+</Base>

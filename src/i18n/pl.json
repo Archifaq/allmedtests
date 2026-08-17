@@ -1,0 +1,22 @@
+{
+  "site.brand": "allmedtests.com",
+  "site.homeAriaLabel": "strona główna allmedtests.com",
+  "home.description": "Przewodniki po badaniach laboratoryjnych i metodach, z narzędziami marketplace do znajdowania opcji badań laboratoryjnych.",
+  "home.heroTagline": "Praktyczne przewodniki po badaniach laboratoryjnych i metodach oraz rozwijana warstwa marketplace, która pomaga\n      porównywać, gdzie zamówić lub wykonać popularne badania zdrowotne.",
+  "home.guidesTitle": "Przewodniki po badaniach laboratoryjnych",
+  "home.noGuides": "Nie przywrócono jeszcze żadnych przewodników.",
+  "home.marketplaceTitle": "Znajdź badanie w pobliżu",
+  "home.marketplaceTeaser": "Wkrótce: narzędzia do porównywania opcji badań laboratoryjnych, zestawów do badań domowych i\n      dostępności usługodawców.",
+  "home.categoryBloodTests": "Badania krwi",
+  "home.categoryHormoneTests": "Badania hormonalne",
+  "home.categoryStdTesting": "Badania w kierunku chorób przenoszonych drogą płciową",
+  "home.categoryVitaminNutrition": "Witaminy i odżywianie",
+  "home.categoryMetabolicHealth": "Zdrowie metaboliczne",
+  "home.categoryFertilityTesting": "Badania płodności",
+  "home.categoryAtHomeLabKits": "Domowe zestawy laboratoryjne",
+  "article.draftBadge": "Wersja robocza — oczekuje na weryfikację",
+  "footer.affiliateDisclosure": "Ta strona może zawierać linki afiliacyjne i może otrzymywać prowizję od kwalifikujących się zakupów.",
+  "market.testsTitle": "Badania",
+  "market.providersTitle": "Usługodawcy",
+  "market.categoriesTitle": "Kategorie"
+}

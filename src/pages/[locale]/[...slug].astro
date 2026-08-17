@@ -1,0 +1,90 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { markets } from '../../data/markets';
+import Base from '../../layouts/Base.astro';
+import { t, type LocaleCode } from '../../i18n';
+import { getArticlesByLocale } from '../../lib/articles';
+
+type ArticleEntry = CollectionEntry<'articles'>;
+
+export async function getStaticPaths() {
+  if (process.env.MARKETPLACE_ENABLED !== 'true') {
+    return [];
+  }
+
+  const marketsByLocale = Object.entries(markets).reduce(
+    (groups, [market, config]) => {
+      if (config.locale !== 'en') {
+        groups[config.locale] = groups[config.locale] ?? [];
+        groups[config.locale].push({ market, primaryForLocale: config.primaryForLocale });
+      }
+
+      return groups;
+    },
+    {} as Partial<Record<LocaleCode, { market: string; primaryForLocale?: true }[]>>,
+  );
+  const articleRoutePrefixByLocale = Object.fromEntries(
+    Object.entries(marketsByLocale).map(([locale, localeMarkets]) => {
+      if (localeMarkets.length === 1) {
+        return [locale, localeMarkets[0].market];
+      }
+
+      const primaryMarkets = localeMarkets.filter((market) => market.primaryForLocale);
+
+      if (primaryMarkets.length === 0) {
+        throw new Error(
+          `Locale "${locale}" is shared by multiple markets but none is marked primaryForLocale`,
+        );
+      }
+
+      if (primaryMarkets.length > 1) {
+        throw new Error(
+          `Locale "${locale}" is shared by multiple markets and has multiple primaryForLocale markets`,
+        );
+      }
+
+      return [locale, primaryMarkets[0].market];
+    }),
+  ) as Partial<Record<LocaleCode, string>>;
+  const translatedLocales = Object.keys(articleRoutePrefixByLocale) as LocaleCode[];
+  const articleGroups = await Promise.all(
+    translatedLocales.map(async (locale) => ({
+      locale,
+      articles: await getArticlesByLocale(locale),
+    })),
+  );
+
+  return articleGroups.flatMap(({ locale, articles }) =>
+    articles.map((article) => {
+      const routePrefix = articleRoutePrefixByLocale[locale] ?? locale;
+      const slug = article.data.originalUrl
+        ? article.data.originalUrl.replace(/^\/+/, '').replace(/\/+$/, '')
+        : article.id.replace(/^[^/]+\//, '').replace(/\.md$/, '');
+
+      return {
+        params: {
+          locale: routePrefix,
+          slug,
+        },
+        props: { article, locale },
+      };
+    }),
+  );
+}
+
+interface Props {
+  article: ArticleEntry;
+  locale: LocaleCode;
+}
+
+const { article, locale } = Astro.props;
+const { Content } = await article.render();
+---
+
+<Base title={article.data.title} description={article.data.description} locale={locale}>
+  <article>
+    <h1>{article.data.title}</h1>
+    {article.data.draft && <p><strong>{t('article.draftBadge', locale)}</strong></p>}
+    <Content />
+  </article>
+</Base>

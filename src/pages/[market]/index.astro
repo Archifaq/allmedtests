@@ -1,0 +1,25 @@
+---
+import { markets, type MarketCode } from '../../data/markets';
+import Base from '../../layouts/Base.astro';
+import { t } from '../../i18n';
+
+export function getStaticPaths() {
+  if (process.env.MARKETPLACE_ENABLED !== 'true') {
+    return [];
+  }
+
+  return Object.entries(markets).map(([market, config]) => ({
+    params: { market },
+    props: { market: market as MarketCode, config },
+  }));
+}
+
+const { market, config } = Astro.props;
+---
+
+<Base title={`${t('site.brand', config.locale)} ${market.toUpperCase()}`} locale={config.locale}>
+  <section>
+    <h1>{t('site.brand', config.locale)} {market.toUpperCase()}</h1>
+    <p>{config.currency} · {config.hreflang}</p>
+  </section>
+</Base>

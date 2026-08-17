@@ -49,3 +49,7 @@
 ## to-study-the-response-of-skin-to-blunt-injury-triple-response
 
 - Missing image: triple-response-to-blunt-injury-300x225.jpg, alt: "Response of Skin To Blunt Injury" — not found in Wayback, needs manual re-creation or new illustration before publish.
+
+## Market provider/test data sourcing
+
+- Real provider/test partnership data is required before populating `src/content/tests/` or `src/content/providers/` for any market (`us`, `uk`, `ie`, `pl`, and all future markets); this is a separate sourcing task, not a translation task.

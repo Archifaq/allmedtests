@@ -1,4 +1,10 @@
 import { defineCollection, z } from 'astro:content';
+import { markets, type MarketCode } from '../data/markets';
+
+const marketSchema = z.custom<MarketCode>(
+  (value) => typeof value === 'string' && value in markets,
+  'Invalid market code',
+);
 
 const articles = defineCollection({
   type: 'content',
@@ -11,6 +17,7 @@ const articles = defineCollection({
     sourceSnapshot: z.string().optional(),
     referringDomains: z.number().optional(),
     priorityTier: z.enum(['P0', 'P1', 'P2', 'P3']).optional(),
+    translationOfSlug: z.string().optional(),
     imageRestoreNeeded: z.boolean().default(false),
     draft: z.boolean().default(true),
   }),
@@ -19,8 +26,9 @@ const articles = defineCollection({
 const tests = defineCollection({
   type: 'content',
   schema: z.object({
+    market: marketSchema,
     title: z.string(),
-    category: z.string(),
+    category: z.string().optional(),
     description: z.string().optional(),
     draft: z.boolean().default(true),
   }),
@@ -29,6 +37,7 @@ const tests = defineCollection({
 const providers = defineCollection({
   type: 'content',
   schema: z.object({
+    market: marketSchema,
     name: z.string(),
     affiliateNetwork: z.string().optional(),
     affiliateUrl: z.string().url().optional(),
@@ -37,4 +46,14 @@ const providers = defineCollection({
   }),
 });
 
-export const collections = { articles, tests, providers };
+const categories = defineCollection({
+  type: 'content',
+  schema: z.object({
+    market: marketSchema,
+    title: z.string(),
+    description: z.string().optional(),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { articles, tests, providers, categories };

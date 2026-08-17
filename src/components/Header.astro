@@ -1,3 +1,13 @@
+---
+import { t, type LocaleCode } from '../i18n';
+
+interface Props {
+  locale?: LocaleCode;
+}
+
+const { locale = 'en' } = Astro.props;
+---
+
 <header>
-  <a href="/" aria-label="allmedtests.com home">allmedtests.com</a>
+  <a href="/" aria-label={t('site.homeAriaLabel', locale)}>{t('site.brand', locale)}</a>
 </header>

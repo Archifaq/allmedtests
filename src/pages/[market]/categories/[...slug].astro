@@ -1,0 +1,48 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { markets, type MarketCode } from '../../../data/markets';
+import Base from '../../../layouts/Base.astro';
+import { t } from '../../../i18n';
+
+type CategoryEntry = CollectionEntry<'categories'>;
+
+export async function getStaticPaths() {
+  if (process.env.MARKETPLACE_ENABLED !== 'true') {
+    return [];
+  }
+
+  const categories = await getCollection('categories');
+  const marketCodes = new Set(Object.keys(markets));
+
+  return categories
+    .filter((category) => marketCodes.has(category.data.market))
+    .map((category) => {
+      const slug = category.id.replace(/^[^/]+\//, '').replace(/\.md$/, '');
+
+      return {
+        params: {
+          market: category.data.market,
+          slug,
+        },
+        props: { category },
+      };
+    });
+}
+
+interface Props {
+  category: CategoryEntry;
+}
+
+const { category } = Astro.props;
+const market = category.data.market as MarketCode;
+const config = markets[market];
+const { Content } = await category.render();
+---
+
+<Base title={category.data.title} description={category.data.description} locale={config.locale}>
+  <article>
+    <h1>{category.data.title}</h1>
+    {category.data.draft && <p><strong>{t('article.draftBadge', config.locale)}</strong></p>}
+    <Content />
+  </article>
+</Base>
