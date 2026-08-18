@@ -9,8 +9,9 @@ The project currently has:
 - 44 restored English educational articles in `src/content/articles/en/`.
 - 9 Polish translated draft articles in `src/content/articles/pl/`.
 - A design system implemented from provided HTML mockups.
-- Marketplace collection scaffolding for categories, tests, and providers.
+- Marketplace collection scaffolding for categories, locations, tests, and providers.
 - Polish category content in `src/content/categories/pl/`.
+- Six Polish draft city pages in `src/content/locations/pl/`.
 - Empty test and provider collections.
 - Cloudflare Pages as the deployment target.
 
@@ -88,11 +89,12 @@ Marketplace routes:
 ```text
 src/pages/[market]/index.astro
 src/pages/[market]/categories/[...slug].astro
+src/pages/[market]/cities/[...slug].astro
 src/pages/[market]/tests/[...slug].astro
 src/pages/[market]/providers/[...slug].astro
 ```
 
-Category pages show real category data and related guides. Tests/providers use empty-state UI until verified marketplace data exists.
+Category pages show real category data and related guides. City pages show real city content plus an `EmptyStateCard` for unverified labs and collection points. Tests/providers use empty-state UI until verified marketplace data exists.
 
 Route helpers live in:
 
@@ -125,6 +127,13 @@ Polish article URLs are localized and prefixed with `/pl/`, for example:
 /pl/badanie-glukozy-we-krwi-metoda-oksydazy-glukozowej/
 ```
 
+Polish city URLs are marketplace-gated and prefixed with `/pl/cities/`, for example:
+
+```text
+/pl/cities/warszawa/
+/pl/cities/krakow/
+```
+
 ## Content Schema State
 
 Article schema remains intentionally minimal. Only `title` is required.
@@ -132,6 +141,16 @@ Article schema remains intentionally minimal. Only `title` is required.
 `referenceRanges` is now optional for articles and tests so `ReferenceRangeTable` can render real structured range data when available. Existing content does not need this field.
 
 Do not add fake reference ranges to restored articles or tests just to populate UI.
+
+The `locations` collection is intentionally minimal:
+
+- `market`
+- `title`
+- `region`
+- `description`
+- `draft`
+
+All current PL city pages are `draft: true`.
 
 ## Current Polish Article Mapping
 
@@ -206,9 +225,26 @@ Polish categories currently exist under:
 src/content/categories/pl/
 ```
 
+Polish city pages currently exist under:
+
+```text
+src/content/locations/pl/
+```
+
+Current PL city slugs:
+
+- `warszawa`
+- `krakow`
+- `wroclaw`
+- `poznan`
+- `gdansk`
+- `lodz`
+
 Tests and providers are intentionally empty until real provider/test partnership data is available.
 
 Marketplace UI currently uses empty states and disabled/non-live messaging for missing provider, price, and test data.
+
+City pages must not contain fake lab names, addresses, prices, collection points, or provider availability. They use `EmptyStateCard` until verified partner/location data exists.
 
 ## Build Notes
 

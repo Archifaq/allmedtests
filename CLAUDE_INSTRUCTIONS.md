@@ -42,13 +42,14 @@ Marketplace routes:
 ```text
 src/pages/[market]/index.astro
 src/pages/[market]/categories/[...slug].astro
+src/pages/[market]/cities/[...slug].astro
 src/pages/[market]/tests/[...slug].astro
 src/pages/[market]/providers/[...slug].astro
 ```
 
-When changing translated slugs, check for collisions with reserved market route segments such as `categories`, `tests`, and `providers`.
+When changing translated slugs, check for collisions with reserved market route segments such as `categories`, `cities`, `tests`, and `providers`.
 
-Use `src/lib/routes.ts` helpers for article, category, test, provider, and market URLs instead of hand-rolling path strings.
+Use `src/lib/routes.ts` helpers for article, category, city, test, provider, and market URLs instead of hand-rolling path strings.
 
 ## Design System Instructions
 
@@ -118,6 +119,15 @@ Polish translated articles live in:
 
 ```text
 src/content/articles/pl/
+```
+
+Marketplace content lives in:
+
+```text
+src/content/categories/{market}/
+src/content/locations/{market}/
+src/content/tests/{market}/
+src/content/providers/{market}/
 ```
 
 For translated articles:
@@ -240,15 +250,35 @@ If an image is missing:
 
 ## Marketplace Instructions
 
+Categories, cities, tests, and providers belong to the feature-flagged marketplace layer.
+
+PL city pages currently use the `locations` collection and route:
+
+```text
+src/content/locations/pl/
+src/pages/[market]/cities/[...slug].astro
+```
+
+Initial PL city slugs are:
+
+- `warszawa`
+- `krakow`
+- `wroclaw`
+- `poznan`
+- `gdansk`
+- `lodz`
+
 Tests and providers are intentionally empty until real provider/test partnership data is available.
 
-Do not create fake providers, prices, LOINC codes, locations, or availability values from design mockups.
+Do not create fake providers, lab names, addresses, prices, LOINC codes, collection points, or availability values from design mockups.
 
-When tests/providers are empty:
+When tests/providers/city listings are empty:
 
 - Use `EmptyStateCard`.
 - Do not render real links or CTAs that imply the marketplace is live.
 - Keep homepage marketplace messaging as a one-line `MarketplaceTeaser`.
+
+Do not add more PL cities, replicate city pages to other markets, or add real lab/provider/location data unless the user explicitly scopes that work.
 
 ## Validation
 
