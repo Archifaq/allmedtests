@@ -4,7 +4,7 @@ import EmptyStateCard from '../../components/EmptyStateCard.astro';
 import RangeMark from '../../components/RangeMark.astro';
 import { markets, type MarketCode } from '../../data/markets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { categoryHref } from '../../lib/routes';
+import { categoryHref, cityHref } from '../../lib/routes';
 
 export function getStaticPaths() {
   if (process.env.MARKETPLACE_ENABLED !== 'true') {
@@ -21,6 +21,7 @@ const { market, config } = Astro.props;
 const categories = await getCollection('categories', ({ data }) => data.market === market);
 const tests = await getCollection('tests', ({ data }) => data.market === market);
 const providers = await getCollection('providers', ({ data }) => data.market === market);
+const cities = await getCollection('locations', ({ data }) => data.market === market);
 ---
 
 <BaseLayout title={`AllMedTests ${market.toUpperCase()}`} locale={config.locale}>
@@ -47,6 +48,27 @@ const providers = await getCollection('providers', ({ data }) => data.market ===
         </div>
       ) : (
         <EmptyStateCard message="No categories are available for this market yet." />
+      )
+    }
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Cities</h2>
+      <span class="count">{cities.length} entries</span>
+    </div>
+    {
+      cities.length > 0 ? (
+        <div class="market-pills">
+          {cities.map((city) => (
+            <a class="market-pill" href={cityHref(market, city)}>
+              <RangeMark size="sm" />
+              {city.data.title}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <EmptyStateCard message="No city pages are available for this market yet." />
       )
     }
   </section>

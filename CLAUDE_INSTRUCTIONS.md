@@ -8,7 +8,8 @@ You are working in the `allmedtests.com` Astro repository.
 2. Keep English article URLs unprefixed at `/slug/`.
 3. Keep restored and translated articles as `draft: true` until explicit publication approval.
 4. Keep the content schema minimal; do not add required frontmatter fields without approval.
-5. Use existing Astro routes and content collection patterns instead of creating duplicate route structures.
+5. Use existing Astro routes, layouts, components, and content collection patterns.
+6. Keep UI connected to real content collections; do not copy placeholder data from mockups into production pages.
 
 ## Do Not Change Without Explicit Approval
 
@@ -18,6 +19,7 @@ You are working in the `allmedtests.com` Astro repository.
 - Astro i18n config in `astro.config.*`, unless reporting a clear issue separately.
 - Cloudflare redirects in `public/_redirects`, unless redirect mapping has been approved.
 - Required frontmatter fields in `src/content/config.ts`.
+- The single translated article route `src/pages/[locale]/[...slug].astro`.
 
 ## Routing Instructions
 
@@ -33,18 +35,77 @@ Translated article route:
 src/pages/[locale]/[...slug].astro
 ```
 
-Do not create per-locale article route files.
+Do not create `/en/...` article URLs and do not create per-locale article route files such as `src/pages/pl/[...slug].astro`.
 
 Marketplace routes:
 
 ```text
 src/pages/[market]/index.astro
 src/pages/[market]/categories/[...slug].astro
+src/pages/[market]/cities/[...slug].astro
 src/pages/[market]/tests/[...slug].astro
 src/pages/[market]/providers/[...slug].astro
 ```
 
-When changing translated slugs, check for collisions with reserved market route segments such as `categories`, `tests`, and `providers`.
+When changing translated slugs, check for collisions with reserved market route segments such as `categories`, `cities`, `tests`, and `providers`.
+
+Use `src/lib/routes.ts` helpers for article, category, city, test, provider, and market URLs instead of hand-rolling path strings.
+
+## Design System Instructions
+
+Design tokens live in:
+
+```text
+src/styles/tokens.css
+```
+
+Use only the established token palette and font variables unless the user explicitly asks for a design expansion:
+
+- `--paper`
+- `--surface`
+- `--ink`
+- `--ink-soft`
+- `--line`
+- `--teal`
+- `--teal-tint`
+- `--amber`
+- `--amber-tint`
+- `--red`
+- `--font-display`
+- `--font-body`
+- `--font-mono`
+
+The base layout is:
+
+```text
+src/layouts/BaseLayout.astro
+```
+
+`src/layouts/Base.astro` is a compatibility wrapper around `BaseLayout.astro`.
+
+Use these existing components rather than duplicating markup:
+
+- `SiteHeader.astro`
+- `SiteFooter.astro`
+- `RangeMark.astro`
+- `DraftBadge.astro`
+- `EmptyStateCard.astro`
+- `MissingImagePlaceholder.astro`
+- `ReferenceRangeTable.astro`
+- `ArticleCard.astro`
+- `MarketplaceTeaser.astro`
+- `TranslationNote.astro`
+- `TableOfContents.astro`
+
+Component behavior rules:
+
+- `DraftBadge` renders only for `draft: true`.
+- `MissingImagePlaceholder` is shown when `imageRestoreNeeded: true`.
+- `TranslationNote` renders only when a translation/original URL resolves.
+- `TableOfContents` uses rendered article headings, not hardcoded headings.
+- `ReferenceRangeTable` must use real `referenceRanges` data when present; do not invent ranges from mockups.
+- `MarketplaceTeaser` stays low-key and non-clickable while tests/providers are empty.
+- `EmptyStateCard` is the shared UI for unavailable marketplace data.
 
 ## Article Content Instructions
 
@@ -58,6 +119,15 @@ Polish translated articles live in:
 
 ```text
 src/content/articles/pl/
+```
+
+Marketplace content lives in:
+
+```text
+src/content/categories/{market}/
+src/content/locations/{market}/
+src/content/tests/{market}/
+src/content/providers/{market}/
 ```
 
 For translated articles:
@@ -79,6 +149,37 @@ Polish transliteration:
 - `ś -> s`
 - `ź -> z`
 - `ż -> z`
+
+## Frontmatter Instructions
+
+Only `title` is required for articles. Most other fields are optional by design.
+
+Current optional article fields include:
+
+- `description`
+- `originalUrl`
+- `originalPublishDate`
+- `restoredDate`
+- `sourceSnapshot`
+- `referringDomains`
+- `priorityTier`
+- `translationOfSlug`
+- `referenceRanges`
+- `imageRestoreNeeded`
+- `draft`
+
+`referenceRanges` is optional for articles and tests. If present, it should be an array of:
+
+```yaml
+referenceRanges:
+  - label: "Adults"
+    min: 25
+    max: 60
+    unit: "mmol/L"
+    valuePosition: 40
+```
+
+Do not add fake `referenceRanges` just to make the UI look populated.
 
 ## Translation Audit Instructions
 
@@ -147,9 +248,41 @@ If an image is missing:
 - Add `imageRestoreNeeded: true`.
 - Add a note to `audit/content_review_needed.md`.
 
+## Marketplace Instructions
+
+Categories, cities, tests, and providers belong to the feature-flagged marketplace layer.
+
+PL city pages currently use the `locations` collection and route:
+
+```text
+src/content/locations/pl/
+src/pages/[market]/cities/[...slug].astro
+```
+
+Initial PL city slugs are:
+
+- `warszawa`
+- `krakow`
+- `wroclaw`
+- `poznan`
+- `gdansk`
+- `lodz`
+
+Tests and providers are intentionally empty until real provider/test partnership data is available.
+
+Do not create fake providers, lab names, addresses, prices, LOINC codes, collection points, or availability values from design mockups.
+
+When tests/providers/city listings are empty:
+
+- Use `EmptyStateCard`.
+- Do not render real links or CTAs that imply the marketplace is live.
+- Keep homepage marketplace messaging as a one-line `MarketplaceTeaser`.
+
+Do not add more PL cities, replicate city pages to other markets, or add real lab/provider/location data unless the user explicitly scopes that work.
+
 ## Validation
 
-For meaningful code, routing, or content changes, run:
+For meaningful code, routing, design, or content changes, run:
 
 ```bash
 npm run build
@@ -157,10 +290,10 @@ npm run build
 
 Warnings about empty `tests` and `providers` collections are expected while those collections are empty.
 
-When validating translated article routes, also run:
+When validating translated article routes or marketplace routes, also run:
 
 ```bash
 MARKETPLACE_ENABLED=true npm run build
 ```
 
-This is needed because localized article routes currently generate only when marketplace mode is enabled.
+This is needed because localized article routes and market pages currently generate only when marketplace mode is enabled.

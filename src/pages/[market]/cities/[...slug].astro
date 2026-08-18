@@ -1,0 +1,204 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import DraftBadge from '../../../components/DraftBadge.astro';
+import EmptyStateCard from '../../../components/EmptyStateCard.astro';
+import RangeMark from '../../../components/RangeMark.astro';
+import { markets, type MarketCode } from '../../../data/markets';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { cityHref } from '../../../lib/routes';
+
+type LocationEntry = CollectionEntry<'locations'>;
+
+export async function getStaticPaths() {
+  if (process.env.MARKETPLACE_ENABLED !== 'true') {
+    return [];
+  }
+
+  const locations = await getCollection('locations');
+  const marketCodes = new Set(Object.keys(markets));
+
+  return locations
+    .filter((city) => marketCodes.has(city.data.market))
+    .map((city) => {
+      const slug = city.id.replace(/^[^/]+\//, '').replace(/\.md$/, '');
+
+      return {
+        params: {
+          market: city.data.market,
+          slug,
+        },
+        props: { city },
+      };
+    });
+}
+
+interface Props {
+  city: LocationEntry;
+}
+
+const { city } = Astro.props;
+const market = city.data.market as MarketCode;
+const config = markets[market];
+const cities = await getCollection('locations', ({ data }) => data.market === market);
+const providers = await getCollection(
+  'providers',
+  ({ data }) => data.market === market,
+);
+const otherCities = cities.filter((item) => item.id !== city.id);
+const { Content } = await city.render();
+const canonicalPath = cityHref(market, city);
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? 'https://allmedtests.com').toString();
+const titleParts = [city.data.title, city.data.region, `AllMedTests ${market.toUpperCase()}`].filter(Boolean);
+const pageTitle = titleParts.join(' - ');
+const pageDescription = city.data.description ?? [city.data.title, city.data.region].filter(Boolean).join(', ');
+const ogLocale = config.locale === 'pl' ? 'pl_PL' : config.hreflang.replace('-', '_');
+const placeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: city.data.title,
+  url: canonicalUrl,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: city.data.title,
+    ...(city.data.region ? { addressRegion: city.data.region } : {}),
+    addressCountry: market.toUpperCase(),
+  },
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  locale={config.locale}
+  canonicalUrl={canonicalUrl}
+  robots={city.data.draft ? 'noindex, follow' : undefined}
+  openGraph={{
+    title: pageTitle,
+    description: pageDescription,
+    url: canonicalUrl,
+    locale: ogLocale,
+    type: 'website',
+  }}
+  jsonLd={placeJsonLd}
+  breadcrumbs={[{ label: 'Cities', href: `/${market}/` }, { label: city.data.title }]}
+>
+  <section class="city-hero wrap">
+    <div class="city-hero__icon"><RangeMark size="lg" /></div>
+    <div class="city-hero__badges">
+      <DraftBadge show={city.data.draft} />
+    </div>
+    <h1>{city.data.title}</h1>
+    {city.data.region && <p class="city-hero__region">{city.data.region}</p>}
+    {city.data.description && <p>{city.data.description}</p>}
+    <div class="city-hero__meta">
+      <span>Market: {market.toUpperCase()} ({config.currency})</span>
+      <span>{providers.length} providers in {market.toUpperCase()}</span>
+    </div>
+    <div class="city-hero__content">
+      <Content />
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Labs and collection points in {city.data.title}</h2>
+      <span class="count">verified locations only</span>
+    </div>
+    <EmptyStateCard message={`No verified lab or collection-point listings for ${city.data.title} yet. Locations will appear only after provider and address data has been confirmed.`} />
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Other cities</h2>
+    </div>
+    {
+      otherCities.length > 0 ? (
+        <div class="city-pills">
+          {otherCities.map((item) => (
+            <a class="city-pill" href={cityHref(market, item)}>
+              <RangeMark size="sm" />
+              {item.data.title}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <EmptyStateCard message="No other cities are published for this market yet." />
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .city-hero {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 36px;
+    padding-top: 44px;
+  }
+
+  .city-hero__icon {
+    align-items: center;
+    background: var(--teal-tint);
+    border-radius: 12px;
+    display: flex;
+    height: 52px;
+    justify-content: center;
+    margin-bottom: 18px;
+    width: 52px;
+  }
+
+  .city-hero__badges {
+    margin-bottom: 10px;
+  }
+
+  .city-hero h1 {
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+
+  .city-hero__region {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .city-hero p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 62ch;
+  }
+
+  .city-hero__meta {
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .city-hero__content {
+    color: var(--ink-soft);
+    margin-top: 18px;
+    max-width: 66ch;
+  }
+
+  .city-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .city-pill {
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+  }
+</style>

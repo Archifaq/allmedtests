@@ -14,6 +14,7 @@ The short version:
 - Keep restored and translated articles as `draft: true` until manual approval.
 - Do not add required frontmatter fields without explicit approval.
 - Use `audit/translation_status.csv` to track translated article status and EN mapping.
+- Use the current design system in `src/styles/tokens.css`, `src/layouts/BaseLayout.astro`, and `src/components/`.
 
 ## Project Basics
 
@@ -57,6 +58,15 @@ Avoid slug collisions with reserved market route segments such as:
 - `categories`
 - `tests`
 - `providers`
+- `cities`
+
+City (location) pages use:
+
+```text
+src/pages/[market]/cities/[...slug].astro
+```
+
+City content lives in `src/content/locations/{market}/`, following the same minimal-schema, `draft: true`-by-default pattern as `categories`. Do not add fake lab names, addresses, or provider data to city pages — use `EmptyStateCard` until verified per-city partner data exists.
 
 ## Content Locations
 
@@ -80,6 +90,60 @@ src/content/tests/
 src/content/providers/
 ```
 
+## Design System
+
+Design tokens live in:
+
+```text
+src/styles/tokens.css
+```
+
+Use the existing palette and font variables instead of introducing new colors or font families without approval.
+
+The active layout is:
+
+```text
+src/layouts/BaseLayout.astro
+```
+
+`src/layouts/Base.astro` remains as a compatibility wrapper.
+
+Reusable UI components:
+
+```text
+src/components/SiteHeader.astro
+src/components/SiteFooter.astro
+src/components/RangeMark.astro
+src/components/DraftBadge.astro
+src/components/EmptyStateCard.astro
+src/components/MissingImagePlaceholder.astro
+src/components/ReferenceRangeTable.astro
+src/components/ArticleCard.astro
+src/components/MarketplaceTeaser.astro
+src/components/TranslationNote.astro
+src/components/TableOfContents.astro
+```
+
+Rules:
+
+- Reuse these components instead of duplicating markup.
+- Keep `RangeMark` as the single implementation of the signature range icon.
+- `DraftBadge` renders only for `draft: true`.
+- `MissingImagePlaceholder` is used when `imageRestoreNeeded: true`.
+- `TranslationNote` renders only when the linked translation/original resolves.
+- `TableOfContents` uses rendered article headings.
+- `ReferenceRangeTable` uses real optional `referenceRanges` data; do not invent ranges from mockups.
+- `MarketplaceTeaser` stays low-key and non-clickable while tests/providers are empty.
+- `EmptyStateCard` is the shared empty marketplace state.
+
+URL helpers live in:
+
+```text
+src/lib/routes.ts
+```
+
+Prefer these helpers over handwritten route strings.
+
 ## Article Frontmatter
 
 The article schema is intentionally minimal. Only `title` is required.
@@ -97,6 +161,12 @@ sourceSnapshot: "http://web.archive.org/web/..."
 referringDomains: 0
 priorityTier: "P0"
 translationOfSlug: "english-original-slug"
+referenceRanges:
+  - label: "Adults"
+    min: 25
+    max: 60
+    unit: "mmol/L"
+    valuePosition: 40
 imageRestoreNeeded: true
 draft: true
 ---
@@ -108,6 +178,7 @@ Rules:
 - All restored or translated articles must remain `draft: true` until the user explicitly approves publication.
 - Do not publish by changing `draft` to `false` unless explicitly asked.
 - For translated articles, `translationOfSlug` must point to the canonical English original slug.
+- `referenceRanges` is optional for articles and tests; add it only when real structured range data is available.
 
 ## Slug Rules
 
@@ -278,6 +349,18 @@ It should:
 - Include a general affiliate disclosure in the footer.
 
 Do not add links to categories, tests, or providers until those pages actually exist.
+
+## Marketplace UI
+
+Tests and providers are intentionally empty until real provider/test partnership data is available.
+
+Do not create fake providers, prices, LOINC codes, locations, or availability values from design mockups.
+
+When marketplace data is missing:
+
+- Use `EmptyStateCard`.
+- Do not render live links or CTAs that imply tests/providers are available.
+- Keep homepage marketplace messaging as the one-line `MarketplaceTeaser`.
 
 ## Redirects
 

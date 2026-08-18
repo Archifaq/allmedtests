@@ -1,16 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import ArticleCard from '../components/ArticleCard.astro';
+import DraftBadge from '../components/DraftBadge.astro';
 import MarketplaceTeaser from '../components/MarketplaceTeaser.astro';
 import RangeMark from '../components/RangeMark.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { t } from '../i18n';
 import { getArticlesByLocale } from '../lib/articles';
+import { cityHref } from '../lib/routes';
 
 const articles = await getArticlesByLocale('en');
 const tests = await getCollection('tests');
 const providers = await getCollection('providers');
 const plArticles = await getArticlesByLocale('pl');
+const marketplaceEnabled = process.env.MARKETPLACE_ENABLED === 'true';
+const plCities = marketplaceEnabled
+  ? (await getCollection('locations', ({ data }) => data.market === 'pl')).sort((a, b) =>
+      a.data.title.localeCompare(b.data.title),
+    )
+  : [];
 
 const tierOrder = { P0: 0, P1: 1, P2: 2, P3: 3 };
 const sortedArticles = articles.sort((a, b) => {
@@ -27,9 +35,23 @@ const sortedArticles = articles.sort((a, b) => {
 const featuredArticles = sortedArticles.slice(0, 9);
 const publishedTests = tests.filter((test) => !test.data.draft);
 const publishedProviders = providers.filter((provider) => !provider.data.draft);
+const cityItemListJsonLd =
+  plCities.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'AllMedTests Polish city pages',
+        itemListElement: plCities.map((city, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: city.data.title,
+          url: new URL(cityHref('pl', city), Astro.site ?? 'https://allmedtests.com').toString(),
+        })),
+      }
+    : undefined;
 ---
 
-<BaseLayout title={t('site.brand')} description={t('home.description')}>
+<BaseLayout title={t('site.brand')} description={t('home.description')} jsonLd={cityItemListJsonLd}>
   <section class="home-hero wrap" aria-labelledby="hero-title">
     <div>
       <div class="home-hero__eyebrow">
@@ -110,6 +132,31 @@ const publishedProviders = providers.filter((provider) => !provider.data.draft);
   <div class="wrap">
     <MarketplaceTeaser />
   </div>
+
+  {
+    plCities.length > 0 && (
+      <section class="city-preview wrap" aria-labelledby="city-preview-title">
+        <div class="city-preview__intro">
+          <div class="city-preview__eyebrow">
+            <RangeMark size="sm" />
+            Marketplace planning
+          </div>
+          <h2 id="city-preview-title">Polish city pages in preparation</h2>
+          <p>
+            Draft city pages are being prepared for the Polish market. Verified lab locations, providers, and pricing are not published yet.
+          </p>
+        </div>
+        <div class="city-preview__links">
+          {plCities.map((city) => (
+            <a class="city-preview__link" href={cityHref('pl', city)}>
+              <span>{city.data.title}</span>
+              <DraftBadge show={city.data.draft} />
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>
 
 <style>
@@ -303,9 +350,67 @@ const publishedProviders = providers.filter((provider) => !provider.data.draft);
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .city-preview {
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: grid;
+    gap: 28px;
+    grid-template-columns: .9fr 1.1fr;
+    padding-bottom: 44px;
+    padding-top: 26px;
+  }
+
+  .city-preview__eyebrow {
+    align-items: center;
+    color: var(--teal);
+    display: flex;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    gap: 8px;
+    letter-spacing: .06em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .city-preview h2 {
+    color: var(--ink);
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .city-preview p {
+    font-size: 13.5px;
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  .city-preview__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .city-preview__link {
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--ink);
+    display: inline-flex;
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px 12px;
+    text-decoration: none;
+  }
+
+  .city-preview__link:hover {
+    border-color: var(--ink-soft);
+  }
+
   @media (max-width: 860px) {
     .home-hero,
-    .article-grid {
+    .article-grid,
+    .city-preview {
       grid-template-columns: 1fr;
     }
 
