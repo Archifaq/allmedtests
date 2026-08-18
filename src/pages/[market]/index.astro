@@ -1,7 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
+import EmptyStateCard from '../../components/EmptyStateCard.astro';
+import RangeMark from '../../components/RangeMark.astro';
 import { markets, type MarketCode } from '../../data/markets';
-import Base from '../../layouts/Base.astro';
-import { t } from '../../i18n';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categoryHref } from '../../lib/routes';
 
 export function getStaticPaths() {
   if (process.env.MARKETPLACE_ENABLED !== 'true') {
@@ -15,11 +18,92 @@ export function getStaticPaths() {
 }
 
 const { market, config } = Astro.props;
+const categories = await getCollection('categories', ({ data }) => data.market === market);
+const tests = await getCollection('tests', ({ data }) => data.market === market);
+const providers = await getCollection('providers', ({ data }) => data.market === market);
 ---
 
-<Base title={`${t('site.brand', config.locale)} ${market.toUpperCase()}`} locale={config.locale}>
-  <section>
-    <h1>{t('site.brand', config.locale)} {market.toUpperCase()}</h1>
+<BaseLayout title={`AllMedTests ${market.toUpperCase()}`} locale={config.locale}>
+  <section class="market-hero wrap">
+    <div class="market-hero__icon"><RangeMark size="lg" /></div>
+    <h1>AllMedTests {market.toUpperCase()}</h1>
     <p>{config.currency} · {config.hreflang}</p>
   </section>
-</Base>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Categories</h2>
+      <span class="count">{categories.length} entries</span>
+    </div>
+    {
+      categories.length > 0 ? (
+        <div class="market-pills">
+          {categories.map((category) => (
+            <a class="market-pill" href={categoryHref(market, category)}>
+              <RangeMark size="sm" />
+              {category.data.title}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <EmptyStateCard message="No categories are available for this market yet." />
+      )
+    }
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Tests and providers</h2>
+      <span class="count">{tests.length + providers.length} published entries</span>
+    </div>
+    <EmptyStateCard message="Marketplace listings will appear after verified provider and price data is available." />
+  </section>
+</BaseLayout>
+
+<style>
+  .market-hero {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 36px;
+    padding-top: 44px;
+  }
+
+  .market-hero__icon {
+    align-items: center;
+    background: var(--teal-tint);
+    border-radius: 12px;
+    display: flex;
+    height: 52px;
+    justify-content: center;
+    margin-bottom: 18px;
+    width: 52px;
+  }
+
+  .market-hero h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+  }
+
+  .market-hero p {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  .market-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .market-pill {
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+  }
+</style>

@@ -1,8 +1,12 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+import ArticleCard from '../../../components/ArticleCard.astro';
+import DraftBadge from '../../../components/DraftBadge.astro';
+import EmptyStateCard from '../../../components/EmptyStateCard.astro';
+import RangeMark from '../../../components/RangeMark.astro';
 import { markets, type MarketCode } from '../../../data/markets';
-import Base from '../../../layouts/Base.astro';
-import { t } from '../../../i18n';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { categoryHref } from '../../../lib/routes';
 
 type CategoryEntry = CollectionEntry<'categories'>;
 
@@ -36,13 +40,152 @@ interface Props {
 const { category } = Astro.props;
 const market = category.data.market as MarketCode;
 const config = markets[market];
+const categories = await getCollection('categories', ({ data }) => data.market === market);
+const tests = await getCollection('tests', ({ data }) => data.market === market && data.category === category.id.replace(/^[^/]+\//, '').replace(/\.md$/, ''));
+const articles = await getCollection('articles', ({ id }) => id.startsWith(`${config.locale}/`));
+const relatedArticles = articles.slice(0, 6);
+const otherCategories = categories.filter((item) => item.id !== category.id);
 const { Content } = await category.render();
 ---
 
-<Base title={category.data.title} description={category.data.description} locale={config.locale}>
-  <article>
+<BaseLayout
+  title={category.data.title}
+  description={category.data.description}
+  locale={config.locale}
+  breadcrumbs={[{ label: 'Categories', href: `/${market}/` }, { label: category.data.title }]}
+>
+  <section class="category-hero wrap">
+    <div class="category-hero__icon"><RangeMark size="lg" /></div>
+    <div class="category-hero__badges">
+      <DraftBadge show={category.data.draft} />
+    </div>
     <h1>{category.data.title}</h1>
-    {category.data.draft && <p><strong>{t('article.draftBadge', config.locale)}</strong></p>}
-    <Content />
-  </article>
-</Base>
+    {category.data.description && <p>{category.data.description}</p>}
+    <div class="category-hero__meta">
+      <span>{relatedArticles.length} guides</span>
+      <span>{tests.length} tests in catalog</span>
+      <span>Market: {market.toUpperCase()} ({config.currency})</span>
+    </div>
+    <div class="category-hero__content">
+      <Content />
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Related guides</h2>
+      <span class="count">from articles/{config.locale}</span>
+    </div>
+    {
+      relatedArticles.length > 0 ? (
+        <div class="category-grid">
+          {relatedArticles.map((article) => <ArticleCard article={article} locale={config.locale} routePrefix={market} />)}
+        </div>
+      ) : (
+        <EmptyStateCard message="No educational guides are linked to this category yet." />
+      )
+    }
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Tests in this category</h2>
+      <span class="count">{tests.length} entries</span>
+    </div>
+    <EmptyStateCard message="The test catalog for this category is not populated yet. Listings will appear only after provider and price data is verified." />
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Other categories</h2>
+    </div>
+    <div class="category-pills">
+      {otherCategories.map((item) => (
+        <a class="category-pill" href={categoryHref(market, item)}>
+          <RangeMark size="sm" />
+          {item.data.title}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .category-hero {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 36px;
+    padding-top: 44px;
+  }
+
+  .category-hero__icon {
+    align-items: center;
+    background: var(--teal-tint);
+    border-radius: 12px;
+    display: flex;
+    height: 52px;
+    justify-content: center;
+    margin-bottom: 18px;
+    width: 52px;
+  }
+
+  .category-hero__badges {
+    margin-bottom: 10px;
+  }
+
+  .category-hero h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+  }
+
+  .category-hero p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 62ch;
+  }
+
+  .category-hero__meta {
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .category-hero__content {
+    color: var(--ink-soft);
+    margin-top: 18px;
+    max-width: 66ch;
+  }
+
+  .category-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .category-pill {
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+  }
+
+  @media (max-width: 860px) {
+    .category-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

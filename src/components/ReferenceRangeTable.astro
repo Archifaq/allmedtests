@@ -1,0 +1,125 @@
+---
+export type ReferenceRangeRow = {
+  label: string;
+  min: number;
+  max: number;
+  unit: string;
+  valuePosition: number;
+};
+
+interface Props {
+  title?: string;
+  rows?: ReferenceRangeRow[];
+}
+
+const { title = 'Reference range', rows = [] } = Astro.props;
+
+function clampPercent(value: number) {
+  return Math.max(0, Math.min(100, value));
+}
+---
+
+{
+  rows.length > 0 && (
+    <div class="reference-range">
+      <div class="reference-range__title">{title}</div>
+      {rows.map((row) => {
+        const min = clampPercent(row.min);
+        const max = clampPercent(row.max);
+        const bandStart = Math.min(min, max);
+        const bandWidth = Math.abs(max - min);
+        const marker = clampPercent(row.valuePosition);
+
+        return (
+          <div class="reference-range__row">
+            <div>{row.label}</div>
+            <div class="reference-range__track">
+              <div class="reference-range__band" style={`left:${bandStart}%;width:${bandWidth}%`}></div>
+              <div class="reference-range__marker" style={`left:${marker}%`}></div>
+            </div>
+            <div class="reference-range__value">
+              {row.min}-{row.max} <span>{row.unit}</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  )
+}
+
+<style>
+  .reference-range {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin: 24px 0;
+    padding: 20px 22px;
+  }
+
+  .reference-range__title {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .reference-range__row {
+    align-items: center;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 120px 1fr 96px;
+    padding: 8px 0;
+  }
+
+  .reference-range__row + .reference-range__row {
+    border-top: 1px solid var(--line);
+  }
+
+  .reference-range__track {
+    background: var(--line);
+    border-radius: 4px;
+    height: 8px;
+    position: relative;
+  }
+
+  .reference-range__band {
+    background: var(--teal-tint);
+    border-radius: 4px;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .reference-range__marker {
+    background: var(--surface);
+    border: 3px solid var(--teal);
+    border-radius: 50%;
+    height: 16px;
+    position: absolute;
+    top: -4px;
+    transform: translateX(-50%);
+    width: 16px;
+  }
+
+  .reference-range__value {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-align: right;
+  }
+
+  .reference-range__value span {
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 680px) {
+    .reference-range__row {
+      grid-template-columns: 1fr;
+    }
+
+    .reference-range__value {
+      text-align: left;
+    }
+  }
+</style>

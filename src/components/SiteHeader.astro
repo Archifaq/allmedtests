@@ -1,0 +1,135 @@
+---
+import { t, type LocaleCode } from '../i18n';
+import RangeMark from './RangeMark.astro';
+
+interface Props {
+  locale?: LocaleCode;
+  breadcrumbs?: { label: string; href?: string }[];
+}
+
+const { locale = 'en', breadcrumbs = [] } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="site-header__brand" href="/" aria-label={t('site.homeAriaLabel', locale)}>
+      <RangeMark size="md" />
+      <span>AllMedTests</span>
+    </a>
+    {
+      breadcrumbs.length > 0 ? (
+        <nav class="site-header__crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          {breadcrumbs.map((crumb) => (
+            <>
+              <span>/</span>
+              {crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span>{crumb.label}</span>}
+            </>
+          ))}
+        </nav>
+      ) : (
+        <nav class="site-header__nav" aria-label="Primary">
+          <a href="/#articles">Articles</a>
+          <span aria-disabled="true">Categories</span>
+          <span aria-disabled="true">Tests</span>
+          <div class="site-header__langs" aria-label="Languages">
+            <span class:list={{ active: locale === 'en' }}>EN</span>
+            <span class:list={{ active: locale === 'pl' }}>PL</span>
+          </div>
+        </nav>
+      )
+    }
+  </div>
+</header>
+
+<style>
+  .site-header {
+    backdrop-filter: blur(6px);
+    background: rgba(245, 247, 247, .92);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .site-header__bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+
+  .site-header__brand {
+    align-items: center;
+    display: flex;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .site-header__nav {
+    align-items: center;
+    color: var(--ink-soft);
+    display: flex;
+    font-size: 14px;
+    gap: 28px;
+  }
+
+  .site-header__nav a {
+    text-decoration: none;
+  }
+
+  .site-header__nav a:hover {
+    color: var(--ink);
+  }
+
+  .site-header__nav span[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  .site-header__langs {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    font-size: 12px;
+    overflow: hidden;
+  }
+
+  .site-header__langs span {
+    padding: 5px 12px;
+  }
+
+  .site-header__langs .active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .site-header__crumbs {
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    gap: 7px;
+    justify-content: flex-end;
+  }
+
+  .site-header__crumbs a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 720px) {
+    .site-header__bar {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .site-header__nav {
+      gap: 16px;
+    }
+  }
+</style>

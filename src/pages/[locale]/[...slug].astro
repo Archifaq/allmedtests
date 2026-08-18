@@ -1,9 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { markets } from '../../data/markets';
-import Base from '../../layouts/Base.astro';
-import { t, type LocaleCode } from '../../i18n';
+import DraftBadge from '../../components/DraftBadge.astro';
+import MissingImagePlaceholder from '../../components/MissingImagePlaceholder.astro';
+import ReferenceRangeTable from '../../components/ReferenceRangeTable.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import TranslationNote from '../../components/TranslationNote.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { type LocaleCode } from '../../i18n';
 import { getArticlesByLocale } from '../../lib/articles';
+import { articleHref, entrySlug } from '../../lib/routes';
 
 type ArticleEntry = CollectionEntry<'articles'>;
 
@@ -59,14 +65,14 @@ export async function getStaticPaths() {
       const routePrefix = articleRoutePrefixByLocale[locale] ?? locale;
       const slug = article.data.originalUrl
         ? article.data.originalUrl.replace(/^\/+/, '').replace(/\/+$/, '')
-        : article.id.replace(/^[^/]+\//, '').replace(/\.md$/, '');
+        : entrySlug(article);
 
       return {
         params: {
           locale: routePrefix,
           slug,
         },
-        props: { article, locale },
+        props: { article, locale, routePrefix },
       };
     }),
   );
@@ -75,16 +81,142 @@ export async function getStaticPaths() {
 interface Props {
   article: ArticleEntry;
   locale: LocaleCode;
+  routePrefix: string;
 }
 
-const { article, locale } = Astro.props;
-const { Content } = await article.render();
+const { article, locale, routePrefix } = Astro.props;
+const { Content, headings } = await article.render();
+const enArticles = await getArticlesByLocale('en');
+const englishOriginal = article.data.translationOfSlug
+  ? enArticles.find((candidate) => entrySlug(candidate) === article.data.translationOfSlug)
+  : null;
+
+if (article.data.translationOfSlug && !englishOriginal) {
+  console.warn(
+    `translationOfSlug missing or unresolved for ${entrySlug(article)}, needs manual mapping to EN original`,
+  );
+}
+
+const englishHref = englishOriginal ? articleHref(englishOriginal, 'en') : null;
+const referenceRanges = article.data.referenceRanges ?? [];
+const restored = article.data.restoredDate ?? article.data.originalPublishDate;
 ---
 
-<Base title={article.data.title} description={article.data.description} locale={locale}>
-  <article>
-    <h1>{article.data.title}</h1>
-    {article.data.draft && <p><strong>{t('article.draftBadge', locale)}</strong></p>}
-    <Content />
-  </article>
-</Base>
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  locale={locale}
+  breadcrumbs={[{ label: 'Articles', href: '/' }, { label: article.data.title }]}
+>
+  <div class="article-layout wrap">
+    <TableOfContents headings={headings} />
+
+    <article class="article-body">
+      <div class="article-body__badges">
+        {article.data.priorityTier && <span class="article-body__tag">{article.data.priorityTier}</span>}
+        <DraftBadge show={article.data.draft} />
+      </div>
+      <h1>{article.data.title}</h1>
+      {article.data.description && <p class="article-body__dek">{article.data.description}</p>}
+      <div class="article-body__meta">
+        {restored && <span>Restored {restored}</span>}
+        <span>{routePrefix.toUpperCase()} translation</span>
+      </div>
+
+      <TranslationNote translationHref={englishHref} label="English original article" />
+
+      {article.data.imageRestoreNeeded && <MissingImagePlaceholder />}
+
+      <Content />
+
+      <ReferenceRangeTable title={`${article.data.title} reference ranges`} rows={referenceRanges} />
+
+      <div class="article-body__disclaimer">
+        This article is educational and does not replace consultation with a physician. Interpret lab results with clinical context.
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-layout {
+    align-items: start;
+    display: grid;
+    gap: 44px;
+    grid-template-columns: 220px minmax(0, 680px);
+    padding-bottom: 80px;
+    padding-top: 40px;
+  }
+
+  .article-body__badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .article-body__tag {
+    background: var(--teal-tint);
+    border-radius: 20px;
+    color: var(--teal);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .article-body h1 {
+    font-size: 36px;
+    line-height: 1.18;
+    margin-bottom: 14px;
+  }
+
+  .article-body__dek {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .article-body__meta {
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  .article-body :global(h2) {
+    font-size: 22px;
+    margin: 38px 0 14px;
+  }
+
+  .article-body :global(h3) {
+    font-size: 19px;
+    margin: 28px 0 12px;
+  }
+
+  .article-body :global(p),
+  .article-body :global(li) {
+    font-size: 16px;
+  }
+
+  .article-body :global(p) {
+    margin: 0 0 16px;
+  }
+
+  .article-body__disclaimer {
+    background: var(--amber-tint);
+    border-radius: 8px;
+    color: #6b4f1c;
+    font-size: 13px;
+    margin-top: 44px;
+    padding: 16px 18px;
+  }
+
+  @media (max-width: 960px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,8 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Base from '../layouts/Base.astro';
-import { t } from '../i18n';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ArticleCard from '../components/ArticleCard.astro';
+import DraftBadge from '../components/DraftBadge.astro';
+import MissingImagePlaceholder from '../components/MissingImagePlaceholder.astro';
+import ReferenceRangeTable from '../components/ReferenceRangeTable.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import TranslationNote from '../components/TranslationNote.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getArticlesByLocale } from '../lib/articles';
+import { articleHref, entrySlug } from '../lib/routes';
 
 type ArticleEntry = CollectionEntry<'articles'>;
 
@@ -13,20 +19,229 @@ export async function getStaticPaths() {
     params: {
       slug: article.data.originalUrl
         ? article.data.originalUrl.replace(/^\/+/, '').replace(/\/+$/, '')
-        : article.id.replace(/^en\//, '').replace(/\.md$/, ''),
+        : entrySlug(article),
     },
     props: { article },
   }));
 }
 
+interface Props {
+  article: ArticleEntry;
+}
+
 const { article } = Astro.props;
-const { Content } = await article.render();
+const { Content, headings } = await article.render();
+const allArticles = await getCollection('articles');
+const enSlug = article.data.originalUrl
+  ? article.data.originalUrl.replace(/^\/+/, '').replace(/\/+$/, '')
+  : entrySlug(article);
+const polishTranslation = allArticles.find(
+  (candidate) => candidate.id.startsWith('pl/') && candidate.data.translationOfSlug === enSlug,
+);
+const translationHref = polishTranslation ? articleHref(polishTranslation, 'pl', 'pl') : null;
+const relatedArticles = allArticles
+  .filter((candidate) => candidate.id.startsWith('en/') && candidate.id !== article.id)
+  .slice(0, 4);
+const referenceRanges = article.data.referenceRanges ?? [];
+const restored = article.data.restoredDate ?? article.data.originalPublishDate;
 ---
 
-<Base title={article.data.title} description={article.data.description}>
-  <article>
-    <h1>{article.data.title}</h1>
-    {article.data.draft && <p><strong>{t('article.draftBadge')}</strong></p>}
-    <Content />
-  </article>
-</Base>
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  breadcrumbs={[{ label: 'Articles', href: '/#articles' }, { label: article.data.title }]}
+>
+  <div class="article-layout wrap">
+    <TableOfContents headings={headings} />
+
+    <article class="article-body">
+      <div class="article-body__badges">
+        {article.data.priorityTier && <span class="article-body__tag">{article.data.priorityTier}</span>}
+        <DraftBadge show={article.data.draft} />
+      </div>
+      <h1>{article.data.title}</h1>
+      {article.data.description && <p class="article-body__dek">{article.data.description}</p>}
+      <div class="article-body__meta">
+        {restored && <span>Restored {restored}</span>}
+        {article.data.originalPublishDate && <span>Original publication {article.data.originalPublishDate}</span>}
+        {article.data.sourceSnapshot && <a href={article.data.sourceSnapshot}>Archive source</a>}
+      </div>
+
+      <TranslationNote translationHref={translationHref} label="A Polish draft translation is available" />
+
+      {article.data.imageRestoreNeeded && <MissingImagePlaceholder />}
+
+      <Content />
+
+      <ReferenceRangeTable title={`${article.data.title} reference ranges`} rows={referenceRanges} />
+
+      <div class="article-body__disclaimer">
+        This article is educational and does not replace consultation with a physician. Interpret lab results with clinical context.
+      </div>
+    </article>
+
+    <aside class="article-rail">
+      <div class="article-rail__box">
+        <h5>Related guides</h5>
+        {relatedArticles.map((related) => <ArticleCard article={related} />)}
+      </div>
+      <div class="article-rail__box">
+        <h5>About this article</h5>
+        <p>
+          Source: restored educational content. Status: {article.data.draft ? 'draft pending review' : 'published'}.
+        </p>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .article-layout {
+    align-items: start;
+    display: grid;
+    gap: 44px;
+    grid-template-columns: 220px 1fr 240px;
+    padding-bottom: 80px;
+    padding-top: 40px;
+  }
+
+  .article-body {
+    max-width: 680px;
+  }
+
+  .article-body__badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .article-body__tag {
+    background: var(--teal-tint);
+    border-radius: 20px;
+    color: var(--teal);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .article-body h1 {
+    font-size: 36px;
+    line-height: 1.18;
+    margin-bottom: 14px;
+  }
+
+  .article-body__dek {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .article-body__meta {
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  .article-body :global(h2) {
+    font-size: 22px;
+    margin: 38px 0 14px;
+  }
+
+  .article-body :global(h3) {
+    font-size: 19px;
+    margin: 28px 0 12px;
+  }
+
+  .article-body :global(p),
+  .article-body :global(li) {
+    font-size: 16px;
+  }
+
+  .article-body :global(p) {
+    margin: 0 0 16px;
+  }
+
+  .article-body :global(table) {
+    border-collapse: collapse;
+    display: block;
+    margin: 24px 0;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .article-body :global(th),
+  .article-body :global(td) {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+  }
+
+  .article-body__disclaimer {
+    background: var(--amber-tint);
+    border-radius: 8px;
+    color: #6b4f1c;
+    font-size: 13px;
+    margin-top: 44px;
+    padding: 16px 18px;
+  }
+
+  .article-rail {
+    position: sticky;
+    top: 76px;
+  }
+
+  .article-rail__box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 18px;
+    padding: 18px;
+  }
+
+  .article-rail__box h5 {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+  }
+
+  .article-rail__box :global(.article-card) {
+    border-left-width: 2px;
+    margin-top: 10px;
+    padding: 14px;
+  }
+
+  .article-rail__box :global(.article-card p),
+  .article-rail__box :global(.article-card__meta),
+  .article-rail__box :global(.draft-badge) {
+    display: none;
+  }
+
+  .article-rail__box p {
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 960px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .article-body {
+      max-width: none;
+    }
+
+    .article-rail {
+      position: static;
+    }
+  }
+</style>

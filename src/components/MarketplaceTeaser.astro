@@ -1,0 +1,27 @@
+---
+import RangeMark from './RangeMark.astro';
+---
+
+<p class="marketplace-teaser">
+  <RangeMark size="md" />
+  <strong>Planned:</strong>
+  comparison tools for lab-test prices and providers. For now, allmedtests.com is focused on clear educational guides.
+</p>
+
+<style>
+  .marketplace-teaser {
+    align-items: baseline;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: flex;
+    font-size: 13.5px;
+    gap: 10px;
+    margin: 0;
+    padding: 18px 0;
+  }
+
+  .marketplace-teaser strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>

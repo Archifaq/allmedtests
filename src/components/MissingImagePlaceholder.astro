@@ -1,0 +1,43 @@
+---
+interface Props {
+  message?: string;
+}
+
+const { message = 'The original archived illustration has not been restored yet.' } = Astro.props;
+---
+
+<div class="missing-image" role="note">
+  <div class="missing-image__icon">i</div>
+  <p>{message}</p>
+</div>
+
+<style>
+  .missing-image {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin: 26px 0;
+    padding: 34px 20px;
+    text-align: center;
+  }
+
+  .missing-image__icon {
+    align-items: center;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    color: var(--ink-soft);
+    display: flex;
+    font-family: var(--font-display);
+    font-style: italic;
+    height: 34px;
+    justify-content: center;
+    margin: 0 auto 12px;
+    width: 34px;
+  }
+
+  .missing-image p {
+    margin: 0;
+  }
+</style>

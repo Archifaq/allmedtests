@@ -1,0 +1,100 @@
+:root {
+  --paper: #F5F7F7;
+  --surface: #FFFFFF;
+  --ink: #12232B;
+  --ink-soft: #4B6069;
+  --line: #D7E1E3;
+  --teal: #0E7A6C;
+  --teal-tint: #E3F1EE;
+  --amber: #B8802B;
+  --amber-tint: #F5EBDA;
+  --red: #B23A34;
+
+  --font-display: 'Newsreader', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 0 28px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.section {
+  padding: 56px 0;
+}
+
+.section-head {
+  align-items: baseline;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  font-size: 26px;
+}
+
+.section-head .count {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+@media (max-width: 860px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 42px 0;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

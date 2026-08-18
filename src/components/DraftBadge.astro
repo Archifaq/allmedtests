@@ -1,0 +1,22 @@
+---
+interface Props {
+  show?: boolean;
+}
+
+const { show = false } = Astro.props;
+---
+
+{show && <span class="draft-badge">Draft - pending review</span>}
+
+<style>
+  .draft-badge {
+    background: var(--amber-tint);
+    border-radius: 20px;
+    color: var(--amber);
+    display: inline-flex;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+</style>

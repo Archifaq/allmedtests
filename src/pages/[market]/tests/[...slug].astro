@@ -1,8 +1,10 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+import DraftBadge from '../../../components/DraftBadge.astro';
+import EmptyStateCard from '../../../components/EmptyStateCard.astro';
+import ReferenceRangeTable from '../../../components/ReferenceRangeTable.astro';
 import { markets, type MarketCode } from '../../../data/markets';
-import Base from '../../../layouts/Base.astro';
-import { t } from '../../../i18n';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 type TestEntry = CollectionEntry<'tests'>;
 
@@ -36,13 +38,157 @@ interface Props {
 const { test } = Astro.props;
 const market = test.data.market as MarketCode;
 const config = markets[market];
+const providers = await getCollection('providers', ({ data }) => data.market === market && !data.draft);
+const referenceRanges = test.data.referenceRanges ?? [];
 const { Content } = await test.render();
 ---
 
-<Base title={test.data.title} description={test.data.description} locale={config.locale}>
-  <article>
-    <h1>{test.data.title}</h1>
-    {test.data.draft && <p><strong>{t('article.draftBadge', config.locale)}</strong></p>}
-    <Content />
-  </article>
-</Base>
+<BaseLayout
+  title={test.data.title}
+  description={test.data.description}
+  locale={config.locale}
+  breadcrumbs={[{ label: 'Tests', href: `/${market}/` }, { label: test.data.title }]}
+>
+  <div class="test-layout wrap">
+    <article class="test-main">
+      <div class="test-badges">
+        {test.data.category && <span class="test-badge test-badge--tag">{test.data.category}</span>}
+        <DraftBadge show={test.data.draft} />
+      </div>
+      <h1>{test.data.title}</h1>
+      {test.data.description && <p class="test-dek">{test.data.description}</p>}
+
+      <Content />
+
+      <ReferenceRangeTable title={`${test.data.title} reference ranges`} rows={referenceRanges} />
+
+      <h2>Where to take this test</h2>
+      {
+        providers.length > 0 ? (
+          <div class="provider-list">
+            {providers.map((provider) => <p>{provider.data.name}</p>)}
+          </div>
+        ) : (
+          <EmptyStateCard message="Provider and price comparison for this test will appear after partner data is verified." />
+        )
+      }
+    </article>
+
+    <aside class="test-rail">
+      <div class="test-rail__box">
+        <h5>Price comparison</h5>
+        <div class="price-row"><span>Verified providers</span><span>{providers.length}</span></div>
+        <div class="price-row"><span>Currency</span><span>{config.currency}</span></div>
+        <span class="test-cta" aria-disabled="true">Comparison soon</span>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .test-layout {
+    align-items: start;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 300px;
+    padding-bottom: 80px;
+    padding-top: 40px;
+  }
+
+  .test-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .test-badge {
+    border-radius: 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .test-badge--tag {
+    background: var(--teal-tint);
+    color: var(--teal);
+  }
+
+  .test-main h1 {
+    font-size: 34px;
+    line-height: 1.18;
+    margin-bottom: 12px;
+  }
+
+  .test-dek {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 26px;
+    max-width: 64ch;
+  }
+
+  .test-main :global(h2),
+  .test-main h2 {
+    font-size: 20px;
+    margin: 34px 0 12px;
+  }
+
+  .test-main :global(p) {
+    font-size: 15.5px;
+    margin: 0 0 14px;
+    max-width: 66ch;
+  }
+
+  .test-rail__box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    position: sticky;
+    top: 76px;
+  }
+
+  .test-rail__box h5 {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+  }
+
+  .price-row {
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    padding: 9px 0;
+  }
+
+  .price-row:first-of-type {
+    border-top: 0;
+  }
+
+  .test-cta {
+    background: var(--line);
+    border-radius: 8px;
+    color: var(--ink-soft);
+    cursor: not-allowed;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 14px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .test-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .test-rail__box {
+      position: static;
+    }
+  }
+</style>

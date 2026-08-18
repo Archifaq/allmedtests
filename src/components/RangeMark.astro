@@ -1,0 +1,62 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { size = 'md' } = Astro.props;
+---
+
+<span class:list={['range-mark', `range-mark--${size}`]} aria-hidden="true">
+  <span class="range-mark__bracket"></span>
+  <span class="range-mark__dot"></span>
+</span>
+
+<style>
+  .range-mark {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
+  .range-mark__bracket {
+    border-left: 2px solid var(--teal);
+    border-radius: 2px 2px 0 0;
+    border-right: 2px solid var(--teal);
+    border-top: 2px solid var(--teal);
+    height: 8px;
+    width: 22px;
+  }
+
+  .range-mark__dot {
+    background: var(--teal);
+    border-radius: 50%;
+    height: 6px;
+    margin-left: -13px;
+    margin-top: 5px;
+    width: 6px;
+  }
+
+  .range-mark--sm .range-mark__bracket {
+    height: 6px;
+    width: 14px;
+  }
+
+  .range-mark--sm .range-mark__dot {
+    height: 4px;
+    margin-left: -8px;
+    margin-top: 4px;
+    width: 4px;
+  }
+
+  .range-mark--lg .range-mark__bracket {
+    height: 10px;
+    width: 26px;
+  }
+
+  .range-mark--lg .range-mark__dot {
+    height: 7px;
+    margin-left: -16px;
+    margin-top: 6px;
+    width: 7px;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import RangeMark from './RangeMark.astro';
+
+interface Props {
+  translationHref: string | null;
+  label?: string;
+}
+
+const { translationHref, label = 'A translated version is available' } = Astro.props;
+---
+
+{
+  translationHref && (
+    <div class="translation-note">
+      <RangeMark size="md" />
+      <span>
+        {label} - <a href={translationHref}>{translationHref.replace(/^\/|\/$/g, '')}</a>
+      </span>
+    </div>
+  )
+}
+
+<style>
+  .translation-note {
+    align-items: center;
+    background: var(--teal-tint);
+    border-radius: 8px;
+    display: flex;
+    font-size: 13px;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding: 12px 16px;
+  }
+
+  .translation-note a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+</style>

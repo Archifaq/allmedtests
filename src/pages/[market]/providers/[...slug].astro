@@ -1,8 +1,9 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+import DraftBadge from '../../../components/DraftBadge.astro';
+import EmptyStateCard from '../../../components/EmptyStateCard.astro';
 import { markets, type MarketCode } from '../../../data/markets';
-import Base from '../../../layouts/Base.astro';
-import { t } from '../../../i18n';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 type ProviderEntry = CollectionEntry<'providers'>;
 
@@ -36,13 +37,215 @@ interface Props {
 const { provider } = Astro.props;
 const market = provider.data.market as MarketCode;
 const config = markets[market];
+const tests = await getCollection('tests', ({ data }) => data.market === market && !data.draft);
 const { Content } = await provider.render();
+const initial = provider.data.name.charAt(0).toUpperCase();
 ---
 
-<Base title={provider.data.name} locale={config.locale}>
-  <article>
-    <h1>{provider.data.name}</h1>
-    {provider.data.draft && <p><strong>{t('article.draftBadge', config.locale)}</strong></p>}
-    <Content />
-  </article>
-</Base>
+<BaseLayout
+  title={provider.data.name}
+  locale={config.locale}
+  breadcrumbs={[{ label: 'Providers', href: `/${market}/` }, { label: provider.data.name }]}
+>
+  <section class="provider-hero wrap">
+    <div class="provider-logo">{initial}</div>
+    <div>
+      <div class="provider-badges">
+        <DraftBadge show={provider.data.draft} />
+      </div>
+      <h1>{provider.data.name}</h1>
+      <div class="provider-sub">
+        Lab-test provider profile · {market.toUpperCase()} · {config.currency}
+      </div>
+      <div class="provider-accreds">
+        <span>Accreditation not confirmed</span>
+        <span>Data pending review</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="provider-layout wrap">
+    <div>
+      <div class="provider-stats">
+        <div class="provider-stat"><div class="provider-stat__num mono">-</div><div class="provider-stat__label">collection sites</div></div>
+        <div class="provider-stat"><div class="provider-stat__num mono">{tests.length}</div><div class="provider-stat__label">published tests</div></div>
+        <div class="provider-stat"><div class="provider-stat__num mono">-</div><div class="provider-stat__label">average turnaround</div></div>
+      </div>
+
+      <h2>About this provider</h2>
+      <div class="provider-copy">
+        <Content />
+      </div>
+      {
+        !provider.body && (
+          <p>
+            Provider details, collection points, accreditation, and pricing will be added only after partnership data is verified.
+          </p>
+        )
+      }
+
+      <h2>Popular test prices</h2>
+      <EmptyStateCard message="The provider price list will appear after verified partner data is available." />
+    </div>
+
+    <aside>
+      <div class="provider-rail">
+        <h5>Contact and data</h5>
+        <div class="info-row"><span>Website</span><span>{provider.data.affiliateUrl ? 'available' : '-'}</span></div>
+        <div class="info-row"><span>Affiliate network</span><span>{provider.data.affiliateNetwork ?? '-'}</span></div>
+        <div class="info-row"><span>Countries</span><span>{provider.data.countriesAvailable?.join(', ') ?? '-'}</span></div>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .provider-hero {
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 20px;
+    padding-bottom: 28px;
+    padding-top: 40px;
+  }
+
+  .provider-logo {
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: var(--teal);
+    display: flex;
+    flex: 0 0 64px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    height: 64px;
+    justify-content: center;
+  }
+
+  .provider-badges {
+    margin-bottom: 8px;
+  }
+
+  .provider-hero h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
+
+  .provider-sub {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+
+  .provider-accreds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .provider-accreds span {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    padding: 3px 8px;
+  }
+
+  .provider-layout {
+    align-items: start;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 300px;
+    padding-bottom: 80px;
+    padding-top: 34px;
+  }
+
+  .provider-stats {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 30px;
+  }
+
+  .provider-stat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .provider-stat__num {
+    font-family: var(--font-display);
+    font-size: 22px;
+  }
+
+  .provider-stat__label {
+    color: var(--ink-soft);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .provider-layout h2 {
+    font-size: 19px;
+    margin: 0 0 14px;
+  }
+
+  .provider-layout p,
+  .provider-copy :global(p) {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 20px;
+    max-width: 64ch;
+  }
+
+  .provider-rail {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    position: sticky;
+    top: 76px;
+  }
+
+  .provider-rail h5 {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    margin: 0 0 14px;
+    text-transform: uppercase;
+  }
+
+  .info-row {
+    border-top: 1px solid var(--line);
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    padding: 9px 0;
+  }
+
+  .info-row:first-of-type {
+    border-top: 0;
+  }
+
+  .info-row span:last-child {
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  @media (max-width: 900px) {
+    .provider-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .provider-rail {
+      position: static;
+    }
+
+    .provider-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

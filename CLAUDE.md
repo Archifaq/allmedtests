@@ -1,71 +1,90 @@
-# AllMedTests Project Context
+# AllMedTests Claude Guide
 
-## Project Summary
+This repository replaces the historical `allmedtests.com` WordPress site with an Astro static site.
 
-This repository is the replacement site for `allmedtests.com`.
+For Claude Project setup, use these companion files:
 
-The old site was a WordPress-based medical/lab-test content site. The current project is an Astro-based static site that is being rebuilt in stages:
+- `CLAUDE_INSTRUCTIONS.md` as the project instructions.
+- `CLAUDE_CONTEXT.md` as the project context / knowledge file.
 
-- Preserve SEO-critical URLs from the old domain.
-- Restore legacy educational article content from Wayback Machine snapshots.
-- Keep original article slugs unchanged.
-- Preserve legacy WordPress image paths under `/wp-content/uploads/...` where images were recovered.
-- Prepare the site to later become a multilingual lab-test marketplace with provider/test collections.
+The short version:
 
-The current deployment target is Cloudflare Pages.
+- Preserve SEO-critical legacy English URLs.
+- Keep English articles unprefixed at `/slug/`.
+- Keep restored and translated articles as `draft: true` until manual approval.
+- Do not add required frontmatter fields without explicit approval.
+- Use `audit/translation_status.csv` to track translated article status and EN mapping.
 
-## Current Technical Stack
+## Project Basics
 
-- Astro 5
-- TypeScript strict
-- Static output
-- Content collections in `src/content/config.ts`
-- Deployment: Cloudflare Pages
-- Build command: `npm run build`
-- Output directory: `dist/`
+- Framework: Astro 5.
+- Language: TypeScript strict.
+- Output: static.
+- Deployment target: Cloudflare Pages.
+- Build command: `npm run build`.
+- Output directory: `dist/`.
 
 Do not add `@astrojs/cloudflare` unless the project explicitly needs SSR later.
 
-## Important Routing Rules
+## Routing Rules
 
 The homepage must stay at `/`.
-
-This is critical because the root URL has the strongest backlink profile:
-
-- `https://allmedtests.com/`
-- 193 referring domains
-- 53 dofollow referring domains
-
-Do not move, redirect, rename, or replace the homepage route with another path.
 
 English URLs must remain unprefixed:
 
 - Correct: `/abo-and-rh-blood-grouping/`
 - Incorrect: `/en/abo-and-rh-blood-grouping/`
 
-This is controlled by Astro i18n:
+Localized translated article routes use:
 
-```js
-i18n: {
-  defaultLocale: 'en',
-  locales: ['en'],
-  routing: {
-    prefixDefaultLocale: false
-  }
-}
+```text
+src/pages/[locale]/[...slug].astro
 ```
 
-## Content Collections
+Do not create per-locale article route files such as `src/pages/pl/[...slug].astro`.
 
-Articles live in:
+Marketplace routes use:
+
+```text
+src/pages/[market]/index.astro
+src/pages/[market]/categories/[...slug].astro
+src/pages/[market]/tests/[...slug].astro
+src/pages/[market]/providers/[...slug].astro
+```
+
+Avoid slug collisions with reserved market route segments such as:
+
+- `categories`
+- `tests`
+- `providers`
+
+## Content Locations
+
+English restored articles:
 
 ```text
 src/content/articles/en/
 ```
 
-The article frontmatter schema is intentionally minimal. Do not introduce new required fields without explicit approval, because restored legacy articles must remain importable.
+Polish translated articles:
 
-Expected article frontmatter fields:
+```text
+src/content/articles/pl/
+```
+
+Marketplace content collections:
+
+```text
+src/content/categories/
+src/content/tests/
+src/content/providers/
+```
+
+## Article Frontmatter
+
+The article schema is intentionally minimal. Only `title` is required.
+
+Common optional fields:
 
 ```yaml
 ---
@@ -77,20 +96,70 @@ restoredDate: "2026-08-14"
 sourceSnapshot: "http://web.archive.org/web/..."
 referringDomains: 0
 priorityTier: "P0"
-draft: true
+translationOfSlug: "english-original-slug"
 imageRestoreNeeded: true
+draft: true
 ---
 ```
 
-Only `title` is required. Most other fields are optional by schema.
+Rules:
 
-All restored articles must remain:
+- Do not add new required frontmatter fields without explicit approval.
+- All restored or translated articles must remain `draft: true` until the user explicitly approves publication.
+- Do not publish by changing `draft` to `false` unless explicitly asked.
+- For translated articles, `translationOfSlug` must point to the canonical English original slug.
 
-```yaml
-draft: true
+## Slug Rules
+
+English article slugs in `src/content/articles/en/` are legacy SEO URLs. Do not rename them unless the user explicitly asks for a migration and redirects.
+
+Polish article slugs must:
+
+- Be lowercase ASCII only.
+- Use only `a-z`, `0-9`, and hyphens.
+- Transliterate Polish characters:
+  - `ą -> a`
+  - `ć -> c`
+  - `ę -> e`
+  - `ł -> l`
+  - `ń -> n`
+  - `ó -> o`
+  - `ś -> s`
+  - `ź -> z`
+  - `ż -> z`
+- Have no spaces, underscores, Cyrillic, doubled hyphens, or leading/trailing hyphens.
+- Match the actual route slug resolved by `src/pages/[locale]/[...slug].astro`.
+- Be unique within `src/content/articles/pl/`.
+
+## Translation Audit
+
+Translation status is tracked in:
+
+```text
+audit/translation_status.csv
 ```
 
-until the user explicitly approves publication after manual review.
+Current columns:
+
+```csv
+slug,en_slug,locale,market,status,translator_source
+```
+
+Column meanings:
+
+- `slug`: localized article slug for the row locale.
+- `en_slug`: English original article slug.
+- `locale`: content locale such as `pl` or `en`.
+- `market`: market code such as `pl`.
+- `status`: translation state, currently draft for machine translations.
+- `translator_source`: translation provenance and review note.
+
+Rules:
+
+- Preserve row order unless the task explicitly asks to sort.
+- For `pl` rows, `en_slug` must match the article frontmatter `translationOfSlug`.
+- For `en` rows, `en_slug` should equal `slug`.
+- If `translationOfSlug` is missing or unresolved, leave `en_slug` empty and add a note to `audit/content_review_needed.md`.
 
 ## Article Restoration Rules
 
@@ -100,7 +169,7 @@ When restoring old content:
 - Use `last_snapshot_url_for_fetch` when available.
 - Cache raw snapshots in `audit/raw_snapshots/{slug}.html`.
 - Do not rewrite, improve, or invent article text.
-- Preserve the original slug exactly.
+- Preserve original English legacy slugs exactly.
 - Preserve headings, lists, and tables where possible.
 - Remove navigation, sidebar, footer, comments, ads, related posts, and Wayback UI.
 - If a fragment is unclear, add:
@@ -141,13 +210,13 @@ If an image cannot be found in Wayback:
 - Add `imageRestoreNeeded: true` to the article frontmatter.
 - Add a note to `audit/content_review_needed.md`.
 
-The most important recovered image is:
+Important recovered image:
 
 ```text
 public/wp-content/uploads/2017/06/ABO-and-RH-Blood-Grouping.png
 ```
 
-It corresponds to the legacy URL:
+It corresponds to:
 
 ```text
 http://allmedtests.com/wp-content/uploads/2017/06/ABO-and-RH-Blood-Grouping.png
@@ -167,17 +236,16 @@ audit/backlinks.csv
 audit/content_review_needed.md
 audit/images_to_recover.csv
 audit/remaining_articles_restore_report.csv
+audit/translation_status.csv
 ```
-
-`audit/urls_priority.csv` is the source of article prioritization.
 
 Current URL classification rules:
 
-- `homepage`: root URL only
-- `article`: real educational articles
-- `legacy_product`: old product/marketplace-style URLs
-- `taxonomy`: category/tag/archive URLs
-- `other`: service/legal/test pages
+- `homepage`: root URL only.
+- `article`: real educational articles.
+- `legacy_product`: old product / marketplace-style URLs.
+- `taxonomy`: category, tag, and archive URLs.
+- `other`: service, legal, and demo pages.
 
 Known service/demo pages must remain out of article restoration:
 
@@ -190,7 +258,7 @@ Known service/demo pages must remain out of article restoration:
 - `facebook-demo`
 - `my-instagram-feed-demo`
 
-Do not classify all slugs containing `demo` as service pages, because real articles such as `demonstrate-*` are valid educational content.
+Do not classify every slug containing `demo` as a service page. Real articles such as `demonstrate-*` are valid educational content.
 
 ## Homepage
 
@@ -206,22 +274,10 @@ It should:
 - Show the `allmedtests.com` brand.
 - List restored lab-test guide articles from the `articles` collection.
 - Show draft badges for articles with `draft: true`.
-- Include a non-clickable "Find a Test Near You" / marketplace teaser while `tests` and `providers` collections are empty.
+- Include a non-clickable marketplace teaser while `tests` and `providers` collections are empty.
 - Include a general affiliate disclosure in the footer.
 
 Do not add links to categories, tests, or providers until those pages actually exist.
-
-## Article Routes
-
-Article rendering is handled by:
-
-```text
-src/pages/[...slug].astro
-```
-
-It should render articles using the original legacy slugs, typically derived from `originalUrl`.
-
-Do not create duplicate article routes under `/en/`.
 
 ## Redirects
 
@@ -231,20 +287,20 @@ Cloudflare Pages uses:
 public/_redirects
 ```
 
-Current file is intentionally only a placeholder.
+The current file is intentionally only a placeholder.
 
 Do not add real redirects until legacy product and taxonomy mapping is finalized.
 
 Expected future redirect volume is around 260+ rules:
 
-- 95 legacy product URLs
-- 167 taxonomy URLs
+- 95 legacy product URLs.
+- 167 taxonomy URLs.
 
 This is below the normal Cloudflare Pages `_redirects` rule limit.
 
 ## Build And Validation
 
-Before finishing meaningful changes, run:
+Before finishing meaningful code or content-routing changes, run:
 
 ```bash
 npm run build
@@ -252,92 +308,10 @@ npm run build
 
 Expected warnings about empty `tests` and `providers` collections are okay while those collections have no content.
 
-Useful validation checks:
+Localized article routes in `src/pages/[locale]/[...slug].astro` currently generate only when:
 
 ```bash
-find src/content/articles/en -name '*.md' | wc -l
+MARKETPLACE_ENABLED=true npm run build
 ```
 
-```bash
-python3 - <<'PY'
-import re
-from pathlib import Path
-missing = []
-external = []
-for md in sorted(Path('src/content/articles/en').glob('*.md')):
-    text = md.read_text()
-    for m in re.finditer(r'!\\[[^\\]]*\\]\\(([^)]+)\\)', text):
-        src = m.group(1)
-        if 'allmedtests.com/wp-content' in src:
-            external.append((md.name, src))
-        if src.startswith('/wp-content/uploads/') and not (Path('public') / src.lstrip('/')).exists():
-            missing.append((md.name, src))
-print('missing', missing)
-print('external', external)
-PY
-```
-
-There should be no broken local image paths and no external image references to the old domain.
-
-## Git Hygiene
-
-Do not commit generated local build/cache noise unless explicitly requested.
-
-Avoid staging:
-
-```text
-.astro/
-dist/
-node_modules/
-scripts/__pycache__/
-```
-
-Prefer explicit `git add` paths for relevant source, audit, script, and public asset files.
-
-## Current Migration Status
-
-Completed:
-
-- URL audit and prioritization.
-- Astro skeleton.
-- Cloudflare Pages redirect placeholder.
-- Wave 1/P0 article restoration.
-- Wave 1 image restoration.
-- P2/P3 article restoration batch.
-- Homepage replacement.
-- `iodine-test-starch` recovery from an earlier working Wayback snapshot.
-- Reclassification of service/demo pages out of article priority.
-
-Current expected article count:
-
-```text
-44 Markdown article files in src/content/articles/en/
-```
-
-Current expected audit counters:
-
-```text
-homepage: 1
-article: 44
-legacy_product: 95
-taxonomy: 167
-other: 26
-```
-
-Priority counts:
-
-```text
-P0: 9
-P1: 0
-P2: 25
-P3: 10
-```
-
-Next likely phases:
-
-- Manual article review.
-- Recover or recreate missing images flagged by `imageRestoreNeeded`.
-- Build real marketplace taxonomy.
-- Map legacy product and taxonomy redirects.
-- Add provider/test content.
-- Later add more locales under prefixed routes such as `/es/...` and `/de/...`.
+Use this extra validation when changing translated article slugs or marketplace routing.

@@ -1,0 +1,98 @@
+---
+import { type LocaleCode } from '../i18n';
+import RangeMark from './RangeMark.astro';
+
+interface Props {
+  locale?: LocaleCode;
+}
+
+const { locale = 'en' } = Astro.props;
+const polishHref = '/pl/grupowanie-krwi-abo-i-rh/';
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <h5><RangeMark size="sm" /> AllMedTests</h5>
+        <p>
+          Independent educational guides to laboratory tests. The site explains results and methods before adding marketplace tools.
+        </p>
+      </div>
+      <div>
+        <h5>Sections</h5>
+        <a href="/#articles">All articles</a>
+        <a href={polishHref}>Polish guides</a>
+        <span aria-disabled="true">Test marketplace</span>
+      </div>
+      <div>
+        <h5>Project</h5>
+        <span aria-disabled="true">Privacy policy</span>
+        <span aria-disabled="true">Terms</span>
+        <span aria-disabled="true">Contact</span>
+      </div>
+    </div>
+    <div class="site-footer__disclosure">
+      Some links on this site are affiliate links. We may earn a commission when a lab test is ordered through them; this does not influence article content. Content is educational and does not replace consultation with a physician.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 13px;
+    padding: 44px 0 36px;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-bottom: 28px;
+  }
+
+  .site-footer h5 {
+    align-items: center;
+    color: var(--ink);
+    display: flex;
+    font-family: var(--font-body);
+    font-size: 13px;
+    gap: 8px;
+    margin: 0 0 12px;
+  }
+
+  .site-footer p {
+    margin: 0;
+    max-width: 40ch;
+  }
+
+  .site-footer a,
+  .site-footer span[aria-disabled='true'] {
+    color: var(--ink-soft);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    text-decoration: none;
+  }
+
+  .site-footer span[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+
+  .site-footer__disclosure {
+    background: var(--teal-tint);
+    border-radius: 8px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    padding: 14px 16px;
+  }
+
+  @media (max-width: 860px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

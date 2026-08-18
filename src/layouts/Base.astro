@@ -1,29 +1,17 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from './BaseLayout.astro';
+import type { LocaleCode } from '../i18n';
 
 interface Props {
   title?: string;
   description?: string;
-  locale?: string;
+  locale?: LocaleCode;
+  breadcrumbs?: { label: string; href?: string }[];
 }
 
-const { title = 'All Med Tests', description, locale = 'en' } = Astro.props;
+const { title, description, locale = 'en', breadcrumbs = [] } = Astro.props;
 ---
 
-<!doctype html>
-<html lang={locale}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    {description && <meta name="description" content={description} />}
-  </head>
-  <body>
-    <Header locale={locale} />
-    <main>
-      <slot />
-    </main>
-    <Footer locale={locale} />
-  </body>
-</html>
+<BaseLayout title={title} description={description} locale={locale} breadcrumbs={breadcrumbs}>
+  <slot />
+</BaseLayout>

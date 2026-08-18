@@ -1,0 +1,88 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { articleHref } from '../lib/routes';
+import DraftBadge from './DraftBadge.astro';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+  href?: string;
+  locale?: string;
+  routePrefix?: string;
+}
+
+const { article, href, locale = article.id.split('/')[0] ?? 'en', routePrefix = locale } = Astro.props;
+const resolvedHref = href ?? articleHref(article, locale, routePrefix);
+const tier = article.data.priorityTier ?? 'Guide';
+const restored = article.data.restoredDate ?? article.data.originalPublishDate;
+---
+
+<a class:list={['article-card', { 'article-card--draft': article.data.draft }]} href={resolvedHref}>
+  <div class="article-card__top">
+    <span class="article-card__tag">{tier}</span>
+    <DraftBadge show={article.data.draft} />
+  </div>
+  <h3>{article.data.title}</h3>
+  {article.data.description && <p>{article.data.description}</p>}
+  <div class="article-card__meta">
+    {restored ? `Restored ${restored}` : 'Educational guide'}
+    {article.data.imageRestoreNeeded ? ' · image review needed' : ''}
+  </div>
+</a>
+
+<style>
+  .article-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--teal);
+    border-radius: 8px;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 100%;
+    padding: 20px;
+    text-decoration: none;
+  }
+
+  .article-card--draft {
+    border-left-color: var(--amber);
+  }
+
+  .article-card:hover {
+    border-color: var(--ink-soft);
+  }
+
+  .article-card__top {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .article-card__tag {
+    color: var(--teal);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  .article-card h3 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .article-card p {
+    color: var(--ink-soft);
+    flex: 1;
+    font-size: 13.5px;
+    margin: 0;
+  }
+
+  .article-card__meta {
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 12px;
+    padding-top: 10px;
+  }
+</style>
