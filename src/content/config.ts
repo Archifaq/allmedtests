@@ -66,4 +66,15 @@ const categories = defineCollection({
   }),
 });
 
-export const collections = { articles, tests, providers, categories };
+const locations = defineCollection({
+  type: 'content',
+  schema: z.object({
+    market: marketSchema,
+    title: z.string(),
+    region: z.string().optional(),
+    description: z.string().optional(),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { articles, tests, providers, categories, locations };

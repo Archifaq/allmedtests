@@ -2,12 +2,13 @@
 
 ## Current State
 
-`allmedtests.com` is being rebuilt from an old WordPress medical / lab-test content site into an Astro static site.
+`allmedtests.com` is being rebuilt from an old WordPress medical / lab-test content site into an Astro static site with a restrained editorial design system.
 
 The project currently has:
 
 - 44 restored English educational articles in `src/content/articles/en/`.
 - 9 Polish translated draft articles in `src/content/articles/pl/`.
+- A design system implemented from provided HTML mockups.
 - Marketplace collection scaffolding for categories, tests, and providers.
 - Polish category content in `src/content/categories/pl/`.
 - Empty test and provider collections.
@@ -21,6 +22,83 @@ The project currently has:
 - Content collections in `src/content/config.ts`.
 - Build command: `npm run build`.
 - Output directory: `dist/`.
+
+## Design System State
+
+Design tokens live in:
+
+```text
+src/styles/tokens.css
+```
+
+The active layout is:
+
+```text
+src/layouts/BaseLayout.astro
+```
+
+`src/layouts/Base.astro` remains as a compatibility wrapper.
+
+Reusable design components live in `src/components/`:
+
+- `SiteHeader.astro`
+- `SiteFooter.astro`
+- `RangeMark.astro`
+- `DraftBadge.astro`
+- `EmptyStateCard.astro`
+- `MissingImagePlaceholder.astro`
+- `ReferenceRangeTable.astro`
+- `ArticleCard.astro`
+- `MarketplaceTeaser.astro`
+- `TranslationNote.astro`
+- `TableOfContents.astro`
+
+The signature visual motif is `RangeMark`, used in the logo, hero graphic, category pills, footer, translation notes, and related UI.
+
+The UI has been wired to real content collections. Placeholder copy, provider names, prices, and numbers from the design mockups were not imported as data.
+
+## Current Page Implementations
+
+Homepage:
+
+```text
+src/pages/index.astro
+```
+
+Uses `BaseLayout`, `RangeMark`, `ArticleCard`, and `MarketplaceTeaser`. It displays real English articles from `articles/en`, Polish draft count from `articles/pl`, and no live marketplace CTAs while tests/providers are empty.
+
+English article route:
+
+```text
+src/pages/[...slug].astro
+```
+
+Keeps English articles at root `/slug/`. Uses `TableOfContents`, `DraftBadge`, `MissingImagePlaceholder`, `TranslationNote`, `ReferenceRangeTable`, and related `ArticleCard`s.
+
+Translated article route:
+
+```text
+src/pages/[locale]/[...slug].astro
+```
+
+This is the single route for translated articles. Polish pages resolve to `/pl/{slug}/` when `MARKETPLACE_ENABLED=true`.
+
+Marketplace routes:
+
+```text
+src/pages/[market]/index.astro
+src/pages/[market]/categories/[...slug].astro
+src/pages/[market]/tests/[...slug].astro
+src/pages/[market]/providers/[...slug].astro
+```
+
+Category pages show real category data and related guides. Tests/providers use empty-state UI until verified marketplace data exists.
+
+Route helpers live in:
+
+```text
+src/lib/routes.ts
+```
 
 ## Important URLs
 
@@ -46,6 +124,14 @@ Polish article URLs are localized and prefixed with `/pl/`, for example:
 /pl/grupowanie-krwi-abo-i-rh/
 /pl/badanie-glukozy-we-krwi-metoda-oksydazy-glukozowej/
 ```
+
+## Content Schema State
+
+Article schema remains intentionally minimal. Only `title` is required.
+
+`referenceRanges` is now optional for articles and tests so `ReferenceRangeTable` can render real structured range data when available. Existing content does not need this field.
+
+Do not add fake reference ranges to restored articles or tests just to populate UI.
 
 ## Current Polish Article Mapping
 
@@ -122,6 +208,8 @@ src/content/categories/pl/
 
 Tests and providers are intentionally empty until real provider/test partnership data is available.
 
+Marketplace UI currently uses empty states and disabled/non-live messaging for missing provider, price, and test data.
+
 ## Build Notes
 
 Standard build:
@@ -135,10 +223,10 @@ Expected warnings:
 - Empty `tests` collection.
 - Empty `providers` collection.
 
-Localized article routes currently generate only when marketplace mode is enabled:
+Localized article routes and market pages currently generate only when marketplace mode is enabled:
 
 ```bash
 MARKETPLACE_ENABLED=true npm run build
 ```
 
-Use this extra build when checking `/pl/{slug}/` output.
+Use this extra build when checking `/pl/{slug}/` output or market pages.

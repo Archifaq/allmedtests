@@ -1,6 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 
-export function entrySlug(entry: CollectionEntry<'articles' | 'categories' | 'tests' | 'providers'>) {
+export function entrySlug(entry: CollectionEntry<'articles' | 'categories' | 'tests' | 'providers' | 'locations'>) {
   return entry.id.replace(/^[^/]+\//, '').replace(/\.md$/, '');
 }
 
@@ -34,4 +34,8 @@ export function testHref(market: string, test: CollectionEntry<'tests'>) {
 
 export function providerHref(market: string, provider: CollectionEntry<'providers'>) {
   return `/${market}/providers/${entrySlug(provider)}/`;
+}
+
+export function cityHref(market: string, city: CollectionEntry<'locations'>) {
+  return `/${market}/cities/${entrySlug(city)}/`;
 }
