@@ -9,6 +9,16 @@ interface Props {
   description?: string;
   locale?: LocaleCode;
   breadcrumbs?: { label: string; href?: string }[];
+  canonicalUrl?: string;
+  robots?: string;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    url?: string;
+    locale?: string;
+    type?: string;
+  };
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -16,7 +26,13 @@ const {
   description,
   locale = 'en',
   breadcrumbs = [],
+  canonicalUrl,
+  robots,
+  openGraph,
+  jsonLd,
 } = Astro.props;
+
+const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 ---
 
 <!doctype html>
@@ -27,6 +43,14 @@ const {
     <meta name="color-scheme" content="light" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {robots && <meta name="robots" content={robots} />}
+    {openGraph?.title && <meta property="og:title" content={openGraph.title} />}
+    {openGraph?.description && <meta property="og:description" content={openGraph.description} />}
+    {openGraph?.url && <meta property="og:url" content={openGraph.url} />}
+    {openGraph?.locale && <meta property="og:locale" content={openGraph.locale} />}
+    {openGraph?.type && <meta property="og:type" content={openGraph.type} />}
+    {jsonLdItems.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

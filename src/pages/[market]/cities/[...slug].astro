@@ -46,12 +46,40 @@ const providers = await getCollection(
 );
 const otherCities = cities.filter((item) => item.id !== city.id);
 const { Content } = await city.render();
+const canonicalPath = cityHref(market, city);
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? 'https://allmedtests.com').toString();
+const titleParts = [city.data.title, city.data.region, `AllMedTests ${market.toUpperCase()}`].filter(Boolean);
+const pageTitle = titleParts.join(' - ');
+const pageDescription = city.data.description ?? [city.data.title, city.data.region].filter(Boolean).join(', ');
+const ogLocale = config.locale === 'pl' ? 'pl_PL' : config.hreflang.replace('-', '_');
+const placeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: city.data.title,
+  url: canonicalUrl,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: city.data.title,
+    ...(city.data.region ? { addressRegion: city.data.region } : {}),
+    addressCountry: market.toUpperCase(),
+  },
+};
 ---
 
 <BaseLayout
-  title={`${city.data.title} — AllMedTests ${market.toUpperCase()}`}
-  description={city.data.description}
+  title={pageTitle}
+  description={pageDescription}
   locale={config.locale}
+  canonicalUrl={canonicalUrl}
+  robots={city.data.draft ? 'noindex, follow' : undefined}
+  openGraph={{
+    title: pageTitle,
+    description: pageDescription,
+    url: canonicalUrl,
+    locale: ogLocale,
+    type: 'website',
+  }}
+  jsonLd={placeJsonLd}
   breadcrumbs={[{ label: 'Cities', href: `/${market}/` }, { label: city.data.title }]}
 >
   <section class="city-hero wrap">
