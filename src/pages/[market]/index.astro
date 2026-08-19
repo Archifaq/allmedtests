@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import DraftBadge from '../../components/DraftBadge.astro';
 import EmptyStateCard from '../../components/EmptyStateCard.astro';
 import RangeMark from '../../components/RangeMark.astro';
 import { markets, type MarketCode } from '../../data/markets';
@@ -42,7 +43,8 @@ const cities = await getCollection('locations', ({ data }) => data.market === ma
           {categories.map((category) => (
             <a class="market-pill" href={categoryHref(market, category)}>
               <RangeMark size="sm" />
-              {category.data.title}
+              <span class="market-pill__label">{category.data.title}</span>
+              <DraftBadge show={category.data.draft} />
             </a>
           ))}
         </div>
@@ -127,5 +129,9 @@ const cities = await getCollection('locations', ({ data }) => data.market === ma
     gap: 8px;
     padding: 8px 14px;
     text-decoration: none;
+  }
+
+  .market-pill__label {
+    min-width: 0;
   }
 </style>
