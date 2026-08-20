@@ -6,7 +6,7 @@ You are working in the `allmedtests.com` Astro repository.
 
 1. Preserve SEO-critical legacy URLs.
 2. Keep English article URLs unprefixed at `/slug/`.
-3. Keep restored and translated articles as `draft: true` until explicit publication approval.
+3. Keep restored, translated, and marketplace research records as `draft: true` until explicit approval.
 4. Keep the content schema minimal; do not add required frontmatter fields without approval.
 5. Use existing Astro routes, layouts, components, and content collection patterns.
 6. Keep UI connected to real content collections; do not copy placeholder data from mockups into production pages.
@@ -15,7 +15,7 @@ You are working in the `allmedtests.com` Astro repository.
 
 - The homepage route `/`.
 - English article slugs in `src/content/articles/en/`.
-- `draft: true` on restored or translated articles.
+- `draft: true` on restored articles, translated articles, draft categories, draft cities, draft providers, or other pending-review content.
 - Astro i18n config in `astro.config.*`, unless reporting a clear issue separately.
 - Cloudflare redirects in `public/_redirects`, unless redirect mapping has been approved.
 - Required frontmatter fields in `src/content/config.ts`.
@@ -47,9 +47,17 @@ src/pages/[market]/tests/[...slug].astro
 src/pages/[market]/providers/[...slug].astro
 ```
 
-When changing translated slugs, check for collisions with reserved market route segments such as `categories`, `cities`, `tests`, and `providers`.
+Marketplace routes are feature-gated:
+
+```bash
+MARKETPLACE_ENABLED=true
+```
+
+Without this env var, default builds must not generate translated article routes or market routes.
 
 Use `src/lib/routes.ts` helpers for article, category, city, test, provider, and market URLs instead of hand-rolling path strings.
+
+Do not create standalone city listing routes such as `/pl/cities/` without explicit request.
 
 ## Design System Instructions
 
@@ -59,21 +67,7 @@ Design tokens live in:
 src/styles/tokens.css
 ```
 
-Use only the established token palette and font variables unless the user explicitly asks for a design expansion:
-
-- `--paper`
-- `--surface`
-- `--ink`
-- `--ink-soft`
-- `--line`
-- `--teal`
-- `--teal-tint`
-- `--amber`
-- `--amber-tint`
-- `--red`
-- `--font-display`
-- `--font-body`
-- `--font-mono`
+Use only the established token palette and font variables unless the user explicitly asks for a design expansion.
 
 The base layout is:
 
@@ -81,9 +75,7 @@ The base layout is:
 src/layouts/BaseLayout.astro
 ```
 
-`src/layouts/Base.astro` is a compatibility wrapper around `BaseLayout.astro`.
-
-Use these existing components rather than duplicating markup:
+Use existing components rather than duplicating markup:
 
 - `SiteHeader.astro`
 - `SiteFooter.astro`
@@ -99,15 +91,16 @@ Use these existing components rather than duplicating markup:
 
 Component behavior rules:
 
+- `RangeMark` is the single implementation of the signature range icon.
 - `DraftBadge` renders only for `draft: true`.
 - `MissingImagePlaceholder` is shown when `imageRestoreNeeded: true`.
 - `TranslationNote` renders only when a translation/original URL resolves.
 - `TableOfContents` uses rendered article headings, not hardcoded headings.
-- `ReferenceRangeTable` must use real `referenceRanges` data when present; do not invent ranges from mockups.
-- `MarketplaceTeaser` stays low-key and non-clickable while tests/providers are empty.
-- `EmptyStateCard` is the shared UI for unavailable marketplace data.
+- `EmptyStateCard` is the shared UI for unavailable or unverified marketplace data.
+- `MarketplaceTeaser` stays low-key and non-clickable while verified tests/providers are unavailable.
+- `ReferenceRangeTable` must use real `referenceRanges` data when present; do not invent ranges.
 
-## Article Content Instructions
+## Content Instructions
 
 English restored articles live in:
 
@@ -150,6 +143,8 @@ Polish transliteration:
 - `ź -> z`
 - `ż -> z`
 
+Do not add fake `referenceRanges`, providers, addresses, prices, availability, LOINC codes, or CTAs.
+
 ## Frontmatter Instructions
 
 Only `title` is required for articles. Most other fields are optional by design.
@@ -181,6 +176,42 @@ referenceRanges:
 
 Do not add fake `referenceRanges` just to make the UI look populated.
 
+## Marketplace Instructions
+
+`src/data/markets.ts` defines 20 planned market codes. A market code being present is not approval to add content for that market.
+
+Currently populated marketplace content:
+
+- `pl`: draft categories, draft city pages, and draft provider research records.
+- `ie`: draft categories, draft city pages, and draft provider research records.
+- `us`: draft categories and draft city pages only.
+- `uk`: draft categories and draft city pages only.
+- All other markets: no populated marketplace content.
+- `tests`: empty for all markets.
+
+Adding categories, cities, tests, providers, or a new market code still requires explicit user scope, even when the market code already exists in `markets.ts`.
+
+Do not add more cities, replicate city pages to other markets, or add real lab/provider/location data unless the user explicitly scopes that work.
+
+`draft: true` means not approved / pending review. Draft records may still render when `MARKETPLACE_ENABLED=true`, marked with `DraftBadge`; they are not implied to be verified or live.
+
+Provider records in `pl` and `ie` are research placeholders only. Their source logs are:
+
+```text
+audit/providers_research_log.csv
+audit/providers_research_log_ie.csv
+```
+
+These records must stay `draft: true` and must not create live CTAs, prices, availability, address listings, or other verified-provider UI until a human explicitly approves that next step.
+
+When tests/providers/city listings are empty or unverified:
+
+- Use `EmptyStateCard`.
+- Do not render live links or CTAs that imply tests/providers are available.
+- Keep homepage marketplace messaging low-key.
+
+Current homepage city links are limited to the existing PL city preparation block when marketplace mode is enabled. Do not add homepage city blocks for `us`, `uk`, or `ie` without explicit scope.
+
 ## Translation Audit Instructions
 
 Translation status is tracked in:
@@ -197,9 +228,9 @@ slug,en_slug,locale,market,status,translator_source
 
 Rules:
 
-- Preserve the existing row order unless explicitly asked to sort.
+- Preserve existing row order unless explicitly asked to sort.
 - Do not change existing values except the columns requested by the task.
-- For `pl` rows, `en_slug` must match the corresponding article frontmatter `translationOfSlug`.
+- For `pl` rows, `en_slug` must match article frontmatter `translationOfSlug`.
 - For `en` rows, `en_slug` should equal `slug`.
 - If a translated article cannot be mapped to an English original, leave `en_slug` empty and add a note to `audit/content_review_needed.md`:
 
@@ -248,57 +279,6 @@ If an image is missing:
 - Add `imageRestoreNeeded: true`.
 - Add a note to `audit/content_review_needed.md`.
 
-## Marketplace Instructions
-
-Categories, cities, tests, and providers belong to the feature-flagged marketplace layer.
-
-The marketplace layer is gated by:
-
-```bash
-MARKETPLACE_ENABLED=true
-```
-
-Without this env var, default builds must not generate `/pl/`, `/pl/cities/...`, or city links on the homepage.
-
-`src/data/markets.ts` currently defines more market codes than have real content. Only `pl` (translated articles, categories, cities, and draft provider research records), `ie` (draft categories, draft city pages, and draft provider research records), and `us`/`uk` (draft categories and draft city pages only) currently have populated marketplace content collections. The presence of a market code in `markets.ts` is not itself approval to add content for it. Treat adding content for any market code, new or already defined, the same as adding a new market: it needs the user to explicitly scope that work first.
-
-`draft: true` on a content record means "not approved / pending review." It does not prevent the record's marketplace route from being generated when `MARKETPLACE_ENABLED=true`. Draft records still render, marked with `DraftBadge`; they are just not implied to be verified or live.
-
-PL city pages currently use the `locations` collection and route:
-
-```text
-src/content/locations/pl/
-src/pages/[market]/cities/[...slug].astro
-```
-
-Initial PL city slugs are:
-
-- `warszawa`
-- `krakow`
-- `wroclaw`
-- `poznan`
-- `gdansk`
-- `lodz`
-
-Tests are intentionally empty until real test catalog data is available. Provider records may exist as `draft: true` research placeholders, but they are not verified live marketplace listings until manual approval and should not create CTAs, prices, availability, or address listings.
-
-Do not create fake providers, lab names, addresses, prices, LOINC codes, collection points, or availability values from design mockups.
-
-When tests/providers/city listings are empty:
-
-- Use `EmptyStateCard`.
-- Do not render real links or CTAs that imply the marketplace is live.
-- Keep homepage marketplace messaging as a one-line `MarketplaceTeaser`.
-
-Current PL city links are intentionally limited to:
-
-- `/pl/`, the PL market index, which contains a Cities section when marketplace mode is enabled.
-- `/`, which contains a low-key "Polish city pages in preparation" block when marketplace mode is enabled.
-
-Do not create a standalone `/pl/cities/` listing route unless explicitly requested.
-
-`us`, `uk`, and `ie` currently have explicitly scoped draft city pages. Do not add more cities, replicate city pages to other markets, or add real lab/provider/location data unless the user explicitly scopes that work.
-
 ## Validation
 
 For meaningful code, routing, design, or content changes, run:
@@ -307,12 +287,12 @@ For meaningful code, routing, design, or content changes, run:
 npm run build
 ```
 
-Warnings about an empty `tests` collection are expected while tests have no content. Empty provider warnings may appear only in checkouts where providers have not yet been populated.
-
 When validating translated article routes or marketplace routes, also run:
 
 ```bash
 MARKETPLACE_ENABLED=true npm run build
 ```
 
-This is needed because localized article routes and market pages currently generate only when marketplace mode is enabled.
+Warnings about an empty `tests` collection are expected while tests have no content. Empty provider warnings may appear only in checkouts where provider records have not yet been populated.
+
+This extra build is needed because localized article routes and market pages currently generate only when marketplace mode is enabled.

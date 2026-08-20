@@ -10,11 +10,10 @@ The project currently has:
 - 9 Polish translated draft articles in `src/content/articles/pl/`.
 - A design system implemented from provided HTML mockups.
 - Marketplace collection scaffolding for categories, locations, tests, and providers.
-- Polish category content in `src/content/categories/pl/`.
-- Six Polish draft city pages in `src/content/locations/pl/`.
-- Draft English-market category and city scaffolds for `us`, `uk`, and `ie`.
+- Draft category content for `pl`, `us`, `uk`, and `ie`.
+- Draft city pages for `pl`, `us`, `uk`, and `ie`.
+- Draft provider research records for `pl` and `ie`.
 - An empty `tests` collection.
-- Draft PL and IE provider research records in `src/content/providers/pl/` and `src/content/providers/ie/`, with source tracing in `audit/providers_research_log.csv` and `audit/providers_research_log_ie.csv`.
 - Cloudflare Pages as the deployment target.
 
 ## Technical Stack
@@ -42,7 +41,7 @@ src/layouts/BaseLayout.astro
 
 `src/layouts/Base.astro` remains as a compatibility wrapper.
 
-Reusable design components live in `src/components/`:
+Reusable components live in `src/components/`:
 
 - `SiteHeader.astro`
 - `SiteFooter.astro`
@@ -56,11 +55,9 @@ Reusable design components live in `src/components/`:
 - `TranslationNote.astro`
 - `TableOfContents.astro`
 
-The signature visual motif is `RangeMark`, used in the logo, hero graphic, category pills, footer, translation notes, and related UI.
+The UI is wired to real content collections. Placeholder provider names, prices, availability values, and mockup numbers must not be imported as data.
 
-The UI has been wired to real content collections. Placeholder copy, provider names, prices, and numbers from the design mockups were not imported as data.
-
-## Current Page Implementations
+## Page Implementations
 
 Homepage:
 
@@ -68,9 +65,7 @@ Homepage:
 src/pages/index.astro
 ```
 
-Uses `BaseLayout`, `RangeMark`, `ArticleCard`, and `MarketplaceTeaser`. It displays real English articles from `articles/en`, Polish draft count from `articles/pl`, and no live marketplace CTAs while tests/providers are empty.
-
-When `MARKETPLACE_ENABLED=true`, the homepage also renders a low-key "Polish city pages in preparation" block with links to the 6 PL city pages from `locations/pl`. Without that env var, the homepage has no city links.
+The homepage stays at `/`, displays real English articles from `articles/en`, shows Polish draft article count, and keeps marketplace messaging low-key. When `MARKETPLACE_ENABLED=true`, it also renders the existing low-key PL city preparation block with links to the 6 PL city pages. It does not currently add homepage city blocks for `us`, `uk`, or `ie`.
 
 English article route:
 
@@ -78,7 +73,7 @@ English article route:
 src/pages/[...slug].astro
 ```
 
-Keeps English articles at root `/slug/`. Uses `TableOfContents`, `DraftBadge`, `MissingImagePlaceholder`, `TranslationNote`, `ReferenceRangeTable`, and related `ArticleCard`s.
+Keeps English articles at root `/slug/`.
 
 Translated article route:
 
@@ -98,7 +93,7 @@ src/pages/[market]/tests/[...slug].astro
 src/pages/[market]/providers/[...slug].astro
 ```
 
-Category pages show real category data and related guides. City pages show real city content plus an `EmptyStateCard` for unverified labs and collection points. Tests/providers use empty-state UI until verified marketplace data exists.
+Category pages show category data and related guides. City pages show city content plus `EmptyStateCard` for unverified labs and collection points. Provider pages render draft research placeholders but do not contain verified prices, addresses, test availability, or CTAs. Tests are empty.
 
 Route helpers live in:
 
@@ -124,27 +119,26 @@ English articles must remain at root paths such as:
 
 Do not create `/en/...` article URLs.
 
-Polish article URLs are localized and prefixed with `/pl/`, for example:
+Polish translated article URLs are localized and prefixed with `/pl/`.
+
+Marketplace city URLs are feature-gated and use:
 
 ```text
-/pl/grupowanie-krwi-abo-i-rh/
-/pl/badanie-glukozy-we-krwi-metoda-oksydazy-glukozowej/
+/{market}/cities/{slug}/
 ```
 
-Polish city URLs are marketplace-gated and prefixed with `/pl/cities/`, for example:
+Examples:
 
 ```text
 /pl/cities/warszawa/
-/pl/cities/krakow/
+/us/cities/new-york/
+/uk/cities/london/
+/ie/cities/dublin/
 ```
 
 ## Content Schema State
 
 Article schema remains intentionally minimal. Only `title` is required.
-
-`referenceRanges` is now optional for articles and tests so `ReferenceRangeTable` can render real structured range data when available. Existing content does not need this field.
-
-Do not add fake reference ranges to restored articles or tests just to populate UI.
 
 The `locations` collection is intentionally minimal:
 
@@ -154,71 +148,18 @@ The `locations` collection is intentionally minimal:
 - `description`
 - `draft`
 
-All current PL city pages are `draft: true`.
+The `providers` collection is intentionally minimal:
 
-## Current Polish Article Mapping
+- `market`
+- `name`
+- `affiliateNetwork` optional
+- `affiliateUrl` optional
+- `countriesAvailable` optional
+- `draft`
 
-The current Polish translated articles are:
+Do not add new required fields to `src/content/config.ts` without explicit approval.
 
-| pl slug | en_slug |
-|---|---|
-| `spektrofotometr-zasada-dzialania-uzycie-i-zastosowania` | `spectrophotometer-working-principle-use-applications` |
-| `proba-benedicta-i-analiza-cukrow-redukujacych` | `benedicts-test-reducing-sugar` |
-| `badanie-glukozy-we-krwi-metoda-oksydazy-glukozowej` | `blood-glucose-test` |
-| `badanie-kinazy-kreatynowej-metoda-kinetyczna-ifcc-zasada-procedura-wyniki` | `creatine-kinase-test` |
-| `badanie-mocznika-w-surowicy-metoda-kinetyczna-uv` | `serum-urea-test-kinetic-uv-method` |
-| `grupowanie-krwi-abo-i-rh` | `abo-and-rh-blood-grouping` |
-| `rozdzial-aminokwasow-metoda-chromatografii-bibulowej` | `separation-amino-acids-paper-chromatography` |
-| `badanie-kliniczne-ukladu-czuciowego` | `clinical-examination-sensory-system` |
-| `fotoelektryczny-kolorymetr-zasada-dzialania-uzycie-i-zastosowania` | `photoelectric-colorimeter` |
-
-Each Polish article has `translationOfSlug` in frontmatter pointing to the corresponding English original.
-
-All Polish translated articles are machine translations pending native review and must remain `draft: true`.
-
-## Translation Status CSV
-
-Translation status lives in:
-
-```text
-audit/translation_status.csv
-```
-
-Current columns:
-
-```csv
-slug,en_slug,locale,market,status,translator_source
-```
-
-The `slug` column tracks the localized content slug. The `en_slug` column links each translation row to its English source article.
-
-## Important Audit Files
-
-- `audit/urls_priority.csv`: prioritized article restoration queue.
-- `audit/urls_full.csv`: full kept URL audit.
-- `audit/backlinks.csv`: backlink source data.
-- `audit/content_review_needed.md`: unresolved content, image, and mapping issues.
-- `audit/images_to_recover.csv`: image recovery queue.
-- `audit/remaining_articles_restore_report.csv`: restoration progress report.
-- `audit/translation_status.csv`: translation tracking and EN mapping.
-- `audit/category_sources_review.md`: source notes for English market category copy.
-- `audit/providers_research_log.csv`: PL provider research source log.
-- `audit/providers_research_log_ie.csv`: IE provider research source log.
-- `audit/us_uk_ie_cities_source.md`: source notes for US/UK/IE draft city selection.
-
-## Known Review Items
-
-`audit/content_review_needed.md` includes missing image notes and content review items.
-
-Existing examples include:
-
-- Missing Benedict's test result image.
-- Missing clinical sensory system image.
-- Missing images for several restored English articles.
-- Marketplace test data still requires real sourcing before populating tests.
-- PL and IE provider research records still require manual validation before any provider data is treated as live.
-
-## Marketplace State
+## Market Config
 
 Market config lives in:
 
@@ -226,7 +167,7 @@ Market config lives in:
 src/data/markets.ts
 ```
 
-`src/data/markets.ts` defines the full list of planned market codes:
+It currently defines 20 planned market codes:
 
 - `us`
 - `uk`
@@ -249,57 +190,122 @@ src/data/markets.ts
 - `dk`
 - `fi`
 
-Defining a market code here does not mean it has real content. It makes the code valid for the `market` schema field and enables its marketplace route to build when `MARKETPLACE_ENABLED=true`.
+Defining a market code does not mean it has real content. It makes the code valid for `market` fields and lets marketplace routes build when `MARKETPLACE_ENABLED=true`.
 
-`pl` is the first localized market with translated articles, city pages, category content, and draft provider research records. `us`, `uk`, and `ie` are English-language commercial-market scaffolds: they currently have `draft: true` category records and `draft: true` city pages. `ie` also has `draft: true` provider research placeholders; `us` and `uk` have no provider records yet. None of these markets has test records.
+When `MARKETPLACE_ENABLED=true`, `src/pages/[market]/index.astro` generates an index page for every market code in `markets.ts`, even when that market has no content. Empty markets render `EmptyStateCard`; this is expected.
 
-All other market codes in `markets.ts` have no content collections populated yet. Their presence in `markets.ts` is scaffolding for future markets, not implicit approval to add content.
+Adding content for a market that does not already have it, or adding a new market code, still requires explicit user scope.
 
-When `MARKETPLACE_ENABLED=true`, `src/pages/[market]/index.astro` generates an index page for every market code in `markets.ts` via `getStaticPaths`, regardless of whether that market has real content. Empty markets render `EmptyStateCard` for categories, cities, and tests/providers. This is expected, not a bug.
+## Current Marketplace Content
 
-Adding real content such as categories, cities, tests, or providers for a market code that does not already have it — or adding a new market code to `markets.ts` — still requires the user to explicitly scope that work, the same as any other marketplace expansion.
+Categories:
 
-Polish categories currently exist under:
+- `pl`: 8 draft category files.
+- `us`: 7 draft category files.
+- `uk`: 7 draft category files.
+- `ie`: 7 draft category files.
+- All other markets: no category files.
+
+Locations:
+
+- `pl`: 6 draft city pages: `warszawa`, `krakow`, `wroclaw`, `poznan`, `gdansk`, `lodz`.
+- `us`: 6 draft city pages: `new-york`, `los-angeles`, `chicago`, `houston`, `phoenix`, `miami`.
+- `uk`: 6 draft city pages: `london`, `manchester`, `birmingham`, `leeds`, `glasgow`, `bristol`.
+- `ie`: 5 draft city pages: `dublin`, `cork`, `galway`, `limerick`, `waterford`.
+- All other markets: no location files.
+
+Providers:
+
+- `pl`: 3 draft provider research records: `diagnostyka`, `alab-laboratoria`, `synevo`.
+- `ie`: 27 draft provider research records.
+- IE provider count by city: Dublin 9, Cork 7, Galway 3, Limerick 5, Waterford 3.
+- `us` and `uk`: no provider records.
+- All other markets: no provider records.
+
+Tests:
+
+- Empty for every market.
+
+Provider research records are not verified live marketplace listings. They must remain `draft: true` and require manual validation before any future step treats them as real provider, address, price, or availability data.
+
+Source tracing:
+
+- PL provider research source log: `audit/providers_research_log.csv` with 18 data rows.
+- IE provider research source log: `audit/providers_research_log_ie.csv` with 27 data rows.
+- IE Waterford `UPMC Whitfield Hospital` is low-confidence because it is based on an aggregator source and needs direct-source confirmation.
+
+## Current Polish Article Mapping
+
+The current Polish translated articles are:
+
+| pl slug | en_slug |
+|---|---|
+| `spektrofotometr-zasada-dzialania-uzycie-i-zastosowania` | `spectrophotometer-working-principle-use-applications` |
+| `proba-benedicta-i-analiza-cukrow-redukujacych` | `benedicts-test-reducing-sugar` |
+| `badanie-glukozy-we-krwi-metoda-oksydazy-glukozowej` | `blood-glucose-test` |
+| `badanie-kinazy-kreatynowej-metoda-kinetyczna-ifcc-zasada-procedura-wyniki` | `creatine-kinase-test` |
+| `badanie-mocznika-w-surowicy-metoda-kinetyczna-uv` | `serum-urea-test-kinetic-uv-method` |
+| `grupowanie-krwi-abo-i-rh` | `abo-and-rh-blood-grouping` |
+| `rozdzial-aminokwasow-metoda-chromatografii-bibulowej` | `separation-amino-acids-paper-chromatography` |
+| `badanie-kliniczne-ukladu-czuciowego` | `clinical-examination-sensory-system` |
+| `fotoelektryczny-kolorymetr-zasada-dzialania-uzycie-i-zastosowania` | `photoelectric-colorimeter` |
+
+All Polish translated articles are machine translations pending review and must remain `draft: true`.
+
+## Audit Files
+
+Important audit files:
+
+- `audit/urls_priority.csv`: prioritized article restoration queue.
+- `audit/urls_full.csv`: full kept URL audit.
+- `audit/backlinks.csv`: backlink source data.
+- `audit/content_review_needed.md`: unresolved content, image, and manual review issues.
+- `audit/images_to_recover.csv`: image recovery queue.
+- `audit/remaining_articles_restore_report.csv`: restoration progress report.
+- `audit/translation_status.csv`: translation tracking and EN mapping.
+- `audit/category_sources_review.md`: source notes for English market category copy.
+- `audit/providers_research_log.csv`: PL provider research source log.
+- `audit/providers_research_log_ie.csv`: IE provider research source log.
+- `audit/us_uk_ie_cities_source.md`: source notes for US/UK/IE draft city selection.
+
+## Restoration Audit Details
+
+Current URL classification rules:
+
+- `homepage`: root URL only.
+- `article`: real educational articles.
+- `legacy_product`: old product / marketplace-style URLs.
+- `taxonomy`: category, tag, and archive URLs.
+- `other`: service, legal, and demo pages.
+
+Known service/demo pages must remain out of article restoration:
+
+- `contact`
+- `about`
+- `privacy-policy`
+- `privacy`
+- `terms`
+- `disclaimer`
+- `facebook-demo`
+- `my-instagram-feed-demo`
+
+Do not classify every slug containing `demo` as a service page. Real articles such as `demonstrate-*` are valid educational content.
+
+Important recovered image:
 
 ```text
-src/content/categories/pl/
+public/wp-content/uploads/2017/06/ABO-and-RH-Blood-Grouping.png
 ```
 
-Polish city pages currently exist under:
+It corresponds to:
 
 ```text
-src/content/locations/pl/
+http://allmedtests.com/wp-content/uploads/2017/06/ABO-and-RH-Blood-Grouping.png
 ```
 
-Draft English-market city pages currently exist under:
+This image had 9 referring domains and must remain available at the same path after deployment.
 
-```text
-src/content/locations/us/
-src/content/locations/uk/
-src/content/locations/ie/
-```
-
-Current PL city slugs:
-
-- `warszawa`
-- `krakow`
-- `wroclaw`
-- `poznan`
-- `gdansk`
-- `lodz`
-
-Tests are still empty. PL and IE provider records exist as `draft: true` research placeholders only, with source tracing kept in `audit/providers_research_log.csv` and `audit/providers_research_log_ie.csv`; they are not verified live marketplace listings.
-
-Marketplace UI currently uses empty states and disabled/non-live messaging for missing provider, price, and test data.
-
-City pages must not contain fake lab names, addresses, prices, collection points, or provider availability. They use `EmptyStateCard` until verified partner/location data exists.
-
-City links currently appear in two places, both marketplace-gated:
-
-- `/pl/`, the PL market index, has the Cities section.
-- `/`, the root homepage, has the low-key city preparation block.
-
-There is no standalone `/pl/cities/` listing route.
+Known review items include missing restored article images, marketplace test data sourcing, PL/IE provider manual validation, and the low-confidence IE Waterford aggregator-sourced provider candidate.
 
 ## Build Notes
 
@@ -309,17 +315,16 @@ Standard build:
 npm run build
 ```
 
-Expected warnings:
-
-- Empty `tests` collection.
-- Empty `providers` collection only in checkouts where provider records have not yet been populated.
-
-Localized article routes and market pages currently generate only when marketplace mode is enabled:
+Marketplace build:
 
 ```bash
 MARKETPLACE_ENABLED=true npm run build
 ```
 
-Use this extra build when checking `/pl/{slug}/`, `/pl/`, `/pl/cities/{slug}/`, `/us/cities/{slug}/`, `/uk/cities/{slug}/`, `/ie/cities/{slug}/`, or market pages.
+Use the marketplace build when checking translated article routes or any market route, including categories, cities, providers, and tests.
 
-If production Cloudflare Pages builds without `MARKETPLACE_ENABLED=true`, `/pl/`, `/pl/cities/...`, and homepage city links will not be present by design.
+Expected warning while tests are empty:
+
+- Empty `tests` collection.
+
+If production Cloudflare Pages builds without `MARKETPLACE_ENABLED=true`, market routes and homepage market-gated links are not present by design.
