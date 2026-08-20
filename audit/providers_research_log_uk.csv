@@ -1,0 +1,25 @@
+market,city,candidate_name,source_url,confidence,notes
+uk,london,Medical Express Clinic,https://www.medicalexpressclinic.co.uk/blood-tests,medium,Harley Street walk-in clinic; provider-page pricing/CTA present on source, must be stripped for draft record
+uk,london,SameDayDoctor,https://samedaydoctor.org/service/private-blood-tests,medium,Queen Anne Street clinic near Harley Street
+uk,london,Walk In Clinic London,https://www.walkinclinic.london/,medium,South Kensington walk-in clinic
+uk,london,Blood.london,https://blood.london/,low,Harley Street; thin source page, needs corroboration
+uk,manchester,Pall Mall Medical,https://www.pallmallmedical.co.uk/bloods-testing/,medium,Manchester and Liverpool clinics
+uk,manchester,Summerhill Health,https://www.summerhillhealth.co.uk/our-services/health-screening/blood-tests-manchester/,low,Based in Hale; serves Greater Manchester/Cheshire, not central Manchester
+uk,manchester,The National Blood Test Clinic,https://thenationalbloodtestclinic.co.uk/pages/blood-tests-manchester,low,Aggregator-style multi-city site, needs direct-source confirmation
+uk,manchester,Goodbody Clinic (Fiora Health partner site),https://goodbodyclinic.com/collections/manchester-clinic-fiora-health,low,Partner-site model inside Manchester Victoria Station, similar to low-confidence IE aggregator pattern
+uk,birmingham,The Private Blood Clinic,https://www.privatebloodclinic.co.uk/,medium,Dedicated Birmingham/Midlands clinic
+uk,birmingham,The Vesey Private Hospital,https://www.thevesey.co.uk/blog/blood-tests-birmingham,medium,Sutton Coldfield
+uk,birmingham,Midland Health,https://midlandhealth.co.uk/blood-tests/,medium,Edgbaston
+uk,birmingham,The Doctors Practice,https://thedoctorspractice.co.uk/services/private-blood-tests-birmingham/,low,Edgbaston; CQC-regulated per source page, needs corroboration
+uk,leeds,Mayfield Clinic,https://www.mayfieldclinic.co.uk/services/leeds-blood-tests,medium,Multi-city private GP chain, also present in Glasgow and Bristol lists
+uk,leeds,The Whitehall Clinic,https://whitehallclinic.com/private-blood-tests,medium,Central Leeds, near train station
+uk,leeds,The Leeds Clinic,https://www.leeds-clinic.co.uk/blood-testing/,low,Thin source page, needs corroboration
+uk,leeds,Goodbody Clinic (Living Care Group partner site),https://goodbodyclinic.com/collections/leeds-clinic-the-living-care-group,low,Partner-site model at Thorpe Park
+uk,glasgow,AIS Health Check (Randox partner),https://aishealthcheck.co.uk/pages/private-health-testing-in-glasgow,medium,Inside Holland & Barrett, Glasgow city centre; same operator/model also found in Bristol
+uk,glasgow,MedAssistant,https://medassistant.co.uk/,medium,Saltmarket, Glasgow; registered with Healthcare Improvement Scotland per source
+uk,glasgow,Ross Hall Hospital (Circle Health Group),https://www.circlehealthgroup.co.uk/hospitals/ross-hall-hospital/blood-tests-glasgow,medium,Private hospital pathology route
+uk,glasgow,GP Matters,https://www.gpmatters.com/blood-tests-glasgow.html,low,West End, Glasgow; small independent clinic
+uk,bristol,AIS Health Check (Randox partner),https://aishealthcheck.co.uk/pages/health-testing-in-bristol,medium,Inside Holland & Barrett, Cabot Circus; same operator/model as Glasgow entry
+uk,bristol,Mayfield Clinic,https://www.mayfieldclinic.co.uk/blog/private-blood-tests-in-bristol-quick-results-at-mayfield-clinic,medium,Same multi-city chain as Leeds/Glasgow entries
+uk,bristol,The Lagom Clinic,https://thelagom.co.uk/blood-test/,low,Independent private GP clinic, Bristol
+uk,bristol,Nuffield Health Bristol,https://www.nuffieldhealth.com/hospitals/bristol/tests-scans/blood-test,medium,Private hospital pathology route, Clifton
