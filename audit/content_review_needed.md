@@ -52,4 +52,8 @@
 
 ## Market provider/test data sourcing
 
-- Real provider/test partnership data is required before populating `src/content/tests/` or `src/content/providers/` for any market (`us`, `uk`, `ie`, `pl`, and all future markets); this is a separate sourcing task, not a translation task.
+- Real provider/test partnership data is required before treating `src/content/tests/` or `src/content/providers/` entries as live marketplace listings for any market (`us`, `uk`, `ie`, `pl`, and all future markets); this is a separate sourcing task, not a translation task. Draft provider research placeholders may exist only for manual validation and must stay `draft: true`.
+
+## IE provider research low-confidence source
+
+- `src/content/providers/ie/waterford/upmc-whitfield-hospital.md` is created only as a `draft: true` research placeholder from `audit/providers_research_log_ie.csv`; its source is an aggregator (`aggregator_secondary_source`) with `verification_status=unverified_needs_manual_review_low_confidence`. It needs direct official-source confirmation before it can be treated as a valid provider candidate.

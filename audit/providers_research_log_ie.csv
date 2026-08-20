@@ -1,0 +1,28 @@
+market,city,provider_name,source_url,source_type,date_checked,verification_status
+ie,dublin,Ellwood Clinic,https://ellwoodclinic.ie/blood-test-health-screening/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Mater Private Network (Phlebotomy Dept),https://www.materprivate.ie/our-services/medical-scans-tests/blood-testing-phlebotomy,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Liffey Medical,https://www.liffeymedical.ie/blood-tests,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Bloodworks (incl. McCabes Pharmacy partnership),https://www.bloodworks.ie/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Jervis Medical Centre,https://jervismedical.ie/blood-tests/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,The Health Lab (Dublin/Kildare/Meath/Tipperary clinics),https://www.thehealthlab.ie/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Folacare,https://fola.care/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Bioscan,https://bioscan.ie/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,dublin,Private Blood Tests Ireland (nurse home visit / postal),https://privatebloodtests.ie/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,The Health Lab - Cork clinic (Hazelwood SC, Glanmire),https://www.thehealthlab.ie/blood-tests-cork,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,Access Laboratories (Midleton, Co. Cork),https://accesslabs.ie/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,MedHub,https://www.medhub.ie/blood-testing-in-cork,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,Mater Private Network Cork (Pathology Lab),https://www.materprivate.ie/our-services/medical-scans-tests/pathology-laboratories,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,City Clinic Douglas / Cork Dental & Medical Clinic,https://cityclinic.ie/service/laboratory-tests/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,MD Clinic Cork,https://www.mdclinic.ie/laboratory.php,provider_website,2026-08-20,unverified_needs_manual_review
+ie,cork,Bon Secours Hospital Cork (Pathology),https://www.bonsecours.ie/services/pathology,provider_website,2026-08-20,unverified_needs_manual_review
+ie,galway,Galway Doc - Walk-in Blood Testing Service,https://www.galwaydoc.com/blood-tests/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,galway,Bon Secours Hospital Galway (Pathology),https://www.bonsecours.ie/services/pathology,provider_website,2026-08-20,unverified_needs_manual_review
+ie,galway,Blackrock Health - Galway Clinic labs,https://www.blackrockhealth.com/treatments-procedures/laboratory-pathology-department,provider_website,2026-08-20,unverified_needs_manual_review
+ie,limerick,The Health Lab - Limerick clinic (FIT 100, Ballysimon),https://www.thehealthlab.ie/blood-tests-limerick,provider_website,2026-08-20,unverified_needs_manual_review
+ie,limerick,LPS Blood Testing And Healthcare Agency,https://www.lpshealthcare.com/blood-testing,provider_website,2026-08-20,unverified_needs_manual_review
+ie,limerick,New Road Clinic,https://www.newroadclinic.ie/blood-clinic.html,provider_website,2026-08-20,unverified_needs_manual_review
+ie,limerick,Beacon Limerick HealthCheck,https://www.beaconhospital.ie/limerick/healthcheck/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,limerick,Centric Health - Corbally Medical,https://centrichealth.ie/services/general-medical-services/blood-tests/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,waterford,University Hospital Waterford Laboratory (HSE CHO5 regional lab),https://www.hse.ie/eng/services/list/3/acutehospitals/hospitals/waterford/laboratoryservices/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,waterford,The Keogh Practice (GP, phlebotomy),https://www.thekeoghpractice.ie/our-services/blood-tests/,provider_website,2026-08-20,unverified_needs_manual_review
+ie,waterford,UPMC Whitfield Hospital (referenced via aggregator; needs direct-source confirmation),https://doconcall.ie/private-blood-tests-ireland/,aggregator_secondary_source,2026-08-20,unverified_needs_manual_review_low_confidence
