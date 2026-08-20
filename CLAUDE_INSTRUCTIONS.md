@@ -252,6 +252,18 @@ If an image is missing:
 
 Categories, cities, tests, and providers belong to the feature-flagged marketplace layer.
 
+The marketplace layer is gated by:
+
+```bash
+MARKETPLACE_ENABLED=true
+```
+
+Without this env var, default builds must not generate `/pl/`, `/pl/cities/...`, or city links on the homepage.
+
+`src/data/markets.ts` currently defines more market codes than have real content. Only `pl` (translated articles, categories, cities, and draft provider research records), `ie` (draft categories, draft city pages, and draft provider research records), and `us`/`uk` (draft categories and draft city pages only) currently have populated marketplace content collections. The presence of a market code in `markets.ts` is not itself approval to add content for it. Treat adding content for any market code, new or already defined, the same as adding a new market: it needs the user to explicitly scope that work first.
+
+`draft: true` on a content record means "not approved / pending review." It does not prevent the record's marketplace route from being generated when `MARKETPLACE_ENABLED=true`. Draft records still render, marked with `DraftBadge`; they are just not implied to be verified or live.
+
 PL city pages currently use the `locations` collection and route:
 
 ```text
@@ -268,7 +280,7 @@ Initial PL city slugs are:
 - `gdansk`
 - `lodz`
 
-Tests and providers are intentionally empty until real provider/test partnership data is available.
+Tests are intentionally empty until real test catalog data is available. Provider records may exist as `draft: true` research placeholders, but they are not verified live marketplace listings until manual approval and should not create CTAs, prices, availability, or address listings.
 
 Do not create fake providers, lab names, addresses, prices, LOINC codes, collection points, or availability values from design mockups.
 
@@ -278,7 +290,14 @@ When tests/providers/city listings are empty:
 - Do not render real links or CTAs that imply the marketplace is live.
 - Keep homepage marketplace messaging as a one-line `MarketplaceTeaser`.
 
-Do not add more PL cities, replicate city pages to other markets, or add real lab/provider/location data unless the user explicitly scopes that work.
+Current PL city links are intentionally limited to:
+
+- `/pl/`, the PL market index, which contains a Cities section when marketplace mode is enabled.
+- `/`, which contains a low-key "Polish city pages in preparation" block when marketplace mode is enabled.
+
+Do not create a standalone `/pl/cities/` listing route unless explicitly requested.
+
+`us`, `uk`, and `ie` currently have explicitly scoped draft city pages. Do not add more cities, replicate city pages to other markets, or add real lab/provider/location data unless the user explicitly scopes that work.
 
 ## Validation
 
@@ -288,7 +307,7 @@ For meaningful code, routing, design, or content changes, run:
 npm run build
 ```
 
-Warnings about empty `tests` and `providers` collections are expected while those collections are empty.
+Warnings about an empty `tests` collection are expected while tests have no content. Empty provider warnings may appear only in checkouts where providers have not yet been populated.
 
 When validating translated article routes or marketplace routes, also run:
 

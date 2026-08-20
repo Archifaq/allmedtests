@@ -86,6 +86,7 @@ Marketplace content collections:
 
 ```text
 src/content/categories/
+src/content/locations/
 src/content/tests/
 src/content/providers/
 ```
@@ -345,22 +346,37 @@ It should:
 - Show the `allmedtests.com` brand.
 - List restored lab-test guide articles from the `articles` collection.
 - Show draft badges for articles with `draft: true`.
-- Include a non-clickable marketplace teaser while `tests` and `providers` collections are empty.
+- Include a non-clickable marketplace teaser while verified tests/providers are unavailable.
 - Include a general affiliate disclosure in the footer.
 
-Do not add links to categories, tests, or providers until those pages actually exist.
+Do not add new homepage links to categories, tests, or providers until those pages and their data have been explicitly scoped. Current low-key city links are marketplace-gated and limited to the existing city-page pattern.
 
 ## Marketplace UI
 
-Tests and providers are intentionally empty until real provider/test partnership data is available.
+Tests are intentionally empty until real provider/test partnership data is available. Provider records may exist as `draft: true` research placeholders for explicitly scoped markets such as `pl` and `ie`, but they are not verified live marketplace listings until manual approval.
 
 Do not create fake providers, prices, LOINC codes, locations, or availability values from design mockups.
+
+The marketplace layer is gated by:
+
+```bash
+MARKETPLACE_ENABLED=true
+```
+
+Without this env var, default builds must not generate `/pl/`, `/pl/cities/...`, or homepage city links.
 
 When marketplace data is missing:
 
 - Use `EmptyStateCard`.
 - Do not render live links or CTAs that imply tests/providers are available.
 - Keep homepage marketplace messaging as the one-line `MarketplaceTeaser`.
+
+Current city links:
+
+- `/pl/` is the PL market index and contains the Cities section when marketplace mode is enabled.
+- `/` contains a low-key "Polish city pages in preparation" block linking to PL city pages when marketplace mode is enabled.
+- `us`, `uk`, and `ie` have draft city pages that render only when `MARKETPLACE_ENABLED=true`; do not add extra homepage blocks for them without explicit scope.
+- There is no separate `/pl/cities/` listing route; do not add one without an explicit request.
 
 ## Redirects
 
@@ -389,7 +405,7 @@ Before finishing meaningful code or content-routing changes, run:
 npm run build
 ```
 
-Expected warnings about empty `tests` and `providers` collections are okay while those collections have no content.
+Expected warnings about an empty `tests` collection are okay while tests have no content. Empty provider warnings may appear only in checkouts where providers have not yet been populated.
 
 Localized article routes in `src/pages/[locale]/[...slug].astro` currently generate only when:
 
