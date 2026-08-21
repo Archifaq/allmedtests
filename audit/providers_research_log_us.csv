@@ -1,0 +1,25 @@
+market,city,candidate_name,source_url,confidence,notes
+us,new-york,Quest Diagnostics,https://locations.questdiagnostics.com/ny/new-york,medium,Official Quest city location page for New York patient service centers
+us,new-york,Labcorp,https://locations.labcorp.com/ny/new-york/,medium,Official Labcorp city location page for New York patient service centers
+us,new-york,NYU Langone Outpatient Laboratory,https://nyulangone.org/locations/nyu-langone-outpatient-laboratory,medium,Official NYU Langone outpatient blood draw laboratory page in New York
+us,new-york,Mount Sinai Clinical Labs,https://icahn.mssm.edu/about/departments/pathology/diagnostic,medium,Official Mount Sinai pathology page notes clinical labs blood drawing service for referred patients
+us,los-angeles,Quest Diagnostics,https://locations.questdiagnostics.com/ca/los-angeles,medium,Official Quest city location page for Los Angeles patient service centers
+us,los-angeles,Labcorp,https://locations.labcorp.com/ca/los-angeles/,medium,Official Labcorp city location page for Los Angeles patient service centers
+us,los-angeles,UCLA Health Clinical Labs,https://www.uclahealth.org/find-location/clinical-labs,medium,Official UCLA Health clinical labs page lists Los Angeles blood work and specimen collection locations
+us,los-angeles,Cedars-Sinai Pavilion Blood Draw Station,https://www.cedars-sinai.org/locations/pavilion-blood-draw-station-306591.html,medium,Official Cedars-Sinai patient service center for blood and urine specimen collection in Los Angeles
+us,chicago,Quest Diagnostics,https://locations.questdiagnostics.com/il/chicago,medium,Official Quest city location page for Chicago patient service centers
+us,chicago,Labcorp,https://locations.labcorp.com/il/chicago/30184/,medium,Official Labcorp Chicago laboratory testing location page
+us,chicago,Northwestern Medicine Laboratory Services,https://www.nm.org/locations/laboratory-services-galter-pavilion?y_source=1_MTAwODkyNzgwNS02NDQtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,medium,Official Northwestern Medicine laboratory services location page in Chicago
+us,chicago,UChicago Medicine Lab Services,https://www.uchicagomedicine.org/conditions-services/lab-services,medium,Official UChicago Medicine lab services page with multiple Chicago outpatient lab locations
+us,houston,Quest Diagnostics,https://locations.questdiagnostics.com/tx/houston,medium,Official Quest city location page for Houston patient service centers
+us,houston,Labcorp,https://locations.labcorp.com/tx/houston/,medium,Official Labcorp city location page for Houston patient service centers
+us,houston,Houston Methodist Laboratory Services,https://www.houstonmethodist.org/locations/laboratory-services/,medium,Official Houston Methodist outpatient laboratory services page
+us,houston,Any Lab Test Now Houston,https://www.anylabtestnow.com/houston-77064/contact-us/,medium,Official Any Lab Test Now Willowbrook Houston location page
+us,phoenix,Sonora Quest Laboratories,https://www.questdiagnostics.com/locations/search.html/85022/25/1,medium,Official Quest location search result showing Sonora Quest Laboratories locations in Phoenix
+us,phoenix,Labcorp,https://locations.labcorp.com/az/phoenix/,medium,Official Labcorp city location page for Phoenix patient service centers
+us,phoenix,Any Lab Test Now Phoenix,https://www.anylabtestnow.com/phoenix-85018/contact-us/,medium,Official Any Lab Test Now Phoenix location page
+us,phoenix,HonorHealth Lab Services,https://www.honorhealth.com/medical-services/primary-care/lab-services-locations,medium,Official HonorHealth lab services list with multiple Phoenix lab locations
+us,miami,Quest Diagnostics,https://locations.questdiagnostics.com/fl/miami,medium,Official Quest city location page for Miami patient service centers
+us,miami,Labcorp,https://locations.labcorp.com/fl/miami/,medium,Official Labcorp city location page for Miami patient service centers
+us,miami,Any Lab Test Now Miami Beach,https://www.anylabtestnow.com/miami-beach-33141/,medium,Official Any Lab Test Now Miami Beach location page in the Miami market
+us,miami,Baptist Health Baptist Hospital Laboratory Services,https://baptisthealth.net/locations/hospitals/baptist-hospital-of-miami,medium,Official Baptist Health Baptist Hospital page lists laboratory services in Miami

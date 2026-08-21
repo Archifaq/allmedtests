@@ -12,7 +12,7 @@ The project currently has:
 - Marketplace collection scaffolding for categories, locations, tests, and providers.
 - Draft category content for `pl`, `us`, `uk`, and `ie`.
 - Draft city pages for `pl`, `us`, `uk`, and `ie`.
-- Draft provider research records for `pl` and `ie`.
+- Draft provider research records for `pl`, `ie`, `uk`, and `us`.
 - An empty `tests` collection.
 - Cloudflare Pages as the deployment target.
 
@@ -219,7 +219,10 @@ Providers:
 - `pl`: 3 draft provider research records: `diagnostyka`, `alab-laboratoria`, `synevo`.
 - `ie`: 27 draft provider research records.
 - IE provider count by city: Dublin 9, Cork 7, Galway 3, Limerick 5, Waterford 3.
-- `us` and `uk`: no provider records.
+- `uk`: 24 draft provider research records.
+- UK provider count by research city: London 4, Manchester 4, Birmingham 4, Leeds 4, Glasgow 4, Bristol 4.
+- `us`: 24 draft provider research records.
+- US provider count by research city: New York 4, Los Angeles 4, Chicago 4, Houston 4, Phoenix 4, Miami 4.
 - All other markets: no provider records.
 
 Tests:
@@ -232,7 +235,11 @@ Source tracing:
 
 - PL provider research source log: `audit/providers_research_log.csv` with 18 data rows.
 - IE provider research source log: `audit/providers_research_log_ie.csv` with 27 data rows.
+- UK provider research source log: `audit/providers_research_log_uk.csv` with 24 data rows.
+- US provider research source log: `audit/providers_research_log_us.csv` with 24 data rows.
 - IE Waterford `UPMC Whitfield Hospital` is low-confidence because it is based on an aggregator source and needs direct-source confirmation.
+- UK provider candidates are draft/unverified placeholders with `confidence` values in the audit CSV; several low-confidence aggregator or partner-site rows require direct-source confirmation before any live use.
+- US provider candidates are draft/unverified placeholders sourced from official provider or health-system pages; they still require manual validation before any live use.
 
 ## Current Polish Article Mapping
 
@@ -266,6 +273,8 @@ Important audit files:
 - `audit/category_sources_review.md`: source notes for English market category copy.
 - `audit/providers_research_log.csv`: PL provider research source log.
 - `audit/providers_research_log_ie.csv`: IE provider research source log.
+- `audit/providers_research_log_uk.csv`: UK provider research source log.
+- `audit/providers_research_log_us.csv`: US provider research source log.
 - `audit/us_uk_ie_cities_source.md`: source notes for US/UK/IE draft city selection.
 
 ## Restoration Audit Details
@@ -305,7 +314,7 @@ http://allmedtests.com/wp-content/uploads/2017/06/ABO-and-RH-Blood-Grouping.png
 
 This image had 9 referring domains and must remain available at the same path after deployment.
 
-Known review items include missing restored article images, marketplace test data sourcing, PL/IE provider manual validation, and the low-confidence IE Waterford aggregator-sourced provider candidate.
+Known review items include missing restored article images, marketplace test data sourcing, PL/IE/UK/US provider manual validation, low-confidence UK provider candidates, and the low-confidence IE Waterford aggregator-sourced provider candidate.
 
 ## Build Notes
 

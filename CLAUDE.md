@@ -140,10 +140,11 @@ Current populated marketplace content:
 
 - `pl`: draft categories, draft city pages, and draft provider research records.
 - `ie`: draft categories, draft city pages, and draft provider research records.
-- `us` and `uk`: draft categories and draft city pages only.
+- `uk`: draft categories, draft city pages, and draft provider research records.
+- `us`: draft categories, draft city pages, and draft provider research records.
 - `tests`: empty.
 
-Provider records in `pl` and `ie` are unverified research placeholders only. They must remain `draft: true` and must not be treated as live marketplace listings until manual validation.
+Provider records in `pl`, `ie`, `uk`, and `us` are unverified research placeholders only. They must remain `draft: true` and must not be treated as live marketplace listings until manual validation.
 
 Do not create fake providers, prices, LOINC codes, addresses, collection points, availability values, or CTAs from design mockups or unverified sources.
 

@@ -184,8 +184,8 @@ Currently populated marketplace content:
 
 - `pl`: draft categories, draft city pages, and draft provider research records.
 - `ie`: draft categories, draft city pages, and draft provider research records.
-- `us`: draft categories and draft city pages only.
-- `uk`: draft categories and draft city pages only.
+- `uk`: draft categories, draft city pages, and draft provider research records.
+- `us`: draft categories, draft city pages, and draft provider research records.
 - All other markets: no populated marketplace content.
 - `tests`: empty for all markets.
 
@@ -195,11 +195,13 @@ Do not add more cities, replicate city pages to other markets, or add real lab/p
 
 `draft: true` means not approved / pending review. Draft records may still render when `MARKETPLACE_ENABLED=true`, marked with `DraftBadge`; they are not implied to be verified or live.
 
-Provider records in `pl` and `ie` are research placeholders only. Their source logs are:
+Provider records in `pl`, `ie`, `uk`, and `us` are research placeholders only. Their source logs are:
 
 ```text
 audit/providers_research_log.csv
 audit/providers_research_log_ie.csv
+audit/providers_research_log_uk.csv
+audit/providers_research_log_us.csv
 ```
 
 These records must stay `draft: true` and must not create live CTAs, prices, availability, address listings, or other verified-provider UI until a human explicitly approves that next step.
