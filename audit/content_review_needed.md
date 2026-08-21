@@ -57,3 +57,7 @@
 ## IE provider research low-confidence source
 
 - `src/content/providers/ie/waterford/upmc-whitfield-hospital.md` is created only as a `draft: true` research placeholder from `audit/providers_research_log_ie.csv`; its source is an aggregator (`aggregator_secondary_source`) with `verification_status=unverified_needs_manual_review_low_confidence`. It needs direct official-source confirmation before it can be treated as a valid provider candidate.
+
+## US provider research manual validation
+
+- The 24 records in `src/content/providers/us/` are `draft: true` research placeholders from `audit/providers_research_log_us.csv`. They need manual validation, including direct-source confirmation of provider name, legitimacy, and operating status, before any future step treats them as live provider listings.
